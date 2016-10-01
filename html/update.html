@@ -1,7 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <title>Update Events</title>
+
+  <style>
+    body {
+      font-family: sans-serif; 
+      background: #efefef;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .button {
+      display: block;
+      padding: 15px;
+      border: 1px solid #000;
+      border-radius: 2px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .button:hover {
+      background: #ccc;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 2px;
+      box-shadow: 0 0 2px #ccc;
+      max-width: 350px;
+      margin: 0 auto;
+      padding: 15px;
+    }
+
+    .success h1 {
+      color: green;
+    }
+
+    .error h1 {
+      color: red;
+    }
+
+  </style>
 </head>
 <body>
 
@@ -15,6 +59,12 @@
   <p class="message">The error message would appear here.</p>
 </div>
 
+<div class="card login">
+  <h1>Please Login to Facebook</h1>
+  <p class="message">In order to copy events from Facebook, you'll need to login first.</p>
+  <a class="button" href="#" onclick="requestLogin()">Login</a>
+</div>
+
 <div class="card success">
   <h1>Success!</h1>
   <p class="message">The operation completed successfully!</p>
@@ -22,9 +72,12 @@
 
 <script>
 
+  // Shortcut methods for retrieving element references
   function getEls(selector) { return document.querySelectorAll(selector); }
   function getEl(selector) { return document.querySelector(selector); }
 
+  // Send the user's Facebook access token to the server so the server can
+  // request events data from Facebook.
   function sendToken(token) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -43,6 +96,7 @@
     xhttp.send("token=" + token);
   }
 
+  // Display a success message with the given text
   function showSuccess(message) {
     var messageEl = getEl('.card.success .message');
     messageEl.innerHTML = message;
@@ -50,6 +104,7 @@
     show('.card.success');
   }
 
+  // Show an error message with the given text
   function showError(message) {
     var messageEl = getEl('.card.error .message');
     messageEl.innerHTML = message;
@@ -57,6 +112,7 @@
     show('.card.error');
   }
 
+  // Show the "operation pending" message with the given text
   function showPending(message) {
     var messageEl = getEl('.card.pending .message');
     messageEl.innerHTML = message;
@@ -64,14 +120,23 @@
     show('.card.pending');
   }
 
+  // Show the Facebook login prompt
+  function showLogin(message) {
+    hide('.card');
+    show('.card.login');
+  }
+
+  // Show elements that match the given selector
   function show(selector) {
     toggle(selector, true);
   }
 
+  // Hide elements that match the given selector
   function hide(selector) {
     toggle(selector, false);
   }
 
+  // Toggle visibility of elements that match the given selector
   function toggle(selector, flag) {
     flag = !!flag;
     elements = document.querySelectorAll(selector);
@@ -87,6 +152,7 @@
     }
   }
 
+  // Show the "pending operation" message by default.
   showPending('Loading Facebook API...');
 
   // When Facebook API loads...
@@ -100,15 +166,23 @@
     
     FB.getLoginStatus(function(response) {
       if (response.status === 'connected') {
-        showSuccess('You\'re logged in!');
+        showPending('Please wait while we pull data from Facebook...');
         sendToken(response.authResponse.accessToken);
       }
       else {
-        showFailure('Your\'re not logged into Facebook.');
-        FB.login();
+        showLogin();
       }
     });
   };
+
+  // Display a Facebook login form for the user to fill out.
+  function requestLogin() {
+    FB.login(function(response) {
+      if (response.authResponse) {
+        document.location.reload();
+      }
+    });
+  }
 
   // Get Facebook API
   (function(d, s, id){

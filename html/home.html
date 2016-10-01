@@ -37,22 +37,22 @@
 
   <!-- Member Projects -->
   <!-- <section class="section-card section-gallery" id="section-gallery"></section> -->
-
+  
   <!-- Facebook -->
   <section class="section-card section-facebook section-grid" id="section-facebook">
     <h1>Upcoming Events</h1>
     <ul class="facebook-events">
       {{#each events}}
       <li>
-        <h2 class="event-name">{{eventName}}</h2>
-        <p class="event-date">{{eventDate}}</p>
-        <p class="event-location">{{eventLocation}}</p>
-        <p class="event-description">{{eventDescription}}</p>
+        <h2 class="event-name">{{name}}</h2>
+        <p class="event-date">{{start_time}}</p>
+        <p class="event-location">{{location.city}}</p>
+        <p class="event-description">{{description}}</p>
       </li>
       {{/each}}
     </ul>
   </section>
-  
+
   <!-- Twitter -->
   <section class="section-card section-twitter section-grid" id="section-twitter">
     <h1>Community</h1>

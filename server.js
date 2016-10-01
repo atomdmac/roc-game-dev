@@ -5,6 +5,7 @@ var fs = require('fs');
 var path = require('path');
 var handlebars = require('handlebars');
 var twitterFeed = require('./twitter-feed');
+var facebookFeed = require('./facebook-feed');
 var FB = require('fb');
 var htmlTpl;
 
@@ -72,47 +73,17 @@ app.get('/images/:fileName', function (req, res) {
   res.sendFile(cwd + '/images/' + req.params.fileName);
 });
 
-// Event Updates
+// Facebook Event Updates
 app.get('/update', function (req, res) {
   res.sendFile(cwd + '/html/update.html');
 });
 
 // Accept event update requests.
 app.post('/update', function (req, res) {
-  FB.setAccessToken(req.body.token);
-  FB.api(
-    '/1453415071632653/events',
-    function (response) {
-
-      // Facebook returned an error :(
-      if(response.error) {
-        res.send(response);
-      } 
-
-      // Facebook response is successful.  Now let's try to save that data to
-      // our website so we can display it to users later.
-      else {
-        fs.writeFile('events.json', JSON.stringify(response), function (writeErr) {
-          
-          // Data write was successful.
-          if(!writeErr) {
-            res.send(JSON.stringify(response));
-          }
-
-          // Data write has failed.  Let the user know.
-          else {
-            res.send({
-              error: {
-                message: 'There was a problem copying events to the ROC Game Dev server.  Ask Atom about it.'
-              }
-            });
-          }
-        });
-      }
-    }
-  );
+  facebookFeed.refresh(req.body.token).then(function (fbResponse) {
+    res.send(fbResponse);
+  });
 });
-
 
 // Twitter aggregator
 twitterFeed.start();
@@ -126,7 +97,7 @@ app.listen(PORT, function () {
 function getPageData () {
   return {
     tweets: twitterFeed.getTweets(),
-    events: getEvents()
+    events: facebookFeed.getEvents()
   };
 }
 
