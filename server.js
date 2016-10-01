@@ -6,30 +6,12 @@ var path = require('path');
 var handlebars = require('handlebars');
 var twitterFeed = require('./twitter-feed');
 var facebookFeed = require('./facebook-feed');
-var FB = require('fb');
 var htmlTpl;
 
 // Configure body-parser Express plug-in for using variables from POST requests.
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-
-/*
-FB.api('oauth/access_token', {
-    client_id: '1532050613487336',
-    client_secret: 'da03c47c75fd30c5be24daead1023a51',
-    grant_type: 'client_credentials'
-}, function (res) {
-  console.log('Token response: ', res);
-    if(!res || res.error) {
-        console.log(!res ? 'error occurred' : res.error);
-        return;
-    }
-
-    var accessToken = res.access_token;
-    var expires = res.expires ? res.expires : 0;
-});
-*/
 
 // Which port should the server offer connections on?
 var PORT = 8080;
