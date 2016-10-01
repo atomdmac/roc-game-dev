@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"box",
+				"box-sizing"
+			],
+			[
+				"eve",
+				"eventData"
+			],
+			[
 				"long",
 				"longestIndex"
 			],
@@ -214,10 +226,6 @@
 			[
 				"bord",
 				"borderRadius"
-			],
-			[
-				"box",
-				"box-shadow"
 			],
 			[
 				"d",
@@ -495,20 +503,44 @@
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 3372,
+				"buffer_size": 3517,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "\n    // The tab key will cycle through the settings when first created\n    // Visit http://wbond.net/sublime_packages/sftp/settings for help\n    \n    // sftp, ftp or ftps\n    \"type\": \"sftp\",\n\n    \"sync_down_on_open\": true,\n    \"sync_same_age\": true,\n    \n    \"host\": \"rocgamedev.org\",\n    \"user\": \"webadmin\",\n    //\"password\": \"password\",\n    //\"port\": \"22\",\n    \n    \"remote_path\": \"/var/www/html/new-site\",\n    //\"file_permissions\": \"664\",\n    //\"dir_permissions\": \"775\",\n    \n    //\"extra_list_connections\": 0,\n\n    \"connect_timeout\": 30,\n    //\"keepalive\": 120,\n    //\"ftp_passive_mode\": true,\n    //\"ftp_obey_passive_host\": false,\n    //\"ssh_key_file\": \"~/.ssh/id_rsa\",\n    //\"sftp_flags\": [\"-F\", \"/path/to/ssh_config\"],\n    \n    //\"preserve_modification_times\": false,\n    //\"remote_time_offset_in_hours\": 0,\n    //\"remote_encoding\": \"utf-8\",\n    //\"remote_locale\": \"C\",\n    //\"allow_config_upload\": false,\n}",
-			"file": "sftp-config.json",
-			"file_size": 948,
-			"file_write_time": 131198115871485342,
+			"file": "events.json",
 			"settings":
 			{
-				"buffer_size": 914,
+				"buffer_size": 9,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "facebook-feed.js",
+			"settings":
+			{
+				"buffer_size": 2188,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "html/update.html",
+			"settings":
+			{
+				"buffer_size": 4854,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "html/home.html",
+			"settings":
+			{
+				"buffer_size": 2717,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -519,10 +551,42 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 242.0,
-		"last_filter": "sftp",
+		"height": 196.0,
+		"last_filter": "enable",
 		"selected_items":
 		[
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"ind",
+				"Indent JSON"
+			],
+			[
+				"inde",
+				"Indent JSON"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"sftp",
 				"SFTP: Show Panel"
@@ -530,10 +594,6 @@
 			[
 				"html",
 				"Set Syntax: HTML"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"json",
@@ -564,10 +624,6 @@
 				"Colorsublime: Install Theme"
 			],
 			[
-				"remove",
-				"Package Control: Remove Package"
-			],
-			[
 				"rename",
 				"File: Rename"
 			],
@@ -578,10 +634,6 @@
 			[
 				"user",
 				"Preferences: Settings - User"
-			],
-			[
-				"disable",
-				"Package Control: Disable Package"
 			],
 			[
 				"package list",
@@ -598,10 +650,6 @@
 			[
 				"ja",
 				"Set Syntax: JavaScript"
-			],
-			[
-				"list",
-				"Package Control: List Packages"
 			],
 			[
 				"diff",
@@ -632,7 +680,7 @@
 				"ExpandRegion"
 			]
 		],
-		"width": 432.0
+		"width": 416.0
 	},
 	"console":
 	{
@@ -677,10 +725,13 @@
 	},
 	"expanded_folders":
 	[
-		"/F/Code/web/roc-game-dev"
+		"/F/Code/web/roc-game-dev",
+		"/F/Code/web/roc-game-dev/css",
+		"/F/Code/web/roc-game-dev/html"
 	],
 	"file_history":
 	[
+		"/F/Code/web/roc-game-dev/events.json",
 		"/F/Code/web/roc-game-dev/sftp-config.json",
 		"/F/Code/web/roc-game-dev/roc-game-dev.sublime-project",
 		"/F/Code/web/facebook-sdk-test/sftp-config.json",
@@ -807,8 +858,7 @@
 		"/F/Code/web/hk/src/entity.js",
 		"/F/Code/python/rogulike-python-tutorial/path_bug.py",
 		"/F/Code/web/haq/js/actor.js",
-		"/F/Code/python/server-test/server.py",
-		"/F/Code/web/rogulike-python-tutorial/roguelike-python-tutorial.py"
+		"/F/Code/python/server-test/server.py"
 	],
 	"find":
 	{
@@ -830,6 +880,11 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"button",
+			"error",
+			"ts",
+			"WORKSHOP - CHOOSING A COLOR PALETTE",
+			"res.send",
 			"elements",
 			"curStrLen",
 			"longestRun",
@@ -952,12 +1007,7 @@
 			"server",
 			"existing",
 			"onGeohashUpdate",
-			"Geohash",
-			"new",
-			"div",
-			"min-height",
-			"top",
-			"h1"
+			"Geohash"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -978,7 +1028,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -987,15 +1037,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3372,
+						"buffer_size": 3517,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1914,
-								1914
+								1970,
+								1970
 							]
 						],
 						"settings":
@@ -1009,27 +1059,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1020.0,
+						"translation.y": 1179.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "sftp-config.json",
+					"file": "events.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 914,
+						"buffer_size": 9,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								597,
-								597
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1038,12 +1088,112 @@
 							"remote_loading": false,
 							"side_bar_folders_auto_load_folder": 1,
 							"synced": false,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "facebook-feed.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2188,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								759,
+								759
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"side_bar_folders_auto_load_folder": 1,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 120.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "html/update.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4854,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								221,
+								221
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"side_bar_folders_auto_load_folder": 1,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 140.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "html/home.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2717,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1750,
+								1750
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"side_bar_folders_auto_load_folder": 1,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 40.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
