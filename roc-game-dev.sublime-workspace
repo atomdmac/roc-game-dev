@@ -1,0 +1,1141 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"long",
+				"longestIndex"
+			],
+			[
+				"darke",
+				"darkest"
+			],
+			[
+				"rg",
+				"rgd-red"
+			],
+			[
+				"light",
+				"lightest"
+			],
+			[
+				"comp",
+				"compileHTMLTemplates"
+			],
+			[
+				"DEBUG",
+				"DEBUG_MODE"
+			],
+			[
+				"character",
+				"characters"
+			],
+			[
+				"pubh",
+				"publish"
+			],
+			[
+				"add",
+				"addEventListener"
+			],
+			[
+				"ed",
+				"editable-text"
+			],
+			[
+				"int",
+				"initialize"
+			],
+			[
+				"char",
+				"character"
+			],
+			[
+				"charac",
+				"characters"
+			],
+			[
+				"sample",
+				"sampleJSON"
+			],
+			[
+				"select",
+				"selectedIndex"
+			],
+			[
+				"pub",
+				"publish"
+			],
+			[
+				"sampl",
+				"sampleJSON"
+			],
+			[
+				"cha",
+				"characterData"
+			],
+			[
+				"refre",
+				"refreshInt"
+			],
+			[
+				"refres",
+				"refreshInt"
+			],
+			[
+				"search",
+				"searchParams"
+			],
+			[
+				"flex-",
+				"flex-direction"
+			],
+			[
+				"fu",
+				"fulfill"
+			],
+			[
+				"html",
+				"htmlTpl"
+			],
+			[
+				"geo",
+				"geohashString"
+			],
+			[
+				"Geo",
+				"GeohashCollection"
+			],
+			[
+				"Item",
+				"ItemCollection"
+			],
+			[
+				"ground",
+				"groundCollectionInstance"
+			],
+			[
+				"Side",
+				"SideBarView"
+			],
+			[
+				"zep",
+				"zepto-browserify"
+			],
+			[
+				"rand",
+				"ranAlready"
+			],
+			[
+				"inve",
+				"inventoryModelInstance"
+			],
+			[
+				"lng",
+				"lngDiff"
+			],
+			[
+				"center",
+				"centerX"
+			],
+			[
+				"sca",
+				"scattered"
+			],
+			[
+				"scar",
+				"scatterItems"
+			],
+			[
+				"ItemM",
+				"ItemMarker"
+			],
+			[
+				"map",
+				"mapboxgl"
+			],
+			[
+				"groud",
+				"groundViewInstance"
+			],
+			[
+				"Ground",
+				"GroundView"
+			],
+			[
+				"sideba",
+				"sidebarWidthLarge"
+			],
+			[
+				"side",
+				"sidebarWidthSmall"
+			],
+			[
+				"debug",
+				"debugModelInstance"
+			],
+			[
+				"Debu",
+				"DebugModelInstance"
+			],
+			[
+				"de",
+				"debug-view"
+			],
+			[
+				"target",
+				"targetConn"
+			],
+			[
+				"color",
+				"color1"
+			],
+			[
+				"Sans",
+				"Sans-Serif"
+			],
+			[
+				"FONT-",
+				"font-family"
+			],
+			[
+				"p",
+				"padding"
+			],
+			[
+				"st",
+				"stripe-height"
+			],
+			[
+				"border",
+				"borderRadius"
+			],
+			[
+				"bord",
+				"borderRadius"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"d",
+				"dotted"
+			],
+			[
+				"dec",
+				"text-decoration-style"
+			],
+			[
+				"star",
+				"start_torrent"
+			],
+			[
+				"fou",
+				"foundAction"
+			],
+			[
+				"track",
+				"tracker_url"
+			],
+			[
+				"file",
+				"file_name"
+			],
+			[
+				"WALL_SINGLE_N",
+				"WALL_SINGLE_NE"
+			],
+			[
+				"wall",
+				"WALL_SINGLE_VLINE"
+			],
+			[
+				"TARG",
+				"target_x"
+			],
+			[
+				"MAP",
+				"MAP_HEIGHT-1"
+			],
+			[
+				"random",
+				"random_get_int"
+			],
+			[
+				"GRAS",
+				"GRASS_2"
+			],
+			[
+				"GRASS",
+				"GRASS_1"
+			],
+			[
+				"MAP_HE",
+				"MAP_HEIGHT"
+			],
+			[
+				"br",
+				"broadcast"
+			],
+			[
+				"compone",
+				"component_name"
+			],
+			[
+				"ref",
+				"need_fov_refresh"
+			],
+			[
+				"SCREEN",
+				"SCREEN_WIDTH"
+			],
+			[
+				"SCREE",
+				"SCREEN_WIDTH"
+			],
+			[
+				"SCRE",
+				"SCREEN_HEIGHT-PANEL_HEIGHT"
+			],
+			[
+				"viewpor",
+				"viewport_x"
+			],
+			[
+				"view",
+				"viewport_x"
+			],
+			[
+				"top_",
+				"top_y"
+			],
+			[
+				"MAP_HEI",
+				"MAP_HEIGHT-1"
+			],
+			[
+				"MAP_",
+				"MAP_WIDTH"
+			],
+			[
+				"ga",
+				"game_msgs"
+			],
+			[
+				"Panel",
+				"PANEL_HEIGHT"
+			],
+			[
+				"monster",
+				"monster_death"
+			],
+			[
+				"monster_",
+				"monster_ai"
+			],
+			[
+				"make_",
+				"make_fov_map"
+			],
+			[
+				"need",
+				"need_fov_refresh"
+			],
+			[
+				"player",
+				"playerx"
+			],
+			[
+				"vis",
+				"visiting"
+			],
+			[
+				"visi",
+				"visiting"
+			],
+			[
+				"getRan",
+				"getRandomItem"
+			],
+			[
+				"_curre",
+				"_currentTrack"
+			],
+			[
+				"Open",
+				"OPEN"
+			],
+			[
+				"PopUp",
+				"PopUpManager"
+			],
+			[
+				"pop",
+				"popUpManager"
+			],
+			[
+				"state",
+				"stateMachine"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"Max",
+				"MAX_LINES"
+			],
+			[
+				"check",
+				"checkKeyboardInput"
+			],
+			[
+				"over",
+				"overlappingCells"
+			],
+			[
+				"Tiled",
+				"TiledMap"
+			],
+			[
+				"ice",
+				"iceAxe"
+			],
+			[
+				"can",
+				"canAttack"
+			],
+			[
+				"get",
+				"getContext"
+			],
+			[
+				"enemy",
+				"enemy"
+			],
+			[
+				"f",
+				"function"
+			],
+			[
+				"coll",
+				"collision"
+			],
+			[
+				"collision",
+				"collisionList"
+			],
+			[
+				"terra",
+				"terrainCollisions"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"col",
+				"collision"
+			],
+			[
+				"pto",
+				"prototype"
+			],
+			[
+				"behav",
+				"behaviorSubStatus"
+			],
+			[
+				"be",
+				"behaviorHuntFsm"
+			],
+			[
+				"intial",
+				"initialState"
+			],
+			[
+				"init",
+				"initialState"
+			],
+			[
+				"move",
+				"movementFsm"
+			],
+			[
+				"incap",
+				"incapacitated"
+			],
+			[
+				"in",
+				"incapacitated"
+			],
+			[
+				"moveme",
+				"movementStatus"
+			],
+			[
+				"TITLE",
+				"title"
+			],
+			[
+				"trans",
+				"transitioner"
+			],
+			[
+				"fade",
+				"fadeStep"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "server.js",
+			"settings":
+			{
+				"buffer_size": 3372,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\n    // The tab key will cycle through the settings when first created\n    // Visit http://wbond.net/sublime_packages/sftp/settings for help\n    \n    // sftp, ftp or ftps\n    \"type\": \"sftp\",\n\n    \"sync_down_on_open\": true,\n    \"sync_same_age\": true,\n    \n    \"host\": \"rocgamedev.org\",\n    \"user\": \"webadmin\",\n    //\"password\": \"password\",\n    //\"port\": \"22\",\n    \n    \"remote_path\": \"/var/www/html/new-site\",\n    //\"file_permissions\": \"664\",\n    //\"dir_permissions\": \"775\",\n    \n    //\"extra_list_connections\": 0,\n\n    \"connect_timeout\": 30,\n    //\"keepalive\": 120,\n    //\"ftp_passive_mode\": true,\n    //\"ftp_obey_passive_host\": false,\n    //\"ssh_key_file\": \"~/.ssh/id_rsa\",\n    //\"sftp_flags\": [\"-F\", \"/path/to/ssh_config\"],\n    \n    //\"preserve_modification_times\": false,\n    //\"remote_time_offset_in_hours\": 0,\n    //\"remote_encoding\": \"utf-8\",\n    //\"remote_locale\": \"C\",\n    //\"allow_config_upload\": false,\n}",
+			"file": "sftp-config.json",
+			"file_size": 948,
+			"file_write_time": 131198115871485342,
+			"settings":
+			{
+				"buffer_size": 914,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 242.0,
+		"last_filter": "sftp",
+		"selected_items":
+		[
+			[
+				"sftp",
+				"SFTP: Show Panel"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"inste",
+				"Package Control: Install Package"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"markdown",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"color",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"rename",
+				"File: Rename"
+			],
+			[
+				"pref",
+				"Preferences: Settings - Default"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"package list",
+				"Package Control: List Packages"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"RENAME",
+				"File: Rename"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"diff",
+				"FileDiffs: Menu"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"exp",
+				"ExpandRegion"
+			],
+			[
+				"expa",
+				"ExpandRegion"
+			],
+			[
+				"expand",
+				"ExpandRegion"
+			]
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 317.0,
+		"history":
+		[
+			"def touch (self, thing): print (\"You touched my\")",
+			"def touch (self, thing): print (\"You touched my\" + thing)",
+			"def",
+			"help(\"def\")",
+			"help(def)",
+			"def touch (self, thing): print (\"You touched my\" + thing)",
+			"def touch (self, thing): print \"You touched my\" + thing",
+			"def touch (self, thing): print \"You touched my \" + thing",
+			"def touch (self, thing): print 'You touched my ' + thing",
+			"def touch (self, thing): print 'You touched my ', thing",
+			"def touch (self, thing):",
+			"len(myDick)",
+			"myDick.count('a')",
+			"myDick.count()",
+			"myDick.count",
+			"dir(myDick)",
+			"myDick[0:2]",
+			"myDick[1:2]",
+			"myDick",
+			"myDick = ['a', 'bunch', 'of', 'strings']",
+			"myDick = ['a', 'bunch', 'of', 'strings]",
+			"poop",
+			"poop = ()",
+			"()",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/F/Code/web/roc-game-dev"
+	],
+	"file_history":
+	[
+		"/F/Code/web/roc-game-dev/sftp-config.json",
+		"/F/Code/web/roc-game-dev/roc-game-dev.sublime-project",
+		"/F/Code/web/facebook-sdk-test/sftp-config.json",
+		"/F/Code/web/facebook-sdk-test/server.js",
+		"/F/Code/web/roc-game-dev/html/update.html",
+		"/F/Code/web/facebook-sdk-test/index.html",
+		"/C/Users/atom/Dropbox/Code/roc-game-dev/server.js",
+		"/F/Code/web/facebook-sdk-test/server/server.js",
+		"/C/Users/atom/AppData/Roaming/Sublime Text 3/Packages/SFTP/SFTP.sublime-settings",
+		"/C/php-7.0.9/php.ini-development",
+		"/F/Code/web/shoretel-test/php/test.php",
+		"/C/Users/atom/Dropbox/Code/roc-game-dev/home.html",
+		"/C/Users/atom/Dropbox/Code/roc-game-dev/twitter-feed.js",
+		"/C/Users/atom/Dropbox/Code/roc-game-dev/scss/screen.scss",
+		"/C/Users/atom/Dropbox/Code/roc-game-dev/css/screen.css",
+		"/F/Code/web/eagle/clients/bms/1816_eRoster/eLearning/03_Planned_Program/Site/course/content/courseData.js",
+		"/F/Code/web/eagle/clients/bms/1816_eRoster/eLearning/03_Planned_Program/Site/course/content/bms_eroster_planned_prgm_0204.html",
+		"/F/Code/web/savage-sheet/scss/screen.scss",
+		"/F/Code/web/savage-sheet/index.html",
+		"/F/Code/web/savage-sheet/js/app.js",
+		"/F/Code/web/savage-sheet/json/sample.json",
+		"/F/Code/web/savage-sheet/node_modules/bind.js/lib/bind.js",
+		"/F/Code/web/savage-sheet/node_modules/bind.js/dist/bind.min.js",
+		"/F/Code/web/savage-sheet/node_modules/bind.js/CODE_OF_CONDUCT.md",
+		"/F/Code/web/savage-sheet/node_modules/bind.js/test/radios.browser.js",
+		"/F/Code/web/savage-sheet/css/screen.css",
+		"/F/Code/web/rivets-test/index.html",
+		"/F/Code/web/rivets-test/js/app.js",
+		"/F/Code/web/savage-sheet/js/die.js",
+		"/F/Code/web/geo-collect-test/geo-collect/js/index.js",
+		"/F/Code/web/geo-collect/index.js",
+		"/F/Code/web/savage-sheet/package.json",
+		"/C/Users/atom/Dropbox/Code/roc-game-dev/config.rb",
+		"/C/Users/atom/Dropbox/Code/roc-game-dev/twitter-feed-test.js",
+		"/F/Code/web/twitter-api-test/app.js",
+		"/F/Code/web/savage-worlds/config.rb",
+		"/F/Code/web/savage-worlds/scss/screen.scss",
+		"/F/Code/web/savage-worlds/index.html",
+		"/F/Code/web/promises-test/index.js",
+		"/F/Code/web/savage-worlds/css/screen.css",
+		"/F/Code/web/savage-worlds/scss/style.scss",
+		"/F/Code/web/savage-worlds/css/style.css",
+		"/F/Code/web/savage-worlds/css/normalize.css",
+		"/F/Code/web/server-side-rendering/html/home.html",
+		"/F/Code/web/server-side-rendering/data/things.json",
+		"/F/Code/web/server-side-rendering/app.js",
+		"/F/Code/web/roc-game-dev/home.html",
+		"/F/Code/web/socket-io-tutorial/index.js",
+		"/C/Users/atom/Desktop/custom-facebook-feed.php",
+		"/F/Code/web/geo-collect/client/js/views.js",
+		"/F/Code/web/geo-collect/client/sass/_view.sidebar.scss",
+		"/F/Code/web/geo-collect/client/js/index.js",
+		"/F/Code/web/geo-collect/docs/game-object-model-definitions.md",
+		"/F/Code/web/geo-collect/docs/api-definition.md",
+		"/F/Code/web/geo-collect/client/js/models.js",
+		"/C/Users/atom/AppData/Local/Temp/basic.ics",
+		"/F/Code/web/web-scrape-experiment/index.js",
+		"/F/Code/web/url-matcher-test/index.js",
+		"/F/Code/web/LightTPD/conf/mimetype.conf",
+		"/F/Code/web/LightTPD/conf/lighttpd.conf",
+		"/F/Code/index.html",
+		"/F/Code/web/geo-collect-zatch/js/models.js",
+		"/F/Code/web/geo-collect/sass/screen.scss",
+		"/F/Code/web/geo-collect/js/index.js",
+		"/F/Code/web/geo-collect/sass/_spinner.scss",
+		"/F/Code/web/geo-collect/js/views.js",
+		"/F/Code/web/geo-collect/js/server-dummy.js",
+		"/F/Code/web/geo-collect/js/models.js",
+		"/F/Code/web/geo-collect/sass/_screen.mobile.scss",
+		"/F/Code/web/geo-collect/sass/_view.map.scss",
+		"/F/Code/web/geo-collect/index.html",
+		"/F/Code/web/geo-collect/sass/_view.popup.scss",
+		"/F/Code/web/geo-collect/sass/_view.sidebar.scss",
+		"/F/Code/web/geo-collect/sass/_view.debug.scss",
+		"/F/Code/web/geo-collect/token.js",
+		"/F/Code/web/geo-collect/sass/_sprinner.scss",
+		"/F/Code/web/geo-collect-test/geo-collect/js/bundle.js",
+		"/F/Code/web/geo-collect/package.json",
+		"/F/Code/web/geo-collect/build-watchify.bat",
+		"/F/Code/web/geo-collect/README.md",
+		"/F/Code/web/geo-collect/build-browserify.bat",
+		"/F/Code/web/geo-collect/js/bundle.js",
+		"/F/Code/web/geo-collect/.gitignore",
+		"/F/Code/web/geo-collect/input.js",
+		"/F/Code/web/geo-collect/js/input.js",
+		"/C/Users/atom/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/atom/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/F/Code/web/geo-collect/css/style.css",
+		"/F/Code/web/geo-collect/config.rb",
+		"/F/Code/web/mapboxgl-test/index.html",
+		"/F/Code/web/location-poc/css/style.css",
+		"/F/Code/web/LightTPD/conf/variables.conf",
+		"/F/Code/web/location-poc/server.js",
+		"/F/Code/web/location-poc/client.js",
+		"/F/Code/web/location-poc/index.html",
+		"/F/Code/web/location-poc/index.js",
+		"/F/Code/web/resume-v2/.sass-lint.yml",
+		"/F/Code/web/resume-v2/js/lib/zepto.js",
+		"/F/Code/web/resume-v2/js/main.js",
+		"/F/Code/web/resume-v2/sass/style.scss",
+		"/F/Code/web/resume-v2/config.rb",
+		"/F/Code/web/resume/index.html",
+		"/F/Code/web/phpinfo.php",
+		"/F/Code/web/LightTPD/conf/mod_fastcgi.conf",
+		"/F/Code/web/resume-v2/index.html",
+		"/F/Code/web/resume-v2/css/style.css",
+		"/F/Code/web/resume/css/style.css",
+		"/F/Code/python/torrent-sort/torrent-sort.py",
+		"/C/cygwin64/home/atom/.weechat/python/gnotify.py",
+		"/C/cygwin64/home/atom/.weechat/python/autoload/atom_growl.py",
+		"/C/cygwin64/home/atom/.weechat/python/autoload/growl.py",
+		"/F/Code/python/larry.py",
+		"/C/cygwin64/home/atom/.weechat/python/autoload/wee_slack.py",
+		"/C/cygwin64/home/atom/.weechat/python/autoload/gnotify.py",
+		"/C/cygwin64/home/atom/.weechat/python/autoload/jabber.py",
+		"/F/Code/python/torrent-sort/torrent-sort.cmd",
+		"/C/Users/atom/AppData/Local/Temp/The Sports - Don't Throw Stones - 1979 (CD - FLAC - Lossless)-700360.torrent",
+		"/F/Code/python/torrent-sort/linuxmint-17.3-cinnamon-32bit.iso.torrent",
+		"/F/Code/python/torrent-sort/torrent-sort",
+		"/F/Code/python/pygame-book/pygame-test.py",
+		"/F/Code/python/pitri/pitri.py",
+		"/F/Code/python/pygame-joystick-example/main.py",
+		"/F/Code/python/rogulike-python-tutorial/roguelike-python-tutorial.py",
+		"/F/Code/web/hk/src/entity.js",
+		"/F/Code/python/rogulike-python-tutorial/path_bug.py",
+		"/F/Code/web/haq/js/actor.js",
+		"/F/Code/python/server-test/server.py",
+		"/F/Code/web/rogulike-python-tutorial/roguelike-python-tutorial.py"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"F:\\Code\\web\\platform-demo",
+			"F:\\Code\\web\\hack-n-slash-sprint\\js\\",
+			"F:\\Code\\web\\hack-n-slash-sprint\\js\\entities",
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"elements",
+			"curStrLen",
+			"longestRun",
+			"port",
+			"padding",
+			"172px",
+			"top: 57px; left: 583px; width: 46px; height: 28px;",
+			"105",
+			"top: 57px; left: 583px; width: 46px; height: 28px;",
+			"050",
+			"045",
+			"040",
+			"top: 57px; left: 583px; width: 46px; height: 28px;",
+			"img/0204/",
+			"025a",
+			"-020\"",
+			"020",
+			"015",
+			"010",
+			"050",
+			"045",
+			"040",
+			"035",
+			"030",
+			"025b",
+			"025a",
+			"025",
+			"020\"",
+			"-020",
+			"020",
+			"015",
+			"010",
+			"0603",
+			"hidden",
+			"visible",
+			"visibility",
+			".visible",
+			"display",
+			"endEndMode",
+			"textValue",
+			"model",
+			"el",
+			"textValue",
+			"editable",
+			"rv-each-die=\"dice\"",
+			"dice",
+			"list-items=\"",
+			"list-items=",
+			"list-items",
+			" />",
+			"attributes",
+			"value",
+			"model",
+			"loadSavedData",
+			"output",
+			"characters",
+			"cur-rank",
+			"agility",
+			"scope",
+			"dieGroupName",
+			"testVar",
+			"input",
+			"section",
+			"views",
+			"data",
+			"agility",
+			"<ul>",
+			"Remove",
+			"template",
+			"compon",
+			"components",
+			"component",
+			"die-selector",
+			"ul",
+			"agility",
+			"thingy",
+			",",
+			"die",
+			"cur",
+			"nPossibleRank",
+			"rank",
+			"rankValue",
+			"novice",
+			"change",
+			"profession",
+			"#",
+			"id",
+			"characterData",
+			"css",
+			"class=\"section",
+			"Member Projects",
+			"What We're Planning",
+			"What We're Saying",
+			"What We're Doing",
+			"What We've Done",
+			"section-",
+			"padding",
+			"-@rhythm();",
+			"module.exports",
+			"exports",
+			"<br />",
+			"h1",
+			"<label>",
+			"value=\"1d12\" />",
+			"top",
+			"Hindrances",
+			"skills",
+			"radiogroup",
+			"<br />",
+			"novice",
+			"req",
+			"false",
+			"true",
+			"cff_show_event_type",
+			"cff_events_only",
+			"<?",
+			"<php",
+			"?>",
+			"event",
+			"server",
+			"existing",
+			"onGeohashUpdate",
+			"Geohash",
+			"new",
+			"div",
+			"min-height",
+			"top",
+			"h1"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"height_map",
+			"",
+			"    lib/phaser/build/phaser.min"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3372,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1914,
+								1914
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"side_bar_folders_auto_load_folder": 1,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1020.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "sftp-config.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 914,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								597,
+								597
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"side_bar_folders_auto_load_folder": 1,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 130.0
+	},
+	"pinned_build_system": "",
+	"project": "roc-game-dev.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 232.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

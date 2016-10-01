@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ROC Game Dev</title>
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Open+Sans" rel="stylesheet">
+  <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/css/print.css" media="print" rel="stylesheet" type="text/css" />
+  <!--[if IE]>
+      <link href="/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
+</head>
+<body>
+<section class="wrapper">
+  <header>
+    <img class="banner-image" src="images/rgd-logo-min.png" />
+    <h1>ROC GAME DEV</h1>
+    <nav>
+      <a class="nav-about" href="#section-about">Who We Are</a>
+      <!-- <a class="nav-gallery" href="#section-gallery">Member Projects</a> -->
+      <a class="nav-facebook" href="#section-facebook">Upcoming Events</a>
+      <a class="nav-twitter" href="#section-twitter">Community</a>
+    </nav>
+  </header>
+
+  <!-- About Us -->
+  <section class="section-card section-about" id="section-about">
+    <h1>Who We Are</h1>
+    <img class="align-left" src="" alt="Sweet Graphic" />
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <ul>
+      <li>Duis aute irure dolor in reprehenderit in voluptate velit esse.</li>
+      <li>Cillum dolore eu fugiat nulla pariatur.</li> 
+      <li>Excepteur sint occaecat cupidatat non.</li>
+    </ul>
+    <p>Proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </section>
+
+  <!-- Member Projects -->
+  <!-- <section class="section-card section-gallery" id="section-gallery"></section> -->
+
+  <!-- Facebook -->
+  <section class="section-card section-facebook section-grid" id="section-facebook">
+    <h1>Upcoming Events</h1>
+    <ul class="facebook-events">
+      {{#each events}}
+      <li>
+        <h2 class="event-name">{{eventName}}</h2>
+        <p class="event-date">{{eventDate}}</p>
+        <p class="event-location">{{eventLocation}}</p>
+        <p class="event-description">{{eventDescription}}</p>
+      </li>
+      {{/each}}
+    </ul>
+  </section>
+  
+  <!-- Twitter -->
+  <section class="section-card section-twitter section-grid" id="section-twitter">
+    <h1>Community</h1>
+    <p>Are you a Rochestarian working on game code, art, music, etc?  Add #rocgamedev to your tweet to feature your progress here!</p>
+    <ul>
+      {{#each tweets}}
+      <li>
+        <h2 class="label-user">{{user.name}}</h2>
+        <p>{{{text}}}</p>
+      </li>
+      {{/each}}
+    </ul>
+    <button class="btn btn-cta">See More</button>
+  </section>
+</section>
+</body>
+</html>

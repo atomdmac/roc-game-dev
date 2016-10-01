@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Events</title>
+</head>
+<body>
+
+<div class="card pending">
+  <h1>Please Wait...</h1>
+  <p class="message">An operation is pending...</p>
+</div>
+
+<div class="card error">
+  <h1>An Error Occured:</h1>
+  <p class="message">The error message would appear here.</p>
+</div>
+
+<div class="card success">
+  <h1>Success!</h1>
+  <p class="message">The operation completed successfully!</p>
+</div>
+
+<script>
+
+  function getEls(selector) { return document.querySelectorAll(selector); }
+  function getEl(selector) { return document.querySelector(selector); }
+
+  function sendToken(token) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var res = JSON.parse(this.response);
+
+        if(res.error) {
+          showError(res.error.message);
+        } else {
+          showSuccess('Events have been pulled from Facebook and applied to the site.');
+        }
+      }
+    };
+    xhttp.open("POST", "/update", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("token=" + token);
+  }
+
+  function showSuccess(message) {
+    var messageEl = getEl('.card.success .message');
+    messageEl.innerHTML = message;
+    hide('.card');
+    show('.card.success');
+  }
+
+  function showError(message) {
+    var messageEl = getEl('.card.error .message');
+    messageEl.innerHTML = message;
+    hide('.card');
+    show('.card.error');
+  }
+
+  function showPending(message) {
+    var messageEl = getEl('.card.pending .message');
+    messageEl.innerHTML = message;
+    hide('.card');
+    show('.card.pending');
+  }
+
+  function show(selector) {
+    toggle(selector, true);
+  }
+
+  function hide(selector) {
+    toggle(selector, false);
+  }
+
+  function toggle(selector, flag) {
+    flag = !!flag;
+    elements = document.querySelectorAll(selector);
+    if(!elements.length) {
+      return;
+    }
+    else if(elements.length) {
+      for(var i=0; i<elements.length; i++) {
+        elements[i].style.display = flag ? 'block' : 'none';
+      }
+    } else {
+      elements.style.display = flag ? 'block' : 'none';
+    }
+  }
+
+  showPending('Loading Facebook API...');
+
+  // When Facebook API loads...
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1532050613487336',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+    FB.AppEvents.logPageView();
+    
+    FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+        showSuccess('You\'re logged in!');
+        sendToken(response.authResponse.accessToken);
+      }
+      else {
+        showFailure('Your\'re not logged into Facebook.');
+        FB.login();
+      }
+    });
+  };
+
+  // Get Facebook API
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+</body>
+</html>

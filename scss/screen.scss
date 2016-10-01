@@ -1,0 +1,134 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import 'normalize';
+@import 'compass/typography/vertical_rhythm';
+
+$max-width: 1080px;
+
+$margin: 30px;
+$padding: $margin / 2;
+
+// Colors
+$color1: #bf0000;
+$color2: #00a33d;
+$color3: #047391;
+
+$rgd-red: #bf2026;
+
+$darkest: #000;
+$darker: #101010;
+$dark: #5e5e5e;
+$orange: #D29034;
+$light: #f7f6f6;
+$lightest: #fff;
+
+$box-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: $orange;
+  color: $darker;
+}
+
+h1 {
+  font-family: 'Baloo Bhai', cursive;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: rhythm();
+  max-width: $max-width;
+  background-color: $lightest;
+  box-shadow: $box-shadow;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  box-shadow: $box-shadow;
+  overflow: hidden;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+65,d3d3d3+100 */
+  background: #ffffff; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  #ffffff 65%, #d3d3d3 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 65%,#d3d3d3 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center,  #ffffff 65%,#d3d3d3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d3d3d3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  
+  img {
+    height: auto;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 5em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-shadow: $box-shadow;
+  }
+
+  nav {
+    background-color: $rgd-red;
+    display: flex;
+    flex-direction: row;
+
+    a {
+      position: relative;
+      // @include horizontal-borders($border-style: none);
+      margin-top: rhythm() / 4;
+      margin-bottom: rhythm() / 4;
+      border-right: 1px solid $light;
+      color: $light;
+      font-size: rhythm();
+      flex-grow: 1;
+      text-align: center;
+      text-decoration: none;
+
+      &:last-child {
+        border-right: 0;
+      }
+
+      &:hover {
+        text-index: rhythm() * -1;
+      }
+    }
+  }
+}
+
+.section-card {
+  @include rhythm-borders($border-style: none);
+  padding-top: .1px;
+
+  h1 {
+    padding-left: rhythm() / 2;
+    color: #fff;
+    background: $darkest;
+    border-radius: 2px;
+  }
+}
+
+.section-grid {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    box-sizing: border-box;
+    padding-right: rhythm();
+    width: 50%;
+
+    &:nth-child(2n) {
+      padding-right: 0;
+    }
+  }
+}
