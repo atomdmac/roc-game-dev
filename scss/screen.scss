@@ -6,6 +6,10 @@
 @import 'normalize';
 @import 'compass/typography/vertical_rhythm';
 
+$width-large: 1080px;
+$width-medium: 980px;
+$width-small: 640px;
+
 $max-width: 1080px;
 
 $margin: 30px;
@@ -43,6 +47,11 @@ h1 {
   max-width: $max-width;
   background-color: $lightest;
   box-shadow: $box-shadow;
+
+  @media screen and (max-width: $width-medium) {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 header {
@@ -51,6 +60,8 @@ header {
   border-radius: 2px;
   box-shadow: $box-shadow;
   overflow: hidden;
+  margin: rhythm() * -1;
+  margin-bottom: rhythm();
 
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+65,d3d3d3+100 */
   background: #ffffff; /* Old browsers */
@@ -59,11 +70,15 @@ header {
   background: radial-gradient(ellipse at center,  #ffffff 65%,#d3d3d3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d3d3d3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-  
   img {
     height: auto;
     width: 50%;
     margin: 0 auto;
+
+    @media screen and (max-width: $width-small) {
+      width: 100%;
+      display: block;
+    }
   }
 
   h1 {
@@ -72,18 +87,26 @@ header {
     padding: 0;
     text-align: center;
     text-shadow: $box-shadow;
+
+    @media screen and (max-width: $width-small) {
+      font-size: 3em;
+    }
   }
 
   nav {
-    background-color: $rgd-red;
+    background-color: $darkest;
     display: flex;
     flex-direction: row;
+
+    @media screen and (max-width: $width-small) {
+      flex-direction: column;
+    }
 
     a {
       position: relative;
       // @include horizontal-borders($border-style: none);
-      margin-top: rhythm() / 4;
-      margin-bottom: rhythm() / 4;
+      margin-top: rhythm() / 2;
+      margin-bottom: rhythm() / 2;
       border-right: 1px solid $light;
       color: $light;
       font-size: rhythm();
@@ -91,8 +114,16 @@ header {
       text-align: center;
       text-decoration: none;
 
+      @media screen and (max-width: $width-small) {
+        font-size: rhythm() / 1;
+        margin-bottom: 0;
+      }
+
       &:last-child {
         border-right: 0;
+        @media screen and (max-width: $width-small) {
+          margin-bottom: rhythm() / 2;
+        }
       }
 
       &:hover {
@@ -107,10 +138,24 @@ header {
   padding-top: .1px;
 
   h1 {
-    padding-left: rhythm() / 2;
+    margin-left: rhythm() * -1;
+    margin-right: rhythm() * -1;
+    padding-left: rhythm();
     color: #fff;
-    background: $darkest;
+    background: $rgd-red;
     border-radius: 2px;
+
+    @media screen and (max-width: $width-medium) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: $width-small) {
+      margin-left: rhythm() * -1 / 2;
+      margin-right: rhythm() * -1 / 2;
+      padding-left: rhythm() / 2;
+      font-size: rhythm();
+    }
   }
 }
 
@@ -126,6 +171,10 @@ header {
     box-sizing: border-box;
     padding-right: rhythm();
     width: 50%;
+
+    @media screen and (max-width: 640px) {
+      width: 100%;
+    }
 
     &:nth-child(2n) {
       padding-right: 0;
