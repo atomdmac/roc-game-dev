@@ -270,43 +270,41 @@ th {
   padding: 0;
 }
 
-/* line 34, ../scss/screen.scss */
+/* line 38, ../scss/screen.scss */
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #D29034;
   color: #101010;
 }
 
-/* line 40, ../scss/screen.scss */
+/* line 44, ../scss/screen.scss */
 h1 {
   font-family: 'Baloo Bhai', cursive;
 }
 
-/* line 44, ../scss/screen.scss */
+/* line 48, ../scss/screen.scss */
 .wrapper {
+  position: relative;
   margin: 0 auto;
-  padding: 1.5em;
+  padding: 0 0 1.5em 0;
   max-width: 1080px;
   background-color: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
 }
-@media screen and (max-width: 980px) {
-  /* line 44, ../scss/screen.scss */
+@media screen and (max-width: 1110px) {
+  /* line 48, ../scss/screen.scss */
   .wrapper {
-    padding: 0;
+    padding: .1px;
     margin: 0;
   }
 }
 
-/* line 57, ../scss/screen.scss */
+/* line 62, ../scss/screen.scss */
 header {
   display: flex;
   flex-direction: column;
-  border-radius: 2px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
-  margin: -1.5em;
-  margin-bottom: 1.5em;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
+  margin: 0;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+65,d3d3d3+100 */
   background: #ffffff;
   /* Old browsers */
@@ -319,132 +317,161 @@ header {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d3d3d3',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
 }
-/* line 73, ../scss/screen.scss */
+/* line 75, ../scss/screen.scss */
 header img {
   height: auto;
   width: 50%;
   margin: 0 auto;
 }
+@media screen and (max-width: 1110px) {
+  /* line 75, ../scss/screen.scss */
+  header img {
+    width: 75%;
+  }
+}
 @media screen and (max-width: 640px) {
-  /* line 73, ../scss/screen.scss */
+  /* line 75, ../scss/screen.scss */
   header img {
     width: 100%;
     display: block;
   }
 }
-/* line 84, ../scss/screen.scss */
+/* line 90, ../scss/screen.scss */
 header h1 {
   font-size: 5em;
   margin: 0;
   padding: 0;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
 }
 @media screen and (max-width: 640px) {
-  /* line 84, ../scss/screen.scss */
+  /* line 90, ../scss/screen.scss */
   header h1 {
     font-size: 3em;
   }
 }
-/* line 96, ../scss/screen.scss */
+/* line 102, ../scss/screen.scss */
 header nav {
   background-color: #000;
   display: flex;
   flex-direction: row;
+  margin: 0 -15px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
+  border-radius: 4px;
+}
+@media screen and (max-width: 1110px) {
+  /* line 102, ../scss/screen.scss */
+  header nav {
+    margin: 0;
+    border-radius: 0;
+  }
 }
 @media screen and (max-width: 640px) {
-  /* line 96, ../scss/screen.scss */
+  /* line 102, ../scss/screen.scss */
   header nav {
     flex-direction: column;
   }
 }
-/* line 105, ../scss/screen.scss */
+/* line 120, ../scss/screen.scss */
 header nav a {
   position: relative;
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
+  margin: 0;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
   border-right: 1px solid #f7f6f6;
   color: #f7f6f6;
   font-size: 1.5em;
   flex-grow: 1;
   text-align: center;
   text-decoration: none;
+  font-family: 'Baloo Bhai', cursive;
+}
+/* line 134, ../scss/screen.scss */
+header nav a:active {
+  background: rgba(255, 255, 255, 0.35);
 }
 @media screen and (max-width: 640px) {
-  /* line 105, ../scss/screen.scss */
+  /* line 120, ../scss/screen.scss */
   header nav a {
-    font-size: 1.5em;
-    margin-bottom: 0;
+    border-right: 0;
+    padding-bottom: 0;
   }
 }
-/* line 122, ../scss/screen.scss */
+/* line 143, ../scss/screen.scss */
 header nav a:last-child {
   border-right: 0;
 }
 @media screen and (max-width: 640px) {
-  /* line 122, ../scss/screen.scss */
+  /* line 143, ../scss/screen.scss */
   header nav a:last-child {
-    margin-bottom: 0.75em;
+    padding-bottom: 0.75em;
   }
 }
-/* line 129, ../scss/screen.scss */
-header nav a:hover {
-  text-index: -1.5em;
-}
 
-/* line 136, ../scss/screen.scss */
+/* line 157, ../scss/screen.scss */
 .section-card {
-  border-width: 0.0625em;
-  border-style: none;
-  padding: 1.4375em;
+  margin: 0 30px;
   padding-top: .1px;
 }
-/* line 140, ../scss/screen.scss */
+/* line 161, ../scss/screen.scss */
 .section-card h1 {
-  margin-left: -1.5em;
-  margin-right: -1.5em;
-  padding-left: 1.5em;
+  margin-left: -45px;
+  margin-right: -45px;
+  padding-left: 45px;
   color: #fff;
   background: #bf2026;
-  border-radius: 2px;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
 }
-@media screen and (max-width: 980px) {
-  /* line 140, ../scss/screen.scss */
+@media screen and (max-width: 1110px) {
+  /* line 161, ../scss/screen.scss */
   .section-card h1 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-@media screen and (max-width: 640px) {
-  /* line 140, ../scss/screen.scss */
-  .section-card h1 {
-    margin-left: -0.75em;
-    margin-right: -0.75em;
-    padding-left: 0.75em;
-    font-size: 1.5em;
+    margin-left: -30px;
+    margin-right: -30px;
+    padding-left: 30px;
+    border-radius: 0;
   }
 }
 
-/* line 163, ../scss/screen.scss */
+/* line 179, ../scss/screen.scss */
+.btn-top {
+  position: fixed;
+  top: 1.5em;
+  right: 15px;
+  padding: 0.75em 15px;
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
+  transition: opacity .5s, top .5s;
+}
+/* line 191, ../scss/screen.scss */
+.btn-top.hidden {
+  opacity: 0;
+  top: -200px;
+}
+
+/* line 198, ../scss/screen.scss */
 .section-grid ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
 }
-/* line 170, ../scss/screen.scss */
+/* line 205, ../scss/screen.scss */
 .section-grid li {
   box-sizing: border-box;
   padding-right: 1.5em;
   width: 50%;
 }
 @media screen and (max-width: 640px) {
-  /* line 170, ../scss/screen.scss */
+  /* line 205, ../scss/screen.scss */
   .section-grid li {
     width: 100%;
   }
 }
-/* line 179, ../scss/screen.scss */
+/* line 214, ../scss/screen.scss */
 .section-grid li:nth-child(2n) {
   padding-right: 0;
 }

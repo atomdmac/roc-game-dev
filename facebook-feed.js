@@ -18,6 +18,13 @@ function loadCachedEventData() {
   return cachedData;
 }
 
+function trimDescriptions(data) {
+  data.forEach(function(item, index) {
+    item.description = item.description.substr(0, 100) + '...';
+  });
+  return data;
+}
+
 // Gets the most up-to-date event data from Facebook, updates our version of the
 // event data in memory, and saves it to disk for later.
 function refresh (token) {
@@ -44,7 +51,7 @@ function refresh (token) {
         else {
 
           // Update our in-memory copy of the data.
-          eventData = response.data;
+          eventData = trimDescriptions(response.data);
 
           // Attempt to write data to disk for later.
           fs.writeFile('events.json', JSON.stringify(eventData), function (writeErr) {

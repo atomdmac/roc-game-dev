@@ -6,14 +6,17 @@
 @import 'normalize';
 @import 'compass/typography/vertical_rhythm';
 
-$width-large: 1080px;
-$width-medium: 980px;
-$width-small: 640px;
 
 $max-width: 1080px;
 
 $margin: 30px;
 $padding: $margin / 2;
+$gutter: 30px;
+
+// Screen sizes
+// $width-large: $max-width + ($gutter * 2)
+$width-medium: $max-width + $gutter;
+$width-small: 640px;
 
 // Colors
 $color1: #bf0000;
@@ -29,7 +32,8 @@ $orange: #D29034;
 $light: #f7f6f6;
 $lightest: #fff;
 
-$box-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+$border-radius: 4px;
+$box-shadow: 0 2px 2px rgba(0, 0, 0, .45);
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -42,14 +46,15 @@ h1 {
 }
 
 .wrapper {
+  position: relative;
   margin: 0 auto;
-  padding: rhythm();
+  padding: 0 0 rhythm() 0;
   max-width: $max-width;
   background-color: $lightest;
   box-shadow: $box-shadow;
 
   @media screen and (max-width: $width-medium) {
-    padding: 0;
+    padding: .1px;
     margin: 0;
   }
 }
@@ -57,11 +62,8 @@ h1 {
 header {
   display: flex;
   flex-direction: column;
-  border-radius: 2px;
   box-shadow: $box-shadow;
-  overflow: hidden;
-  margin: rhythm() * -1;
-  margin-bottom: rhythm();
+  margin: 0;
 
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+65,d3d3d3+100 */
   background: #ffffff; /* Old browsers */
@@ -74,6 +76,10 @@ header {
     height: auto;
     width: 50%;
     margin: 0 auto;
+
+    @media screen and (max-width: $width-medium) {
+      width: 75%;
+    }
 
     @media screen and (max-width: $width-small) {
       width: 100%;
@@ -97,6 +103,15 @@ header {
     background-color: $darkest;
     display: flex;
     flex-direction: row;
+    margin: 0 $gutter * -.5;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+
+
+    @media screen and (max-width: $width-medium) {
+      margin: 0;
+      border-radius: 0;
+    }
 
     @media screen and (max-width: $width-small) {
       flex-direction: column;
@@ -105,57 +120,77 @@ header {
     a {
       position: relative;
       // @include horizontal-borders($border-style: none);
-      margin-top: rhythm() / 2;
-      margin-bottom: rhythm() / 2;
+      margin: 0;
+      padding-top: rhythm() / 2;
+      padding-bottom: rhythm() / 2;
       border-right: 1px solid $light;
       color: $light;
       font-size: rhythm();
       flex-grow: 1;
       text-align: center;
       text-decoration: none;
+      font-family: 'Baloo Bhai', cursive;
+
+      &:active {
+        background: rgba(255, 255, 255, .35);
+      }
 
       @media screen and (max-width: $width-small) {
-        font-size: rhythm() / 1;
-        margin-bottom: 0;
+        border-right: 0;
+        padding-bottom: 0;
       }
 
       &:last-child {
         border-right: 0;
         @media screen and (max-width: $width-small) {
-          margin-bottom: rhythm() / 2;
+          padding-bottom: rhythm() / 2;
         }
       }
 
       &:hover {
-        text-index: rhythm() * -1;
+        // text-indent: rhythm() * -1;
       }
     }
   }
 }
 
 .section-card {
-  @include rhythm-borders($border-style: none);
+  margin: 0 $gutter;
   padding-top: .1px;
 
   h1 {
-    margin-left: rhythm() * -1;
-    margin-right: rhythm() * -1;
-    padding-left: rhythm();
+    margin-left: $gutter * -1.5;
+    margin-right: $gutter * -1.5;
+    padding-left: $gutter * 1.5;
     color: #fff;
     background: $rgd-red;
-    border-radius: 2px;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
 
     @media screen and (max-width: $width-medium) {
-      margin-left: 0;
-      margin-right: 0;
+      margin-left: $gutter * -1;
+      margin-right: $gutter * -1;
+      padding-left: $gutter;
+      border-radius: 0;
     }
+  }
+}
 
-    @media screen and (max-width: $width-small) {
-      margin-left: rhythm() * -1 / 2;
-      margin-right: rhythm() * -1 / 2;
-      padding-left: rhythm() / 2;
-      font-size: rhythm();
-    }
+.btn-top {
+  position: fixed;
+  top: rhythm();
+  right: $gutter / 2;
+  padding: rhythm() / 2 $gutter / 2;
+  text-decoration: none;
+  color: $lightest;
+  background: $darkest;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  transition: opacity .5s, top .5s;
+
+  &.hidden {
+    opacity: 0;
+    top: -200px;
   }
 }
 
