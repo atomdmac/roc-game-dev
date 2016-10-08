@@ -24,6 +24,7 @@ $color2: #00a33d;
 $color3: #047391;
 
 $rgd-red: #bf2026;
+$rgd-blue: #107593;
 
 $darkest: #000;
 $darker: #101010;
@@ -237,11 +238,49 @@ header {
     width: 50%;
 
     @media screen and (max-width: 640px) {
+      padding-right: 0;
       width: 100%;
     }
 
     &:nth-child(2n) {
       padding-right: 0;
+    }
+  }
+}
+
+.tweet {
+  h2 {
+    a {
+      color: $dark;
+      text-decoration: none;
+    }
+  }
+
+  a {
+    color: $lightest;
+    text-decoration: none;
+  }
+
+  p {
+    position: relative;
+    background-image: url('../images/tweet-speech.png');
+    background-repeat: no-repeat;
+    background-position: -$gutter;
+    background: $rgd-blue;
+    padding: $gutter;
+    border-radius: $border-radius;
+    
+
+    // Create speech bubble tail
+    &:before {
+      content: '';
+      width: 0; 
+      height: 0; 
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 15px solid $rgd-blue;
+      position: absolute;
+      top: -15px
     }
   }
 }

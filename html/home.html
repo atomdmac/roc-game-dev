@@ -61,9 +61,9 @@
     <p>Are you a Rochestarian working on game code, art, music, etc?  Add #rocgamedev to your tweet to feature your progress here!</p>
     <ul>
       {{#each tweets}}
-      <li>
-        <h2 class="label-user">{{user.name}}</h2>
-        <p>{{{text}}}</p>
+      <li class="tweet">
+        <h2 class="label-user"><a href="https://twitter.com/{{user.screen_name}}">{{user.name}}</a></h2>
+        <a href="https://twitter.com/{{user.screen_name}}/status/{{id_str}}"><p>{{{text}}}</p></a>
       </li>
       {{/each}}
     </ul>
