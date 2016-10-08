@@ -52,17 +52,18 @@ h1 {
   max-width: $max-width;
   background-color: $lightest;
   box-shadow: $box-shadow;
+  border: 1px solid $light;
+  border-top: 0;
+  border-bottom: 0;
 
   @media screen and (max-width: $width-medium) {
-    padding: .1px;
-    margin: 0;
+    border: 0;
   }
 }
 
 header {
   display: flex;
   flex-direction: column;
-  box-shadow: $box-shadow;
   margin: 0;
 
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+65,d3d3d3+100 */
@@ -103,7 +104,7 @@ header {
     background-color: $darkest;
     display: flex;
     flex-direction: row;
-    margin: 0 $gutter * -.5;
+    margin: 0 $gutter * -1;
     box-shadow: $box-shadow;
     border-radius: $border-radius;
 
@@ -159,20 +160,50 @@ header {
   padding-top: .1px;
 
   h1 {
-    margin-left: $gutter * -1.5;
-    margin-right: $gutter * -1.5;
-    padding-left: $gutter * 1.5;
+    margin-left: $gutter * -2;
+    margin-right: $gutter * -2;
+    padding-left: $gutter * 2;
     color: #fff;
     background: $rgd-red;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
+    background-repeat: no-repeat;
+    background-size: 1em;
+    background-position: $gutter * .5;
+
+    img {
+      width: auto;
+      height: 1em;
+      vertical-align: middle;
+      margin: 0;
+      margin-left: $gutter * -0.5;
+      margin-right: $gutter / 2;
+    }
 
     @media screen and (max-width: $width-medium) {
       margin-left: $gutter * -1;
       margin-right: $gutter * -1;
-      padding-left: $gutter;
+      padding-left: $gutter * 2;
       border-radius: 0;
     }
+  }
+}
+
+.section-about {
+  h1 {
+    background-image: url('../images/icon-game-pad.png');
+  }
+}
+
+.section-facebook {
+  h1 {
+    background-image: url('../images/icon-screw-driver.png');
+  }
+}
+
+.section-twitter {
+  h1 {
+    background-image: url('../images/icon-speech-bubble.png');
   }
 }
 
