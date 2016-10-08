@@ -514,14 +514,11 @@ header nav a:last-child {
 /* line 267, ../scss/screen.scss */
 .tweet p {
   position: relative;
-  background-image: url("../images/tweet-speech.png");
-  background-repeat: no-repeat;
-  background-position: -30px;
   background: #107593;
   padding: 30px;
   border-radius: 4px;
 }
-/* line 278, ../scss/screen.scss */
+/* line 275, ../scss/screen.scss */
 .tweet p:before {
   content: '';
   width: 0;
