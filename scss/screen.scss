@@ -62,9 +62,8 @@ h1 {
 }
 
 header {
-  display: flex;
-  flex-direction: column;
   margin: 0;
+  text-align: center;
 
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+65,d3d3d3+100 */
   background: #ffffff; /* Old browsers */
@@ -92,7 +91,6 @@ header {
     font-size: 5em;
     margin: 0;
     padding: 0;
-    text-align: center;
     text-shadow: $box-shadow;
 
     @media screen and (max-width: $width-small) {
