@@ -106,3 +106,20 @@ function getEvents () {
     }
   ];
 }
+
+// Inserts content if the given date is in the past.
+handlebars.registerHelper('is_past', function(dateTimeStr, options) {
+
+    var currentDate = new Date();
+    var inputDate = new Date(dateTimeStr);
+
+    var result = false;
+    if(inputDate < currentDate) result = true;
+
+    if( result ) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+
+});

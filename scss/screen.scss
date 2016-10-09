@@ -201,6 +201,12 @@ header {
   h1 {
     background-image: url('../images/icon-screw-driver.png');
   }
+
+  .event-passed {
+    h2 {
+      text-decoration: line-through;
+    }
+  }
 }
 
 .section-twitter {
@@ -269,7 +275,7 @@ header {
     background: $rgd-blue;
     padding: $gutter;
     border-radius: $border-radius;
-    
+    box-shadow: $box-shadow;
 
     // Create speech bubble tail
     &:before {

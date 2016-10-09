@@ -45,7 +45,7 @@
     <h1>Upcoming Events</h1>
     <ul class="facebook-events">
       {{#each events}}
-      <li>
+      <li class="{{#is_past start_time}}event-passed{{/is_past}}">
         <h2 class="event-name">{{name}}</h2>
         <p class="event-date">{{start_time}}</p>
         <p class="event-location">{{location.city}}</p>

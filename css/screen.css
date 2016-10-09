@@ -451,13 +451,17 @@ header nav a:last-child {
 .section-facebook h1 {
   background-image: url("../images/icon-screw-driver.png");
 }
+/* line 206, ../scss/screen.scss */
+.section-facebook .event-passed h2 {
+  text-decoration: line-through;
+}
 
-/* line 207, ../scss/screen.scss */
+/* line 213, ../scss/screen.scss */
 .section-twitter h1 {
   background-image: url("../images/icon-speech-bubble.png");
 }
 
-/* line 212, ../scss/screen.scss */
+/* line 218, ../scss/screen.scss */
 .btn-top {
   position: fixed;
   top: 1.5em;
@@ -470,55 +474,56 @@ header nav a:last-child {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
   transition: opacity .5s, top .5s;
 }
-/* line 224, ../scss/screen.scss */
+/* line 230, ../scss/screen.scss */
 .btn-top.hidden {
   opacity: 0;
   top: -200px;
 }
 
-/* line 231, ../scss/screen.scss */
+/* line 237, ../scss/screen.scss */
 .section-grid ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
 }
-/* line 238, ../scss/screen.scss */
+/* line 244, ../scss/screen.scss */
 .section-grid li {
   box-sizing: border-box;
   padding-right: 1.5em;
   width: 50%;
 }
 @media screen and (max-width: 640px) {
-  /* line 238, ../scss/screen.scss */
+  /* line 244, ../scss/screen.scss */
   .section-grid li {
     padding-right: 0;
     width: 100%;
   }
 }
-/* line 248, ../scss/screen.scss */
+/* line 254, ../scss/screen.scss */
 .section-grid li:nth-child(2n) {
   padding-right: 0;
 }
 
-/* line 256, ../scss/screen.scss */
+/* line 262, ../scss/screen.scss */
 .tweet h2 a {
   color: #5e5e5e;
   text-decoration: none;
 }
-/* line 262, ../scss/screen.scss */
+/* line 268, ../scss/screen.scss */
 .tweet a {
   color: #fff;
   text-decoration: none;
 }
-/* line 267, ../scss/screen.scss */
+/* line 273, ../scss/screen.scss */
 .tweet p {
   position: relative;
   background: #107593;
   padding: 30px;
   border-radius: 4px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
 }
-/* line 275, ../scss/screen.scss */
+/* line 281, ../scss/screen.scss */
 .tweet p:before {
   content: '';
   width: 0;
