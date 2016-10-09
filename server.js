@@ -26,7 +26,7 @@ var cwd = path.resolve();
 
 // Load HTML templates
 function compileHTMLTemplates () {
-  fs.readFile('./html/home.html', 'utf8', function (err, data) {
+  fs.readFile('./client/html/home.html', 'utf8', function (err, data) {
     htmlTpl = handlebars.compile(data);
   });
 }
@@ -45,14 +45,19 @@ app.get('/', function (req, res) {
   res.send(htmlTpl(getPageData()));
 });
 
+// JavaScript files
+app.get('/js/:fileName', function (req, res) {
+  res.sendFile(cwd + '/client/js/' + req.params.fileName);
+});
+
 // CSS files
 app.get('/css/:fileName', function (req, res) {
-  res.sendFile(cwd + '/css/' + req.params.fileName);
+  res.sendFile(cwd + '/client/css/' + req.params.fileName);
 });
 
 // Images
 app.get('/images/:fileName', function (req, res) {
-  res.sendFile(cwd + '/images/' + req.params.fileName);
+  res.sendFile(cwd + '/client/images/' + req.params.fileName);
 });
 
 // Facebook Event Updates
