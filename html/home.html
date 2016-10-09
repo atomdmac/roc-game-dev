@@ -46,7 +46,7 @@
     <ul class="facebook-events">
       {{#each events}}
       <li class="{{#is_past start_time}}event-passed{{/is_past}}">
-        <h2 class="event-name">{{name}}</h2>
+        <h2 class="event-name"><a href="https://www.facebook.com/events/{{id}}" target="_blank">{{name}}</a></h2>
         <p class="event-date">{{start_time}}</p>
         <p class="event-location">{{location.city}}</p>
         <p class="event-description">{{description}}</p>
@@ -62,8 +62,8 @@
     <ul>
       {{#each tweets}}
       <li class="tweet">
-        <h2 class="label-user"><a href="https://twitter.com/{{user.screen_name}}">{{user.name}}</a></h2>
-        <a href="https://twitter.com/{{user.screen_name}}/status/{{id_str}}"><p>{{{text}}}</p></a>
+        <h2 class="label-user"><a href="https://twitter.com/{{user.screen_name}}" target="_blank">{{user.name}}</a></h2>
+        <a href="https://twitter.com/{{user.screen_name}}/status/{{id_str}}" target="_blank"><p>{{{text}}}</p></a>
       </li>
       {{/each}}
     </ul>

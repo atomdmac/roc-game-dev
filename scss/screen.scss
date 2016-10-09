@@ -205,6 +205,11 @@ header {
   .event-passed {
     h2 {
       text-decoration: line-through;
+
+      a {
+        text-decoration: initial;
+        color: initial;
+      }
     }
   }
 }
