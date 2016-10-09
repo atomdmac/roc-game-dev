@@ -38,7 +38,8 @@ function refresh (token) {
 
     FB.api(
       '/' + GROUP_ID + '/events',
-      {since: nowTimeStamp},
+      // {since: nowTimeStamp},
+      {limit: 2},
       function (response) {
 
         // Facebook returned an error :(
