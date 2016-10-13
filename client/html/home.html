@@ -72,45 +72,5 @@
 </section>
 
 <script src="js/app.min.js"></script>
-<script>
-    // Utility methods
-    HTMLElement.prototype.addClass = function (className) {
-      if(!this.hasClass(className)) this.className += ' ' + className;
-    };
-
-    HTMLElement.prototype.removeClass = function (className) {
-      var newClass = ' ' + this.className.replace( /[\t\r\n]/g, ' ') + ' ';
-      if (this.hasClass(className)) {
-        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
-          newClass = newClass.replace(' ' + className + ' ', ' ');
-        }
-        this.className = newClass.replace(/^\s+|\s+$/g, '');
-      }
-    };
-
-    HTMLElement.prototype.hasClass = function (className) {
-      var index = this.className.indexOf(className);
-      if(index === -1) return false;
-      return true;
-    };
-
-    // Back to top buttons.
-    var btnTop = document.querySelector('.btn-top');
-    btnTop.addEventListener('click', function(e) {
-      document.body.scrollTop = 0;
-      return false;
-    });
-
-    // Only show back to top button when scrolled down.
-    var headerEl = document.querySelector('header');
-    document.addEventListener('scroll', function(e) {
-      var headerHeight = parseInt(headerEl.offsetHeight, 10);
-      if(document.body.scrollTop > headerHeight - 10) {
-        btnTop.removeClass('hidden');
-      } else {
-        if(!btnTop.hasClass('hidden')) btnTop.addClass('hidden');
-      }
-    });
-  </script>
 </body>
 </html>
