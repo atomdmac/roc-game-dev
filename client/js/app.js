@@ -3,10 +3,6 @@ require('./html-element');
 
 // Back to top buttons.
 var btnTop = document.querySelector('.btn-top');
-// btnTop.addEventListener('click', function(e) {
-//   document.body.scrollTop = 0;
-//   return false;
-// });
 
 // Only show back to top button when scrolled down.
 var headerEl = document.querySelector('header');
