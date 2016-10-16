@@ -66,7 +66,7 @@ function refresh (token) {
             else {
               reject({
                 error: {
-                  message: 'There was a problem copying events to the ROC Game Dev server.  Ask Atom about it.'
+                  message: 'The events came over from Facebook but couldn\'t be saved to the server. Ask Atom about it.'
                 }
               });
             }

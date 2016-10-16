@@ -62,14 +62,22 @@ app.get('/images/:fileName', function (req, res) {
 
 // Facebook Event Updates
 app.get('/update', function (req, res) {
-  res.sendFile(cwd + '/html/update.html');
+  res.sendFile(cwd + '/client/html/update.html');
 });
 
 // Accept event update requests.
 app.post('/update', function (req, res) {
-  facebookFeed.refresh(req.body.token).then(function (fbResponse) {
-    res.send(fbResponse);
-  });
+  facebookFeed.refresh(req.body.token)
+  
+    // Success
+    .then(function (fbResponse) {
+      res.send(fbResponse);
+    },
+
+    // Failure
+    function (reason) {
+     res.send(reason);
+    });
 });
 
 // Twitter aggregator
