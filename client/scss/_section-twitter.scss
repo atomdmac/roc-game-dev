@@ -1,0 +1,41 @@
+.section-twitter {
+  h1 {
+    background-image: url('../images/icon-speech-bubble.png');
+  }
+}
+
+.tweet {
+  h2 {
+    a {
+      color: $dark;
+      text-decoration: none;
+    }
+  }
+
+  a {
+    border: 0;
+    color: $lightest;
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+  p {
+    position: relative;
+    background: $rgd-blue;
+    padding: $gutter;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    // Create speech bubble tail
+    &:before {
+      content: '';
+      width: 0; 
+      height: 0; 
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 15px solid $rgd-blue;
+      position: absolute;
+      top: -15px
+    }
+  }
+}

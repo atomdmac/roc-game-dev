@@ -1,0 +1,22 @@
+.section-facebook {
+  h1 {
+    background-image: url('../images/icon-screw-driver.png');
+  }
+
+  h2 { 
+    a {
+      border: 0;
+    }
+  }
+
+  .event-passed {
+    h2 {
+      text-decoration: line-through;
+
+      a {
+        text-decoration: initial;
+        color: initial;
+      }
+    }
+  }
+}

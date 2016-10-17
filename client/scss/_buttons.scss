@@ -1,0 +1,26 @@
+.btn {
+  display: inline-block;
+  color: $lightest;
+  background-color: $darker;
+  padding: $padding;
+  border: 0;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  text-decoration: none;
+
+  &:hover {
+    color: $lightest;
+  }
+}
+
+.btn-top {
+  position: fixed;
+  top: rhythm();
+  right: $gutter / 2;
+  transition: opacity .5s, top .5s;
+
+  &.hidden {
+    opacity: 0;
+    top: -200px;
+  }
+}

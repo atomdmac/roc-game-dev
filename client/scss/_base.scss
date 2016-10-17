@@ -1,0 +1,27 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: $orange;
+  color: $darker;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+h1 {
+  font-family: 'Baloo Bhai', cursive;
+}
+
+a {
+  color: $darker;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid $rgd-red;
+
+  &:hover,
+  &:active {
+    color: $rgd-red;
+  }
+}

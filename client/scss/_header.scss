@@ -1,0 +1,95 @@
+header {
+  margin: 0;
+  text-align: center;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+65,d3d3d3+100 */
+  background: #ffffff; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  #ffffff 65%, #d3d3d3 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 65%,#d3d3d3 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center,  #ffffff 65%,#d3d3d3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  // Currently commented because this prevents the <nav> element in the header
+  // from being able to 'break out' of the left and right sides of the header.
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d3d3d3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  img {
+    height: auto;
+    width: 50%;
+    margin: 0 auto;
+
+    @media screen and (max-width: $width-medium) {
+      width: 75%;
+    }
+
+    @media screen and (max-width: $width-small) {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  h1 {
+    font-size: 5em;
+    margin: 0;
+    padding: 0;
+    text-shadow: $box-shadow;
+
+    @media screen and (max-width: $width-small) {
+      font-size: 3em;
+    }
+  }
+
+  nav {
+    background-color: $darkest;
+    display: flex;
+    flex-direction: row;
+    margin: 0 $gutter * -1;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+
+
+    @media screen and (max-width: $width-medium) {
+      margin: 0;
+      border-radius: 0;
+    }
+
+    @media screen and (max-width: $width-small) {
+      flex-direction: column;
+    }
+
+    a {
+      position: relative;
+      // @include horizontal-borders($border-style: none);
+      margin: 0;
+      padding-top: rhythm() / 2;
+      padding-bottom: rhythm() / 2;
+      border: 0;
+      border-right: 1px solid $light;
+      color: $light;
+      font-size: rhythm();
+      flex-grow: 1;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Baloo Bhai', cursive;
+
+      &:active {
+        background: rgba(255, 255, 255, .35);
+      }
+
+      @media screen and (max-width: $width-small) {
+        border-right: 0;
+        padding-bottom: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+        @media screen and (max-width: $width-small) {
+          padding-bottom: rhythm() / 2;
+        }
+      }
+
+      &:hover {
+        color: $lightest;
+      }
+    }
+  }
+}
