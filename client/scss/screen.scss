@@ -45,10 +45,28 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-color: $orange;
   color: $darker;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
 }
 
 h1 {
   font-family: 'Baloo Bhai', cursive;
+}
+
+a {
+  color: $darker;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid $rgd-red;
+
+  &:hover,
+  &:active {
+    color: $rgd-red;
+  }
 }
 
 .wrapper {
@@ -131,6 +149,7 @@ header {
       margin: 0;
       padding-top: rhythm() / 2;
       padding-bottom: rhythm() / 2;
+      border: 0;
       border-right: 1px solid $light;
       color: $light;
       font-size: rhythm();
@@ -156,7 +175,7 @@ header {
       }
 
       &:hover {
-        // text-indent: rhythm() * -1;
+        color: $lightest;
       }
     }
   }
@@ -207,6 +226,12 @@ header {
     background-image: url('../images/icon-screw-driver.png');
   }
 
+  h2 { 
+    a {
+      border: 0;
+    }
+  }
+
   .event-passed {
     h2 {
       text-decoration: line-through;
@@ -225,16 +250,25 @@ header {
   }
 }
 
+.btn {
+  display: inline-block;
+  color: $lightest;
+  background-color: $darker;
+  padding: $padding;
+  border: 0;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  text-decoration: none;
+
+  &:hover {
+    color: $lightest;
+  }
+}
+
 .btn-top {
   position: fixed;
   top: rhythm();
   right: $gutter / 2;
-  padding: rhythm() / 2 $gutter / 2;
-  text-decoration: none;
-  color: $lightest;
-  background: $darkest;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
   transition: opacity .5s, top .5s;
 
   &.hidden {
@@ -276,6 +310,7 @@ header {
   }
 
   a {
+    border: 0;
     color: $lightest;
     text-decoration: none;
   }
