@@ -6,9 +6,10 @@ var btnTop = document.querySelector('.btn-top');
 
 // Only show back to top button when scrolled down.
 var headerEl = document.querySelector('header');
+var scrollingEl = document.querySelector('body');
 document.addEventListener('scroll', function(e) {
   var headerHeight = parseInt(headerEl.offsetHeight, 10);
-  if(document.scrollingElement.scrollTop > headerHeight - 10) {
+  if(scrollingEl.scrollTop > headerHeight - 10) {
     btnTop.removeClass('hidden');
   } else {
     if(!btnTop.hasClass('hidden')) btnTop.addClass('hidden');
