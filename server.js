@@ -26,7 +26,7 @@ var cwd = path.resolve();
 
 // Load HTML templates
 function compileHTMLTemplates () {
-  fs.readFile('./client/html/home.html', 'utf8', function (err, data) {
+  fs.readFile('./client/build/html/home.html', 'utf8', function (err, data) {
     htmlTpl = handlebars.compile(data);
   });
 }
@@ -47,28 +47,28 @@ app.get('/', function (req, res) {
 
 // JavaScript files
 app.get('/js/:fileName', function (req, res) {
-  res.sendFile(cwd + '/client/js/' + req.params.fileName);
+  res.sendFile(cwd + '/client/build/js/' + req.params.fileName);
 });
 
 // CSS files
 app.get('/css/:fileName', function (req, res) {
-  res.sendFile(cwd + '/client/css/' + req.params.fileName);
+  res.sendFile(cwd + '/client/build/css/' + req.params.fileName);
 });
 
 // Images
 app.get('/images/:fileName', function (req, res) {
-  res.sendFile(cwd + '/client/images/' + req.params.fileName);
+  res.sendFile(cwd + '/client/build/images/' + req.params.fileName);
 });
 
 // Facebook Event Updates
 app.get('/update', function (req, res) {
-  res.sendFile(cwd + '/client/html/update.html');
+  res.sendFile(cwd + '/client/build/html/update.html');
 });
 
 // Accept event update requests.
 app.post('/update', function (req, res) {
   facebookFeed.refresh(req.body.token)
-  
+
     // Success
     .then(function (fbResponse) {
       res.send(fbResponse);

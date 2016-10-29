@@ -4,12 +4,24 @@
 		"selected_items":
 		[
 			[
-				"lig",
-				"light"
+				"dar",
+				"darker"
 			],
 			[
 				"rgd",
+				"rgd-red"
+			],
+			[
+				"rg",
 				"rgd-blue"
+			],
+			[
+				"rgb",
+				"rgd-blue"
+			],
+			[
+				"lig",
+				"light"
 			],
 			[
 				"border",
@@ -46,10 +58,6 @@
 			[
 				"darke",
 				"darkest"
-			],
-			[
-				"rg",
-				"rgd-red"
 			],
 			[
 				"light",
@@ -506,14 +514,6 @@
 			[
 				"TITLE",
 				"title"
-			],
-			[
-				"trans",
-				"transitioner"
-			],
-			[
-				"fade",
-				"fadeStep"
 			]
 		]
 	},
@@ -528,53 +528,12 @@
 			}
 		},
 		{
-			"contents": "[\n    {\n        \"description\": \"// WORKSHOP - CHOOSING A COLOR PALETTE //\\nThis month's workshop will go over some of the different w...\",\n        \"end_time\": \"2016-10-05T22:00:00-0400\",\n        \"id\": \"599077843605299\",\n        \"name\": \"ROC Game Dev - Workshop + Meetup\",\n        \"place\": {\n            \"id\": \"477856358928964\",\n            \"location\": {\n                \"city\": \"Rochester\",\n                \"country\": \"United States\",\n                \"latitude\": 43.083225145803,\n                \"longitude\": -77.679947055442,\n                \"state\": \"NY\",\n                \"street\": \"159 Lomb Memorial Dr (Student Innovation Hall)\",\n                \"zip\": \"14623-5603\"\n            },\n            \"name\": \"MAGIC at RIT\"\n        },\n        \"start_time\": \"2016-10-05T19:00:00-0400\"\n    },\n    {\n        \"description\": \"We meet up at The Playhouse//Swillburger on the 3rd Saturday of every month. Burgers, arcade games, ...\",\n        \"end_time\": \"2016-09-17T23:00:00-0400\",\n        \"id\": \"878491655614325\",\n        \"name\": \"ROC Game Dev - Social Meetup\",\n        \"place\": {\n            \"id\": \"830085093698421\",\n            \"location\": {\n                \"city\": \"Rochester\",\n                \"country\": \"United States\",\n                \"latitude\": 43.1417235,\n                \"longitude\": -77.5977281,\n                \"state\": \"NY\",\n                \"street\": \"820 Clinton Ave S\",\n                \"zip\": \"14620\"\n            },\n            \"name\": \"The Playhouse // Swillburger\"\n        },\n        \"start_time\": \"2016-09-17T20:00:00-0400\"\n    }\n]",
-			"settings":
-			{
-				"buffer_size": 1539,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 3600,
+				"buffer_size": 3711,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "client/js/app.js",
-			"settings":
-			{
-				"buffer_size": 25,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/js/app.min.js",
-			"settings":
-			{
-				"buffer_size": 5750,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "client/scss/screen.scss",
-			"settings":
-			{
-				"buffer_size": 6107,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "client/css/screen.css",
-			"settings":
-			{
-				"buffer_size": 13678,
-				"line_ending": "Windows"
 			}
 		},
 		{
@@ -586,19 +545,63 @@
 			}
 		},
 		{
-			"file": "client/css/print.css",
+			"file": "client/html/update.html",
 			"settings":
 			{
-				"buffer_size": 213,
+				"buffer_size": 4854,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/atom/AppData/Roaming/Sublime Text 3/Packages/User/SFTP.sublime-settings",
+			"file": "facebook-feed.js",
 			"settings":
 			{
-				"buffer_size": 90,
+				"buffer_size": 2397,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "client/js/app.js",
+			"settings":
+			{
+				"buffer_size": 1094,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "client/html/home.html",
+			"settings":
+			{
+				"buffer_size": 3560,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/scss/screen.scss",
+			"settings":
+			{
+				"buffer_size": 1396,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/css/screen.css",
+			"settings":
+			{
+				"buffer_size": 14490,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "client/js/app.min.js",
+			"settings":
+			{
+				"buffer_size": 7576,
 				"line_ending": "Windows"
 			}
 		}
@@ -786,14 +789,25 @@
 	[
 		"/F/Code/web/roc-game-dev",
 		"/F/Code/web/roc-game-dev/client",
-		"/F/Code/web/roc-game-dev/client/css",
 		"/F/Code/web/roc-game-dev/client/html",
 		"/F/Code/web/roc-game-dev/client/js",
-		"/F/Code/web/roc-game-dev/client/node_modules",
-		"/F/Code/web/roc-game-dev/client/node_modules/smooth-scroll"
+		"/F/Code/web/roc-game-dev/client/node_modules/smooth-scroll",
+		"/F/Code/web/roc-game-dev/client/scss"
 	],
 	"file_history":
 	[
+		"/F/Code/web/roc-game-dev/client/scss/section-twitter.scss",
+		"/F/Code/web/roc-game-dev/client/scss/_header.scss",
+		"/F/Code/web/roc-game-dev/client/scss/base.scss",
+		"/F/Code/web/roc-game-dev/client/scss/section.scss",
+		"/F/Code/web/roc-game-dev/client/scss/section-about.scss",
+		"/F/Code/web/roc-game-dev/client/scss/section-facebook.scss",
+		"/F/Code/web/roc-game-dev/client/scss/_buttons.scss",
+		"/F/Code/web/platform/platform.html",
+		"/F/Code/web/roc-game-dev/events.json",
+		"/F/Code/web/roc-game-dev/client/js/html-element.js",
+		"/F/Code/web/roc-game-dev/client/js/app.min.js",
+		"/C/Users/atom/AppData/Roaming/Sublime Text 3/Packages/User/SFTP.sublime-settings",
 		"/F/Code/web/roc-game-dev/client/html/home.html",
 		"/F/Code/web/roc-game-dev/html/home.html",
 		"/F/Code/web/roc-game-dev/client/scss/screen.scss",
@@ -801,7 +815,6 @@
 		"/F/Code/web/roc-game-dev/client/node_modules/smooth-scroll/package.json",
 		"/F/Code/web/roc-game-dev/client/js/bundle.js",
 		"/F/Code/web/roc-game-dev/client/package.json",
-		"/F/Code/web/roc-game-dev/client/js/app.min.js",
 		"/F/Code/web/roc-game-dev/client/build.watchify.cmd",
 		"/F/Code/web/roc-game-dev/client/build.browserify.cmd",
 		"/F/Code/web/roc-game-dev/client/node_modules/smooth-scroll/gulpfile.js",
@@ -812,7 +825,6 @@
 		"/F/Code/web/roc-game-dev/facebook-feed.js",
 		"/F/Code/web/roc-game-dev/html/update.html",
 		"/C/Users/atom/AppData/Roaming/Sublime Text 3/Packages/User/SFTP.errors.log",
-		"/F/Code/web/roc-game-dev/events.json",
 		"/F/Code/web/roc-game-dev/sftp-config.json",
 		"/F/Code/web/roc-game-dev/roc-game-dev.sublime-project",
 		"/F/Code/web/facebook-sdk-test/sftp-config.json",
@@ -911,17 +923,7 @@
 		"/F/Code/web/resume-v2/.sass-lint.yml",
 		"/F/Code/web/resume-v2/js/lib/zepto.js",
 		"/F/Code/web/resume-v2/js/main.js",
-		"/F/Code/web/resume-v2/sass/style.scss",
-		"/F/Code/web/resume-v2/config.rb",
-		"/F/Code/web/resume/index.html",
-		"/F/Code/web/phpinfo.php",
-		"/F/Code/web/LightTPD/conf/mod_fastcgi.conf",
-		"/F/Code/web/resume-v2/index.html",
-		"/F/Code/web/resume-v2/css/style.css",
-		"/F/Code/web/resume/css/style.css",
-		"/F/Code/python/torrent-sort/torrent-sort.py",
-		"/C/cygwin64/home/atom/.weechat/python/gnotify.py",
-		"/C/cygwin64/home/atom/.weechat/python/autoload/atom_growl.py"
+		"/F/Code/web/resume-v2/sass/style.scss"
 	],
 	"find":
 	{
@@ -943,6 +945,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"mac",
+			"atom",
+			"button",
+			">\n",
 			"lvalue",
 			"margin",
 			"979px",
@@ -1066,11 +1072,7 @@
 			"top",
 			"Hindrances",
 			"skills",
-			"radiogroup",
-			"<br />",
-			"novice",
-			"req",
-			"false"
+			"radiogroup"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1091,7 +1093,7 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1106,69 +1108,41 @@
 						"selection":
 						[
 							[
-								25851,
-								25851
+								1416,
+								1416
 							]
 						],
 						"settings":
 						{
 							"default_dir": "F:\\Code\\web\\roc-game-dev",
+							"expand_region_settings": "{\"stack\": [{\"start\": 3, \"end\": 4007}], \"hash\": \"76648055fc62416ccf0f753bffba186d\"}",
 							"incomplete_sync": null,
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 11938.0,
+						"translation.y": 300.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1539,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								968,
-								944
-							]
-						],
-						"settings":
-						{
-							"default_dir": "F:\\Code\\web\\roc-game-dev",
-							"incomplete_sync": null,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "server.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3600,
+						"buffer_size": 3711,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1408,
-								1408
+								2034,
+								2034
 							]
 						],
 						"settings":
@@ -1182,27 +1156,129 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 960.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "client/js/app.js",
+					"buffer": 2,
+					"file": "twitter-feed.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 25,
+						"buffer_size": 1612,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								25,
-								25
+								236,
+								236
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"side_bar_folders_auto_load_folder": 1,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "client/html/update.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4854,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2085,
+								2085
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"side_bar_folders_auto_load_folder": 1,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1320.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "facebook-feed.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1643,
+								1643
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"side_bar_folders_auto_load_folder": 1,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 660.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "client/js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1094,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								411,
+								411
 							]
 						],
 						"settings":
@@ -1221,52 +1297,56 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "client/js/app.min.js",
+					"buffer": 6,
+					"file": "client/html/home.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5750,
+						"buffer_size": 3560,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1053,
+								1053
 							]
 						],
 						"settings":
 						{
+							"expand_region_settings": "{\"stack\": [{\"start\": 3389, \"end\": 3390}, {\"start\": 3362, \"end\": 3421}], \"hash\": \"90c1d340dbd6d7d49f7a43a106e2821b\"}",
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"side_bar_folders_auto_load_folder": 1,
 							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "client/scss/screen.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6107,
+						"buffer_size": 1396,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1098,
+								1098
 							]
 						],
 						"settings":
@@ -1280,19 +1360,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 480.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "client/css/screen.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13678,
+						"buffer_size": 14490,
 						"regions":
 						{
 						},
@@ -1317,24 +1403,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "twitter-feed.js",
+					"buffer": 9,
+					"file": "client/js/app.min.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1612,
+						"buffer_size": 7576,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1384,
-								1384
+								1112,
+								1112
 							]
 						],
 						"settings":
@@ -1351,72 +1437,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "client/css/print.css",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 213,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"side_bar_folders_auto_load_folder": 1,
-							"synced": false,
-							"syntax": "Packages/CSS3/CSS3.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/C/Users/atom/AppData/Roaming/Sublime Text 3/Packages/User/SFTP.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 90,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								90,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"side_bar_folders_auto_load_folder": 1,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1439,11 +1460,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.917061611374,
 			1.0
 		],
 		"rows":
@@ -1465,7 +1493,7 @@
 	"project": "roc-game-dev.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 66.0
 	},
 	"save_all_on_build": true,
 	"select_file":
