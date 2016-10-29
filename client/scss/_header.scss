@@ -57,15 +57,14 @@ header {
     }
 
     a {
+      @include padding-top(0.5);
+      @include padding-bottom(0.5);
+      @include typeset(navigation);
       position: relative;
-      // @include horizontal-borders($border-style: none);
       margin: 0;
-      padding-top: rhythm() / 2;
-      padding-bottom: rhythm() / 2;
       border: 0;
       border-right: 1px solid $light;
       color: $light;
-      font-size: rhythm();
       flex-grow: 1;
       text-align: center;
       text-decoration: none;
@@ -83,7 +82,7 @@ header {
       &:last-child {
         border-right: 0;
         @media screen and (max-width: $width-small) {
-          padding-bottom: rhythm() / 2;
+          @include padding-bottom(0.5);
         }
       }
 

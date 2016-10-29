@@ -2,275 +2,6 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
-/*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
-/* line 9, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
-  display: block;
-}
-
-/* line 29, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-  vertical-align: baseline;
-}
-
-/* line 40, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/* line 47, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
-[hidden],
-template {
-  display: none;
-}
-
-/*! normalize.css v3.0.0 | Base | MIT License | git.io/normalize */
-/* line 11, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
-html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-/* line 19, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
-body {
-  margin: 0;
-}
-
-/*! normalize.css v3.0.0 | Links | MIT License | git.io/normalize */
-/* line 9, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_links.scss */
-a {
-  background: transparent;
-}
-
-/* line 15, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_links.scss */
-a:active,
-a:hover {
-  outline: 0;
-}
-
-/*! normalize.css v3.0.0 | Typography | MIT License | git.io/normalize */
-/* line 9, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-/* line 15, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
-b,
-strong {
-  font-weight: bold;
-}
-
-/* line 22, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
-dfn {
-  font-style: italic;
-}
-
-/* line 29, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/* line 36, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
-mark {
-  background: #ff0;
-  color: #000;
-}
-
-/* line 43, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
-small {
-  font-size: 80%;
-}
-
-/* line 49, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-/* line 57, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
-sup {
-  top: -0.5em;
-}
-
-/* line 61, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_typography.scss */
-sub {
-  bottom: -0.25em;
-}
-
-/*! normalize.css v3.0.0 | Embedded Content | MIT License | git.io/normalize */
-/* line 9, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_embeds.scss */
-img {
-  border: 0;
-}
-
-/* line 15, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_embeds.scss */
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/*! normalize.css v3.0.0 | Figures | MIT License | git.io/normalize */
-/* line 9, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_groups.scss */
-figure {
-  margin: 1em 40px;
-}
-
-/* line 15, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_groups.scss */
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-/* line 23, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_groups.scss */
-pre {
-  overflow: auto;
-}
-
-/* line 29, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_groups.scss */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-/*! normalize.css v3.0.0 | Forms | MIT License | git.io/normalize */
-/* line 15, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-button,
-input,
-optgroup,
-select,
-textarea {
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
-
-/* line 27, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-button {
-  overflow: visible;
-}
-
-/* line 36, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-button,
-select {
-  text-transform: none;
-}
-
-/* line 47, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer;
-}
-
-/* line 57, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-
-/* line 64, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-/* line 73, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-input {
-  line-height: normal;
-}
-
-/* line 83, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-/* line 93, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/* line 102, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-}
-
-/* line 113, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/* line 120, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-/* line 129, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-legend {
-  border: 0;
-  padding: 0;
-}
-
-/* line 136, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-textarea {
-  overflow: auto;
-}
-
-/* line 143, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_forms.scss */
-optgroup {
-  font-weight: bold;
-}
-
-/*! normalize.css v3.0.0 | Tables | MIT License | git.io/normalize */
-/* line 9, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_tables.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 14, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-normalize-1.5/stylesheets/normalize/_tables.scss */
-td,
-th {
-  padding: 0;
-}
-
-/* line 1, ../scss/_base.scss */
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #d29034;
@@ -280,27 +11,19 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: auto;
-}
+  overflow: auto; }
 
-/* line 13, ../scss/_base.scss */
 h1 {
-  font-family: 'Baloo Bhai', cursive;
-}
+  font-family: 'Baloo Bhai', cursive; }
 
-/* line 17, ../scss/_base.scss */
 a {
   color: #101010;
   font-weight: bold;
   text-decoration: none;
-  border-bottom: 2px solid #bf2026;
-}
-/* line 23, ../scss/_base.scss */
-a:hover, a:active {
-  color: #bf2026;
-}
+  border-bottom: 2px solid #bf2026; }
+  a:hover, a:active {
+    color: #bf2026; }
 
-/* line 1, ../scss/_buttons.scss */
 .btn {
   display: inline-block;
   color: #fff;
@@ -309,27 +32,19 @@ a:hover, a:active {
   border: 0;
   border-radius: 4px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
-  text-decoration: none;
-}
-/* line 11, ../scss/_buttons.scss */
-.btn:hover {
-  color: #fff;
-}
+  text-decoration: none; }
+  .btn:hover {
+    color: #fff; }
 
-/* line 16, ../scss/_buttons.scss */
 .btn-top {
   position: fixed;
-  top: 1.5em;
+  top: rhythm();
   right: 15px;
-  transition: opacity .5s, top .5s;
-}
-/* line 22, ../scss/_buttons.scss */
-.btn-top.hidden {
-  opacity: 0;
-  top: -200px;
-}
+  transition: opacity .5s, top .5s; }
+  .btn-top.hidden {
+    opacity: 0;
+    top: -200px; }
 
-/* line 1, ../scss/_header.scss */
 header {
   margin: 0;
   text-align: center;
@@ -341,231 +56,185 @@ header {
   background: -webkit-radial-gradient(center, ellipse cover, #ffffff 65%, #d3d3d3 100%);
   /* Chrome10-25,Safari5.1-6 */
   background: radial-gradient(ellipse at center, #ffffff 65%, #d3d3d3 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
-/* line 15, ../scss/_header.scss */
-header img {
-  height: auto;
-  width: 50%;
-  margin: 0 auto;
-}
-@media screen and (max-width: 1110px) {
-  /* line 15, ../scss/_header.scss */
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
   header img {
-    width: 75%;
-  }
-}
-@media screen and (max-width: 640px) {
-  /* line 15, ../scss/_header.scss */
-  header img {
-    width: 100%;
-    display: block;
-  }
-}
-/* line 30, ../scss/_header.scss */
-header h1 {
-  font-size: 5em;
-  margin: 0;
-  padding: 0;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
-}
-@media screen and (max-width: 640px) {
-  /* line 30, ../scss/_header.scss */
+    height: auto;
+    width: 50%;
+    margin: 0 auto; }
+    @media screen and (max-width: 1110px) {
+      header img {
+        width: 75%; } }
+    @media screen and (max-width: 640px) {
+      header img {
+        width: 100%;
+        display: block; } }
   header h1 {
-    font-size: 3em;
-  }
-}
-/* line 41, ../scss/_header.scss */
-header nav {
-  background-color: #000;
-  display: flex;
-  flex-direction: row;
-  margin: 0 -30px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
-  border-radius: 4px;
-}
-@media screen and (max-width: 1110px) {
-  /* line 41, ../scss/_header.scss */
-  header nav {
+    font-size: 5em;
     margin: 0;
-    border-radius: 0;
-  }
-}
-@media screen and (max-width: 640px) {
-  /* line 41, ../scss/_header.scss */
+    padding: 0;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.45); }
+    @media screen and (max-width: 640px) {
+      header h1 {
+        font-size: 3em; } }
   header nav {
-    flex-direction: column;
-  }
-}
-/* line 59, ../scss/_header.scss */
-header nav a {
-  position: relative;
-  margin: 0;
-  padding-top: 0.75em;
-  padding-bottom: 0.75em;
-  border: 0;
-  border-right: 1px solid #f7f6f6;
-  color: #f7f6f6;
-  font-size: 1.5em;
-  flex-grow: 1;
-  text-align: center;
-  text-decoration: none;
-  font-family: 'Baloo Bhai', cursive;
-}
-/* line 74, ../scss/_header.scss */
-header nav a:active {
-  background: rgba(255, 255, 255, 0.35);
-}
-@media screen and (max-width: 640px) {
-  /* line 59, ../scss/_header.scss */
-  header nav a {
-    border-right: 0;
-    padding-bottom: 0;
-  }
-}
-/* line 83, ../scss/_header.scss */
-header nav a:last-child {
-  border-right: 0;
-}
-@media screen and (max-width: 640px) {
-  /* line 83, ../scss/_header.scss */
-  header nav a:last-child {
-    padding-bottom: 0.75em;
-  }
-}
-/* line 90, ../scss/_header.scss */
-header nav a:hover {
-  color: #fff;
-}
+    background-color: #000;
+    display: flex;
+    flex-direction: row;
+    margin: 0 -30px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
+    border-radius: 4px; }
+    @media screen and (max-width: 1110px) {
+      header nav {
+        margin: 0;
+        border-radius: 0; } }
+    @media screen and (max-width: 640px) {
+      header nav {
+        flex-direction: column; } }
+    header nav a {
+      padding-top: 0.75em;
+      padding-bottom: 0.75em;
+      font-size: 1.5em;
+      line-height: 1.25em;
+      font-weight: 400;
+      position: relative;
+      margin: 0;
+      border: 0;
+      border-right: 1px solid #f7f6f6;
+      color: #f7f6f6;
+      flex-grow: 1;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Baloo Bhai', cursive; }
+      header nav a:active {
+        background: rgba(255, 255, 255, 0.35); }
+      @media screen and (max-width: 640px) {
+        header nav a {
+          border-right: 0;
+          padding-bottom: 0; } }
+      header nav a:last-child {
+        border-right: 0; }
+        @media screen and (max-width: 640px) {
+          header nav a:last-child {
+            padding-bottom: 0.75em; } }
+      header nav a:hover {
+        color: #fff; }
 
-/* line 1, ../scss/_section.scss */
 .section-card {
   margin: 0 30px;
-  padding-top: .1px;
-}
-/* line 5, ../scss/_section.scss */
-.section-card h1 {
-  margin-left: -60px;
-  margin-right: -60px;
-  padding-left: 60px;
-  color: #fff;
-  background: #bf2026;
-  border-radius: 4px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
-  background-repeat: no-repeat;
-  background-size: 1em;
-  background-position: 15px;
-}
-/* line 17, ../scss/_section.scss */
-.section-card h1 img {
-  width: auto;
-  height: 1em;
-  vertical-align: middle;
-  margin: 0;
-  margin-left: -15px;
-  margin-right: 15px;
-}
-@media screen and (max-width: 1110px) {
-  /* line 5, ../scss/_section.scss */
+  padding-top: .1px; }
   .section-card h1 {
-    margin-left: -30px;
-    margin-right: -30px;
+    margin-left: -60px;
+    margin-right: -60px;
     padding-left: 60px;
-    border-radius: 0;
-  }
-}
+    color: #fff;
+    background: #bf2026;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
+    background-repeat: no-repeat;
+    background-size: 1em;
+    background-position: 15px; }
+    .section-card h1 img {
+      width: auto;
+      height: 1em;
+      vertical-align: middle;
+      margin: 0;
+      margin-left: -15px;
+      margin-right: 15px; }
+    @media screen and (max-width: 1110px) {
+      .section-card h1 {
+        margin-left: -30px;
+        margin-right: -30px;
+        padding-left: 60px;
+        border-radius: 0; } }
 
-/* line 36, ../scss/_section.scss */
 .section-grid ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  padding: 0;
-}
-/* line 43, ../scss/_section.scss */
+  padding: 0; }
+
 .section-grid li {
-  box-sizing: border-box;
   padding-right: 1.5em;
-  width: 50%;
-}
-@media screen and (max-width: 640px) {
-  /* line 43, ../scss/_section.scss */
-  .section-grid li {
-    padding-right: 0;
-    width: 100%;
-  }
-}
-/* line 53, ../scss/_section.scss */
-.section-grid li:nth-child(2n) {
-  padding-right: 0;
-}
+  box-sizing: border-box;
+  width: 50%; }
+  @media screen and (max-width: 640px) {
+    .section-grid li {
+      padding-right: 0;
+      width: 100%; } }
+  .section-grid li:nth-child(2n) {
+    padding-right: 0; }
 
-/* line 2, ../scss/_section-about.scss */
 .section-about h1 {
-  background-image: url("../images/icon-game-pad.png");
-}
+  background-image: url("../images/icon-game-pad.png"); }
 
-/* line 2, ../scss/_section-facebook.scss */
 .section-facebook h1 {
-  background-image: url("../images/icon-screw-driver.png");
-}
-/* line 7, ../scss/_section-facebook.scss */
+  background-image: url("../images/icon-screw-driver.png"); }
+
 .section-facebook h2 a {
-  border: 0;
-}
-/* line 13, ../scss/_section-facebook.scss */
+  border: 0; }
+
 .section-facebook .event-passed h2 {
-  text-decoration: line-through;
-}
-/* line 16, ../scss/_section-facebook.scss */
-.section-facebook .event-passed h2 a {
-  text-decoration: initial;
-  color: initial;
-}
+  text-decoration: line-through; }
+  .section-facebook .event-passed h2 a {
+    text-decoration: initial;
+    color: initial; }
 
-/* line 2, ../scss/_section-twitter.scss */
 .section-twitter h1 {
-  background-image: url("../images/icon-speech-bubble.png");
-}
+  background-image: url("../images/icon-speech-bubble.png"); }
 
-/* line 9, ../scss/_section-twitter.scss */
 .tweet h2 a {
   color: #5e5e5e;
-  text-decoration: none;
-}
-/* line 15, ../scss/_section-twitter.scss */
+  text-decoration: none; }
+
 .tweet a {
   border: 0;
   color: #fff;
   text-decoration: none;
-  font-weight: normal;
-}
-/* line 22, ../scss/_section-twitter.scss */
+  font-weight: normal; }
+
 .tweet p {
   position: relative;
   background: #107593;
   padding: 30px;
   border-radius: 4px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
-}
-/* line 30, ../scss/_section-twitter.scss */
-.tweet p:before {
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid #107593;
-  position: absolute;
-  top: -15px;
-}
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45); }
+  .tweet p:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #107593;
+    position: absolute;
+    top: -15px; }
 
-/* line 55, ../scss/screen.scss */
 .btn-top {
-  z-index: 1;
-}
+  z-index: 1; }
 
-/* line 60, ../scss/screen.scss */
+html {
+  font-size: 100%;
+  line-height: 1.5em; }
+  @media print {
+    html {
+      font-size: 12pt; } }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+h1 {
+  font-size: 2em;
+  line-height: 0.9375em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-top: 0.375em;
+  padding-bottom: 0.375em; }
+
+h2 {
+  font-size: 1.5em;
+  line-height: 1.25em;
+  font-weight: 400; }
+
 .wrapper {
   position: relative;
   margin: 0 auto;
@@ -575,11 +244,7 @@ header nav a:hover {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
   border: 1px solid #f7f6f6;
   border-top: 0;
-  border-bottom: 0;
-}
-@media screen and (max-width: 1110px) {
-  /* line 60, ../scss/screen.scss */
-  .wrapper {
-    border: 0;
-  }
-}
+  border-bottom: 0; }
+  @media screen and (max-width: 1110px) {
+    .wrapper {
+      border: 0; } }

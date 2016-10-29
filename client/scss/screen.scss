@@ -5,8 +5,8 @@
 
 // Modules
 @import 'normalize';
-@import 'compass/typography/vertical_rhythm';
-
+@import 'typey';
+@import 'variables';
 
 // Page Rhythm and Dimensions
 $max-width: 1080px;
@@ -56,11 +56,30 @@ $lightest: #fff;
   z-index: 1;
 }
 
+html {
+  @include define-type-sizing;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  @include typeset(heading-1);
+  @include padding-top(.25);
+  @include padding-bottom(.25);
+}
+
+h2 {
+  @include typeset(heading-2);
+}
+
 // A wrapper for the whole page
 .wrapper {
   position: relative;
   margin: 0 auto;
-  padding: 0 0 rhythm() 0;
+  @include padding(0 0 1 0);
   max-width: $max-width;
   background-color: $lightest;
   box-shadow: $box-shadow;

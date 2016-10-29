@@ -1,0 +1,21 @@
+$base-unit: em;
+
+$base-font-size:    16px;
+$base-line-height:  24px;
+
+$line-height-method: rhythm;
+
+$print-font-size: 12pt;
+
+$font-size: (
+  xl:   32px,
+  l:    24px,
+  m:    16px,
+  s:    12px,
+);
+
+$typestyles: (
+  heading-1: xl 1.25 bold uppercase,
+  heading-2: l 1.25 normal,
+  navigation: l 1.25 normal
+)
