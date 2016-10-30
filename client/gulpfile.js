@@ -85,5 +85,5 @@ gulp.task('watch-images', function() {
 });
 
 gulp.task('build', ['script', 'sass', 'html', 'images']);
-gulp.task('watch', ['watch-script', 'watch-sass', 'watch-html', 'watch-images']);
+gulp.task('watch', ['build', 'watch-script', 'watch-sass', 'watch-html', 'watch-images']);
 gulp.task('default', ['build']);
