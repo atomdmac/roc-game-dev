@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "smooth-scroll": "git://github.com/cferdinandi/smooth-scroll"
+    "smooth-scroll": "git://github.com/cferdinandi/smooth-scroll",
+    "scrolling-element": "git+https://github.com/mathiasbynens/document.scrollingElement.git"
   },
   "devDependencies": {
     "browserify": "^13.1.1",

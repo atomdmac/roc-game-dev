@@ -1,4 +1,6 @@
 var smoothScroll = require('smooth-scroll');
+
+require('scrollingelement');
 require('./html-element');
 
 // Back to top buttons.
@@ -6,7 +8,8 @@ var btnTop = document.querySelector('.btn-top');
 
 // Only show back to top button when scrolled down.
 var headerEl = document.querySelector('header');
-var scrollingEl = document.querySelector('body');
+var scrollingEl = document.scrollingElement;
+
 document.addEventListener('scroll', function(e) {
   var headerHeight = parseInt(headerEl.offsetHeight, 10);
   if(scrollingEl.scrollTop > headerHeight - 10) {
