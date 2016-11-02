@@ -2,12 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-color: $orange;
   color: $darker;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: auto;
+  position: relative;
 }
 
 h1 {
