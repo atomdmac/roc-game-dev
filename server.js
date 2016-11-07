@@ -4,8 +4,8 @@ var app = express();
 var fs = require('fs');
 var path = require('path');
 var handlebars = require('handlebars');
-var twitterFeed = require('./twitter-feed');
-var facebookFeed = require('./facebook-feed');
+var twitterFeed = require('./modules/twitter-feed');
+var facebookFeed = require('./modules/facebook-feed');
 var htmlTpl;
 
 // Configure body-parser Express plug-in for using variables from POST requests.
