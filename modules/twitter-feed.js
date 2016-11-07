@@ -14,20 +14,16 @@ var refreshInt;
 
 // Cache of tweets.
 var tweetCache = [];
- 
+
 // Create a Twitter client object to interact with the API.
-var client = new Twitter({
-  consumer_key: 'bRN09D9szr9TUEI4PXn9bovOZ',
-  consumer_secret: 'pzKaia6y5DgeCUZEtx3HRghKJxWS68qRAmRiesoFzos63UFhW9',
-  access_token_key: '2800910940-qSNvkxIgvEgt0BpqMexZVajtVExeU9WuTNOgS8v',
-  access_token_secret: 'VPHJOi6I06c1e3jmvr8hgrB5APrCUu9hDgSBIPKi9skQ1'
-});
+var clientCredentials = require('../credentials/twitter-feed-credentials.json');
+var client = new Twitter(clientCredentials);
 
 function refresh () {
   var p = new Promize(function (fulfill, reject) {
     client.get(
       'search/tweets',
-      settings.searchParams, 
+      settings.searchParams,
       function(error, results, response) {
         // Report error if necessary.
         if(error) {
