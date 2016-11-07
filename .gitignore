@@ -2,3 +2,4 @@
 /design
 node_modules
 /sftp-config.json
+/.ftppass

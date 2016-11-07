@@ -6,7 +6,7 @@ var sftp = require('gulp-sftp');
 var sftpOptions = {
   host: 'rocgamedev.org',
   auth: 'keyMain',
-  authFile: './.sftp-config.json',
+  authFile: '.ftppass',
   remotePath: '/var/www/html/new-site'
 };
 
