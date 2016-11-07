@@ -1,0 +1,42 @@
+[
+    {
+        "description": "// WORKSHOP - CHOOSING A COLOR PALETTE //\nThis month's workshop will go over some of the different w...",
+        "end_time": "2016-10-05T22:00:00-0400",
+        "id": "599077843605299",
+        "name": "ROC Game Dev - Workshop + Meetup",
+        "place": {
+            "id": "477856358928964",
+            "location": {
+                "city": "Rochester",
+                "country": "United States",
+                "latitude": 43.083225145803,
+                "longitude": -77.679947055442,
+                "state": "NY",
+                "street": "159 Lomb Memorial Dr (Student Innovation Hall)",
+                "zip": "14623-5603"
+            },
+            "name": "MAGIC at RIT"
+        },
+        "start_time": "2016-10-05T19:00:00-0400"
+    },
+    {
+        "description": "We meet up at The Playhouse//Swillburger on the 3rd Saturday of every month. Burgers, arcade games, ...",
+        "end_time": "2016-09-17T23:00:00-0400",
+        "id": "878491655614325",
+        "name": "ROC Game Dev - Social Meetup",
+        "place": {
+            "id": "830085093698421",
+            "location": {
+                "city": "Rochester",
+                "country": "United States",
+                "latitude": 43.1417235,
+                "longitude": -77.5977281,
+                "state": "NY",
+                "street": "820 Clinton Ave S",
+                "zip": "14620"
+            },
+            "name": "The Playhouse // Swillburger"
+        },
+        "start_time": "2016-09-17T20:00:00-0400"
+    }
+]

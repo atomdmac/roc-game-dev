@@ -2,11 +2,27 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var browserify = require('gulp-browserify');
 
+var sftp = require('gulp-sftp');
+var sftpOptions = {
+  host: 'rocgamedev.org',
+  auth: 'keyMain',
+  authFile: './.sftp-config.json',
+  remotePath: '/var/www/html/new-site'
+};
+
 var sass = require('gulp-sass');
 var eyeglass = require('eyeglass');
 var sassOptions = {};
 
 var filePath = {
+  server: {
+    src: [
+      'package.json',
+      'server.js',
+      'modules/**',
+      'data_cache/**/*'
+    ]
+  },
   sass: {
     src: ['client/scss/**/*.scss'],
     dest: 'client/build/css'
@@ -83,6 +99,19 @@ gulp.task('watch-images', function() {
     server.changed(file.path);
   });
 });
+
+gulp.task('deploy', function() {
+  var src = [].concat(filePath.server.src);
+  src.push(filePath.script.dest + '/**/*');
+  src.push(filePath.sass.dest + '/**/*');
+  src.push(filePath.html.dest + '/**/*');
+  src.push(filePath.images.dest + '/**/*');
+
+  gulp
+    .src(src, {base: './'})
+    .pipe(sftp(sftpOptions));
+});
+
 
 gulp.task('build', ['script', 'sass', 'html', 'images']);
 gulp.task('watch', ['build', 'watch-script', 'watch-sass', 'watch-html', 'watch-images']);

@@ -2,6 +2,7 @@ var FB = require('fb');
 var Promize = require('promise');
 var fs = require('fs');
 
+var CACHE_DIR = 'data_cache';
 var GROUP_ID = '1453415071632653';
 
 // The Facebook event data.
@@ -9,7 +10,7 @@ var eventData = loadCachedEventData();
 
 // Load data that was previously pulled from Facebook.
 function loadCachedEventData() {
-  var cachedData = fs.readFileSync('events.json', {encoding: 'utf8'});
+  var cachedData = fs.readFileSync(CACHE_DIR + '/events.json', {encoding: 'utf8'});
   try {
     cachedData = JSON.parse(cachedData);
   } catch (e) {
@@ -45,7 +46,7 @@ function refresh (token) {
         // Facebook returned an error :(
         if(response.error) {
           reject(response);
-        } 
+        }
 
         // Facebook response is successful.  Now let's try to save that data to
         // our website so we can display it to users later.
@@ -55,8 +56,8 @@ function refresh (token) {
           eventData = trimDescriptions(response.data);
 
           // Attempt to write data to disk for later.
-          fs.writeFile('events.json', JSON.stringify(eventData), function (writeErr) {
-            
+          fs.writeFile(CACHE_DIR + '/events.json', JSON.stringify(eventData), function (writeErr) {
+
             // Data write was successful.
             if(!writeErr) {
               fulfill(JSON.stringify(response));
