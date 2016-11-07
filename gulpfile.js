@@ -8,20 +8,20 @@ var sassOptions = {};
 
 var filePath = {
   sass: {
-    src: ['scss/**/*.scss'],
-    dest: 'build/css'
+    src: ['client/scss/**/*.scss'],
+    dest: 'client/build/css'
   },
   script: {
-    src: ['js/app.js'],
-    dest: 'build/js'
+    src: ['client/js/app.js'],
+    dest: 'client/build/js'
   },
   html: {
-    src: ['./html/*.html'],
-    dest: 'build/html'
+    src: ['client/html/*.html'],
+    dest: 'client/build/html'
   },
   images: {
-    src: ['./images/*.png'],
-    dest: 'build/images'
+    src: ['client/images/*.png'],
+    dest: 'client/build/images'
   }
 };
 

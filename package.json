@@ -15,6 +15,21 @@
     "handlebars": "^4.0.5",
     "normalize.css": "^4.2.0",
     "promise": "^7.1.1",
-    "twitter": "^1.4.0"
+    "twitter": "^1.4.0",
+    "smooth-scroll": "git://github.com/cferdinandi/smooth-scroll",
+    "scrollingelement": "git+https://github.com/mathiasbynens/document.scrollingElement.git"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.1",
+    "eyeglass": "^1.1.2",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sftp": "^0.1.5",
+    "gulp-uglify": "^2.0.0",
+    "normalize-scss": "^6.0.0",
+    "remove": "^0.1.5",
+    "typey": "^1.0.3",
+    "watchify": "^3.7.0"
   }
 }
