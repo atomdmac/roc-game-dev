@@ -39,6 +39,13 @@ h1 {
 
 h2 {
   @include typeset(heading-2);
+  color: $black300;
+  text-decoration: none;
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
 }
 
 // A wrapper for the whole page
