@@ -20,7 +20,8 @@ var filePath = {
       'package.json',
       'server.js',
       'modules/**',
-      'data_cache/**/*'
+      'data_cache/**/*',
+      'credentials/**/*'
     ]
   },
   sass: {
