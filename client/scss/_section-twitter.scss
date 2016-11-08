@@ -7,21 +7,21 @@
 .tweet {
   h2 {
     a {
-      color: $dark;
+      color: $black300;
       text-decoration: none;
     }
   }
 
   a {
     border: 0;
-    color: $lightest;
+    color: $white100;
     text-decoration: none;
     font-weight: normal;
   }
 
   p {
     position: relative;
-    background: $rgd-blue;
+    background: $color3;
     padding: $gutter;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
@@ -29,11 +29,11 @@
     // Create speech bubble tail
     &:before {
       content: '';
-      width: 0; 
-      height: 0; 
+      width: 0;
+      height: 0;
       border-left: 15px solid transparent;
       border-right: 15px solid transparent;
-      border-bottom: 15px solid $rgd-blue;
+      border-bottom: 15px solid $color3;
       position: absolute;
       top: -15px
     }

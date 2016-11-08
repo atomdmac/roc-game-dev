@@ -47,9 +47,9 @@ h2 {
   margin: 0 auto;
   @include padding(0 0 1 0);
   max-width: $max-width;
-  background-color: $lightest;
+  background-color: $white100;
   box-shadow: $box-shadow;
-  border: 1px solid $light;
+  border: 1px solid $white200;
   border-top: 0;
   border-bottom: 0;
 

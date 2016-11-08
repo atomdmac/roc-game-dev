@@ -39,7 +39,7 @@ header {
   }
 
   nav {
-    background-color: $darkest;
+    background-color: $black100;
     display: flex;
     flex-direction: row;
     margin: 0 $gutter * -1;
@@ -63,8 +63,8 @@ header {
       position: relative;
       margin: 0;
       border: 0;
-      border-right: 1px solid $light;
-      color: $light;
+      border-right: 1px solid $white200;
+      color: $white200;
       flex-grow: 1;
       text-align: center;
       text-decoration: none;
@@ -87,7 +87,7 @@ header {
       }
 
       &:hover {
-        color: $lightest;
+        color: $white100;
       }
     }
   }
