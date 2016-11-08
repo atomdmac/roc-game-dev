@@ -8,40 +8,6 @@
 @import 'typey';
 @import 'variables';
 
-// Page Rhythm and Dimensions
-$max-width: 1080px;
-$margin: 30px;
-$padding: $margin / 2;
-$gutter: 30px;
-
-
-// Screen sizes
-// $width-large: $max-width + ($gutter * 2)
-$width-medium: $max-width + $gutter;
-$width-small: 640px;
-
-
-// Borders
-$border-radius: 4px;
-$box-shadow: 0 2px 2px rgba(0, 0, 0, .45);
-
-
-// Colors
-$color1: #bf0000;
-$color2: #00a33d;
-$color3: #047391;
-
-$rgd-red: #bf2026;
-$rgd-blue: #107593;
-
-$darkest: #000;
-$darker: #101010;
-$dark: #5e5e5e;
-$orange: #d29034;
-$light: #f7f6f6;
-$lightest: #fff;
-
-
 // Partials
 @import 'base';
 @import 'buttons';
