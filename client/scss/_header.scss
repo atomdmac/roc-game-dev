@@ -63,8 +63,8 @@ header {
       position: relative;
       margin: 0;
       border: 0;
-      border-right: 1px solid $white200;
-      color: $white200;
+      border-right: 1px solid $white100;
+      color: $white100;
       flex-grow: 1;
       text-align: center;
       text-decoration: none;
@@ -88,6 +88,7 @@ header {
 
       &:hover {
         color: $white100;
+        background-color: $black300;
       }
     }
   }
