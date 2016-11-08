@@ -16,7 +16,6 @@
     border: 0;
     color: $white100;
     text-decoration: none;
-    font-weight: normal;
   }
 
   p {
@@ -25,6 +24,7 @@
     padding: $gutter;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
+    font-weight: normal;
 
     // Create speech bubble tail
     &:before {
