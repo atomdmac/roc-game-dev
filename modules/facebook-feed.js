@@ -8,6 +8,34 @@ var GROUP_ID = '1453415071632653';
 // The Facebook event data.
 var eventData = loadCachedEventData();
 
+function transformEventData(eventData) {
+  var newEventData = [];
+  eventData.forEach(function (event, index) {
+    newEventData.push({
+      description: event.description,
+      start_time : event.start_time,
+      end_time   : event.end_time,
+      id         : event.id,
+      name       : event.name,
+      place      : {
+        id  : event.place.id,
+        name: event.place.name,
+        location: {
+          city     : event.place.location.city,
+          country  : event.place.location.country,
+          latitude : event.place.location.latitude,
+          longitude: event.place.location.longitude,
+          state    : event.place.location.state,
+          street   : event.place.location.street,
+          zip      : event.place.location.zip
+        }
+      }
+    });
+  });
+
+  return newEventData;
+}
+
 // Load data that was previously pulled from Facebook.
 function loadCachedEventData() {
   var cachedData = fs.readFileSync(CACHE_DIR + '/events.json', {encoding: 'utf8'});
@@ -53,7 +81,7 @@ function refresh (token) {
         else {
 
           // Update our in-memory copy of the data.
-          eventData = trimDescriptions(response.data);
+          eventData = transformEventData(response.data);
 
           // Attempt to write data to disk for later.
           fs.writeFile(CACHE_DIR + '/events.json', JSON.stringify(eventData), function (writeErr) {
