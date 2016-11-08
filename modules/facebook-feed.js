@@ -1,23 +1,29 @@
 var FB = require('fb');
 var Promize = require('promise');
 var fs = require('fs');
+var moment = require('moment');
 
 var CACHE_DIR = 'data_cache';
 var GROUP_ID = '1453415071632653';
 
+var DATE_FORMAT = "dddd, MMMM Do, h:mm a";
+
 // The Facebook event data.
 var eventData = loadCachedEventData();
+eventData = transformEventData(eventData);
 
 function transformEventData(eventData) {
   var newEventData = [];
   eventData.forEach(function (event, index) {
     newEventData.push({
       description: event.description,
-      start_time : event.start_time,
-      end_time   : event.end_time,
-      id         : event.id,
-      name       : event.name,
-      place      : {
+      start_time     : moment(event.start_time).format(DATE_FORMAT),
+      end_time       : moment(event.end_time).format(DATE_FORMAT),
+      start_time_raw : event.start_time,
+      end_time_raw   : event.end_time,
+      id             : event.id,
+      name           : event.name,
+      place          : {
         id  : event.place.id,
         name: event.place.name,
         location: {
@@ -44,6 +50,7 @@ function loadCachedEventData() {
   } catch (e) {
     cachedData = [];
   }
+
   return cachedData;
 }
 

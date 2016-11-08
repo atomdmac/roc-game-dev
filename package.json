@@ -13,11 +13,12 @@
     "express": "^4.14.0",
     "fb": "^1.1.1",
     "handlebars": "^4.0.5",
+    "moment": "^2.15.2",
     "normalize.css": "^4.2.0",
     "promise": "^7.1.1",
-    "twitter": "^1.4.0",
+    "scrollingelement": "git+https://github.com/mathiasbynens/document.scrollingElement.git",
     "smooth-scroll": "git://github.com/cferdinandi/smooth-scroll",
-    "scrollingelement": "git+https://github.com/mathiasbynens/document.scrollingElement.git"
+    "twitter": "^1.4.0"
   },
   "devDependencies": {
     "browserify": "^13.1.1",
