@@ -77,7 +77,12 @@ header {
 
       @media screen and (max-width: $width-small) {
         border-right: 0;
-        padding-bottom: 0;
+        @include padding-top(0.25);
+        @include padding-bottom(0.25);
+      }
+
+      &:first-child {
+        @include padding-top(0.5);
       }
 
       &:last-child {
