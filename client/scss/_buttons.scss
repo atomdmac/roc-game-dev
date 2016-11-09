@@ -15,12 +15,14 @@
 
 .btn-top {
   position: fixed;
-  top: rhythm();
-  right: $gutter / 2;
-  transition: opacity .5s, top .5s;
+  top: 0;
+  right: 0;
+  margin: $gutter / 2  $gutter / 2 0 0;
+  transform: translateY(0px);
+  transition: opacity .5s, transform .5s;
 
   &.hidden {
     opacity: 0;
-    top: -200px;
+    transform: translateY(-200px);
   }
 }
