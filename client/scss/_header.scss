@@ -60,6 +60,7 @@ header {
       @include padding-top(0.5);
       @include padding-bottom(0.5);
       @include typeset(navigation);
+      display: inline-block;
       position: relative;
       margin: 0;
       border: 0;
