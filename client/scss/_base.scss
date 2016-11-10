@@ -5,8 +5,43 @@ body {
   position: relative;
 }
 
+html {
+  @include define-type-sizing;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2 {
+  @include margin-bottom(0.5);
+}
+
 h1 {
-  font-family: 'Baloo Bhai', cursive;
+  @include margin-top(1.5);
+  @include padding-top(0.25);
+  @include padding-bottom(0.25);
+  @include typeset(heading-1);
+  @include typeface(heading-1);
+}
+
+h2 {
+  @include margin-top(1);
+  @include typeset(heading-2);
+  color: $black300;
+  text-decoration: none;
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+}
+
+
+p, ul, li {
+  @include margin-top(0);
+  @include margin-bottom(1);
 }
 
 a {
@@ -19,8 +54,4 @@ a {
   &:active {
     color: $color1;
   }
-}
-
-li {
-  @include margin-bottom(1);
 }

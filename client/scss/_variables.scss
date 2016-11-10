@@ -1,4 +1,4 @@
-$base-unit: em;
+$base-unit: rem;
 
 $base-font-size:    16px;
 $base-line-height:  24px;
@@ -14,10 +14,17 @@ $font-size: (
   s:    12px,
 );
 
+// Fonts
+$baloo-bhai: 'Baloo Bhai', cursive;
+
+$typefaces: (
+  heading-1: $baloo-bhai
+);
+
 $typestyles: (
-  heading-1: xl 1.25 bold uppercase,
-  heading-2: l 1.25 bold,
-  navigation: l 1.25 normal
+  heading-1: xl 1.5 bold uppercase,
+  heading-2: l 1.5 bold,
+  navigation: l 1.5 normal
 );
 
 // Page Rhythm and Dimensions

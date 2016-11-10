@@ -1,6 +1,5 @@
 .section-card {
   margin: 0 $gutter;
-  padding-top: .1px;
 
   h1 {
     margin-left: $gutter * -2;
@@ -30,6 +29,11 @@
       border-radius: 0;
     }
   }
+
+  &>p:first-of-type {
+    @include margin-top(1.5);
+    @include margin-bottom(0);
+  }
 }
 
 .section-grid {
@@ -42,6 +46,7 @@
 
   li {
     @include padding-right(1);
+    margin: 0;
     box-sizing: border-box;
     width: 50%;
 

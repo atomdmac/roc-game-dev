@@ -19,9 +19,9 @@
   }
 
   p {
+    @include padding(1);
     position: relative;
     background: $color3;
-    padding: $gutter;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
     font-weight: normal;

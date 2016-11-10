@@ -22,32 +22,6 @@
   z-index: 1;
 }
 
-html {
-  @include define-type-sizing;
-}
-
-body {
-  padding: 0;
-  margin: 0;
-}
-
-h1 {
-  @include typeset(heading-1);
-  @include padding-top(.25);
-  @include padding-bottom(.25);
-}
-
-h2 {
-  @include typeset(heading-2);
-  color: $black300;
-  text-decoration: none;
-
-  a {
-    color: inherit;
-    text-decoration: inherit;
-  }
-}
-
 // A wrapper for the whole page
 .wrapper {
   position: relative;
