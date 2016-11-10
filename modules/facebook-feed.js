@@ -6,7 +6,7 @@ var moment = require('moment');
 var CACHE_DIR = 'data_cache';
 var GROUP_ID = '1453415071632653';
 
-var DATE_FORMAT = "dddd, MMMM Do, h:mm a";
+var DATE_FORMAT = "MMMM D - h:mma";
 
 // The Facebook event data.
 var eventData = loadCachedEventData();

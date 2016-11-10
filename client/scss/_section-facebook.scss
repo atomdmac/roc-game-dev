@@ -3,7 +3,7 @@
     background-image: url('../images/icon-screw-driver.png');
   }
 
-  h2 { 
+  h2 {
     a {
       border: 0;
     }
@@ -18,5 +18,10 @@
         color: initial;
       }
     }
+  }
+
+  .event-time,
+  .event-location {
+    font-weight: bold;
   }
 }

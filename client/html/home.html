@@ -46,8 +46,7 @@
       {{#each events}}
       <li class="{{#is_past start_time}}event-passed{{/is_past}}">
         <h2 class="event-name"><a href="https://www.facebook.com/events/{{id}}" target="_blank">{{name}}</a></h2>
-        <p class="event-date">{{start_time}}</p>
-        <p class="event-location">{{location.city}}</p>
+        <p><span class="event-location">{{place.name}}</span><span class="event-time"> - {{start_time}}</span></p>
         <p class="event-description">{{description}}</p>
       </li>
       {{/each}}
