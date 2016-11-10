@@ -2,6 +2,7 @@ var FB = require('fb');
 var Promize = require('promise');
 var fs = require('fs');
 var moment = require('moment');
+var stringUtil = require('./string-util');
 
 var CACHE_DIR = 'data_cache';
 var GROUP_ID = '1453415071632653';
@@ -16,7 +17,7 @@ function transformEventData(eventData) {
   var newEventData = [];
   eventData.forEach(function (event, index) {
     newEventData.push({
-      description: event.description,
+      description: stringUtil.shorten(event.description, 150),
       start_time     : moment(event.start_time).format(DATE_FORMAT),
       end_time       : moment(event.end_time).format(DATE_FORMAT),
       start_time_raw : event.start_time,
@@ -54,13 +55,6 @@ function loadCachedEventData() {
   return cachedData;
 }
 
-function trimDescriptions(data) {
-  data.forEach(function(item, index) {
-    item.description = item.description.substr(0, 100) + '...';
-  });
-  return data;
-}
-
 // Gets the most up-to-date event data from Facebook, updates our version of the
 // event data in memory, and saves it to disk for later.
 function refresh (token) {
@@ -91,7 +85,10 @@ function refresh (token) {
           eventData = transformEventData(response.data);
 
           // Attempt to write data to disk for later.
-          fs.writeFile(CACHE_DIR + '/events.json', JSON.stringify(eventData), function (writeErr) {
+          // NOTE: We're saving the *ORIGINAL* data that we got from Facebook.
+          // This allows us to update the way date is transformed later without
+          // needing to fetch it again from Facebook.
+          fs.writeFile(CACHE_DIR + '/events.json', JSON.stringify(response.data), function (writeErr) {
 
             // Data write was successful.
             if(!writeErr) {
