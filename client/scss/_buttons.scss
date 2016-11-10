@@ -20,6 +20,12 @@
   margin: $gutter / 2  $gutter / 2 0 0;
   transform: translateY(0px);
   transition: opacity .5s, transform .5s;
+  border-radius: 200px;
+  background-image: url(../images/icon-up.png);
+  background-repeat: no-repeat;
+  background-position: $padding;
+  width: $base-line-height;
+  height: $base-line-height;
 
   &.hidden {
     opacity: 0;
