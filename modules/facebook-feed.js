@@ -12,7 +12,9 @@ var DATE_FORMAT = "MMMM D - h:mma";
 // The Facebook event data.
 var eventData = loadCachedEventData();
 eventData = transformEventData(eventData);
+eventData = removePastEvents(eventData);
 
+// Canonicalize data that has been pulled from Facebook.
 function transformEventData(eventData) {
   var newEventData = [];
   eventData.forEach(function (event, index) {
@@ -41,6 +43,16 @@ function transformEventData(eventData) {
   });
 
   return newEventData;
+}
+
+// Remove any events from the given list that have occurred in the past.
+// NOTE: This assumes that the given event list has already been processed by
+// the transformEventData() function.
+function removePastEvents(eventList) {
+  var currentDate = new Date();
+  return eventList.filter(function (event, index) {
+    return new Date(event.start_time_raw) > currentDate;
+  });
 }
 
 // Load data that was previously pulled from Facebook.
@@ -83,6 +95,7 @@ function refresh (token) {
 
           // Update our in-memory copy of the data.
           eventData = transformEventData(response.data);
+          eventDate = removePastEvents(eventData);
 
           // Attempt to write data to disk for later.
           // NOTE: We're saving the *ORIGINAL* data that we got from Facebook.
