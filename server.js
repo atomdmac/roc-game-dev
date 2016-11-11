@@ -136,3 +136,14 @@ handlebars.registerHelper('is_past', function(dateTimeStr, options) {
     }
 
 });
+
+// Inserts content if the given date is in the past.
+handlebars.registerHelper('is_larger_than', function(number1, number2, options) {
+  console.log(arguments);
+    if( number1 > number2 ) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+
+});

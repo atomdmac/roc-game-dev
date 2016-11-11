@@ -42,7 +42,7 @@
   <!-- Facebook -->
   <section class="section-card section-facebook section-grid" id="section-facebook">
     <h1>Upcoming Events</h1>
-    <ul class="facebook-events">
+    <ul class="facebook-events {{#is_larger_than events.length 1}}double-column{{/is_larger_than}}">
       {{#each events}}
       <li class="{{#is_past start_time}}event-passed{{/is_past}}">
         <h2 class="event-name"><a href="https://www.facebook.com/events/{{id}}" target="_blank">{{name}}</a></h2>
@@ -57,7 +57,7 @@
   <section class="section-card section-twitter section-grid" id="section-twitter">
     <h1>Community</h1>
     <p>Are you a Rochestarian working on game code, art, music, etc?  Add <a href="https://twitter.com/search?f=tweets&vertical=default&q=%23rocgamedev&src=typd&lang=en" target="_blank">#rocgamedev</a> to your tweet to feature your progress here!</p>
-    <ul>
+    <ul class="{{#is_larger_than tweets.length 1}}double-column{{/is_larger_than}}">
       {{#each tweets}}
       <li class="tweet">
         <h2 class="label-user"><a href="https://twitter.com/{{user.screen_name}}" target="_blank">{{user.name}}</a></h2>

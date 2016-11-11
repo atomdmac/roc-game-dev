@@ -42,21 +42,27 @@
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
-  }
 
-  li {
-    @include padding-right(1);
-    margin: 0;
-    box-sizing: border-box;
-    width: 50%;
-
-    @media screen and (max-width: 640px) {
-      padding-right: 0;
+    li {
+      margin: 0;
+      box-sizing: border-box;
       width: 100%;
     }
 
-    &:nth-child(2n) {
-      padding-right: 0;
+    &.double-column {
+      li {
+        @include padding-right(1);
+        width: 50%;
+
+        &:nth-child(2n) {
+          padding-right: 0;
+        }
+
+        @media screen and (max-width: 640px) {
+          padding-right: 0;
+          width: 100%;
+        }
+      }
     }
   }
 }
