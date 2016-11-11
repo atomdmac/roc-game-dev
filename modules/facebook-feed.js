@@ -17,7 +17,7 @@ function transformEventData(eventData) {
   var newEventData = [];
   eventData.forEach(function (event, index) {
     newEventData.push({
-      description: stringUtil.wrapUrls(event.description, 500),
+      description: stringUtil.wrapUrls(event.description),
       start_time     : moment(event.start_time).format(DATE_FORMAT),
       end_time       : moment(event.end_time).format(DATE_FORMAT),
       start_time_raw : event.start_time,
