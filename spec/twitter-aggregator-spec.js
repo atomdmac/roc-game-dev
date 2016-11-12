@@ -17,7 +17,7 @@ describe('TwitterAggregator', function () {
     expect(TwitterAggregator).to.not.equal(undefined);
   });
 
-  it('Should read existing Twitter data from disk', function () {
+  it('getLocal', function () {
     return taInstance
       .getLocal('../data_cache/twitter.json')
       .then(
@@ -33,7 +33,7 @@ describe('TwitterAggregator', function () {
       );
   });
 
-  it('Should read data from the Twitter Search API', function () {
+  it('getRemote', function () {
     return taInstance
       .getRemote({q:'#rocgamedev'})
       .then(
@@ -48,7 +48,7 @@ describe('TwitterAggregator', function () {
         });
   });
 
-  it('Should combine local and remote Tweets without duplicates', function () {
+  it('getCombined', function () {
     return taInstance
       .getCombined('./twitter-aggregator-spec-data.json', {q:'#rocgamedev'})
       .then(
