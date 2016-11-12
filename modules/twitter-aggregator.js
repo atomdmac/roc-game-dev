@@ -90,7 +90,7 @@ TwitterAggregator.prototype.combine = function (local, remote) {
   var newData = local.concat(remote);
   newData = newData.filter(function (tweet, index, tweets) {
     for(var t = index+1; t<tweets.length; t++) {
-      if(tweet.id === tweets[t].id) {
+      if(tweet.id_str === tweets[t].id_str) {
         return false;
       }
     }
