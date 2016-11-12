@@ -23,7 +23,7 @@ describe('TwitterAggregator', function () {
       .then(
         // Success
         function(localData) {
-          expect(localData, 'Read local Twitter data from disk.').to.be.instanceof(Array);
+          expect(localData).to.be.instanceof(Array);
         },
 
         // Fail
@@ -39,7 +39,7 @@ describe('TwitterAggregator', function () {
       .then(
         // Success
         function(remoteData) {
-          expect(remoteData, 'Read remote data from Twitter Search API').to.be.instanceof(Array);
+          expect(remoteData).to.be.instanceof(Array);
         },
 
         // Fail
