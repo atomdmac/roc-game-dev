@@ -66,7 +66,20 @@ describe('TwitterAggregator', function () {
 
   it('refreshLocal', function (done) {
     taInstance
-      .refreshLocal('./twitter-aggregator-spec-data.json', {q:'#rocgamedev'})
+      .refreshLocal(
+        // Local input file
+        './twitter-aggregator-spec-data.json',
+
+        // Remote search parameters
+        {
+          q:'#rocgamedev'
+        },
+
+        // Other options
+        {
+          outputFile: './twitter-aggregator-data.output.json'
+        }
+      )
       .then(
         // Success
         function (data) {

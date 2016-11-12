@@ -64,19 +64,25 @@ TwitterAggregator.prototype.getCombined = function (localFile, remoteSearchParam
   });
 };
 
-TwitterAggregator.prototype.refreshLocal = function (localFile, remoteSearchParams) {
+TwitterAggregator.prototype.refreshLocal = function (localFile, remoteSearchParams, options) {
+  options = options || {};
+  options.outputFile = options.outputFile || localFile;
+
   var self = this;
   return new Promize(function(fulfill, reject) {
     self.getCombined(localFile, remoteSearchParams)
       .then(function(data) {
         // Write data to the filesystem.
-        fs.writeFile(localFile + 'test.json', JSON.stringify(data.combined, null, 2), {encoding: 'utf8'}, function (err) {
-          if(err === null) {
-            fulfill(data);
-          } else {
-            reject(err);
-          }
-        });
+        fs.writeFile(options.outputFile,
+          JSON.stringify(data.combined, null, 2),
+          {encoding: 'utf8'},
+          function (err) {
+            if(err === null) {
+              fulfill(data);
+            } else {
+              reject(err);
+            }
+          });
       },
 
       // Fail
