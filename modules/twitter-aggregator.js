@@ -39,34 +39,50 @@ TwitterAggregator.prototype.getRemote = function (searchParams) {
   });
 };
 
-TwitterAggregator.prototype.refreshLocal = function (file, remoteSearchParams) {
+TwitterAggregator.prototype.getCombined = function (localFile, remoteSearchParams) {
   var self = this;
   return new Promize(function(fulfill, reject) {
     Promize
-      .all([self.getLocal(file), self.getRemote(remoteSearchParams)])
+      .all([self.getLocal(localFile), self.getRemote(remoteSearchParams)])
       .then(
         function (data) {
           var localData = data[0];
           var remoteData = data[1];
           var combinedData = self.combine(localData, remoteData);
 
-          // Write data to the filesystem.
-          fs.writeFile(file + 'test', JSON.stringify(combinedData, null, 2), {encoding: 'utf8'}, function (err) {
-            if(err === null) {
-              fulfill({
-                combined: combinedData,
-                local: localData,
-                remote: remoteData
-              });
-            } else {
-              reject(err);
-            }
+          // Success!
+          fulfill({
+            combined: combinedData,
+            local: localData,
+            remote: remoteData
           });
         },
         function (error) {
           reject(error);
         }
       );
+  });
+};
+
+TwitterAggregator.prototype.refreshLocal = function (localFile, remoteSearchParams) {
+  var self = this;
+  return new Promize(function(fulfill, reject) {
+    self.getCombined(localFile, remoteSearchParams)
+      .then(function(data) {
+        // Write data to the filesystem.
+        fs.writeFile(localFile + 'test.json', JSON.stringify(data.combined, null, 2), {encoding: 'utf8'}, function (err) {
+          if(err === null) {
+            fulfill(data);
+          } else {
+            reject(err);
+          }
+        });
+      },
+
+      // Fail
+      function (error) {
+        reject(error);
+      });
   });
 };
 
