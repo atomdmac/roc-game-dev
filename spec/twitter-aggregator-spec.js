@@ -50,7 +50,7 @@ describe('TwitterAggregator', function () {
 
   it('Should combine local and remote Tweets without duplicates', function () {
     return taInstance
-      .refreshLocal('./twitter-aggregator-spec-data.js', {q:'#rocgamedev'})
+      .getCombined('./twitter-aggregator-spec-data.json', {q:'#rocgamedev'})
       .then(
         // Success
         function (data) {
@@ -61,6 +61,23 @@ describe('TwitterAggregator', function () {
         // Failure
         function (error) {
           expect(false);
+        });
+  });
+
+  it('refreshLocal', function (done) {
+    taInstance
+      .refreshLocal('./twitter-aggregator-spec-data.json', {q:'#rocgamedev'})
+      .then(
+        // Success
+        function (data) {
+          expect(true).to.be.true;
+          done();
+        },
+
+        // Failure
+        function (error) {
+          expect(false).to.be.true;
+          done();
         });
   });
 });
