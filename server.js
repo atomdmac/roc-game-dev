@@ -82,8 +82,8 @@ app.post('/update', function (req, res) {
 
 // Start polling Twitter data source.
 var twitterFeedInstance = new TwitterFeed({
-  inputFile : './data_cache/twitter-input.json',
-  outputFile: './data_cache/twitter-output.json',
+  inputFile : './data_cache/twitter.json',
+  outputFile: './data_cache/twitter.json',
   searchParams: {
     q: '#rocgamedev'
   }
