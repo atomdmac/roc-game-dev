@@ -1,6 +1,7 @@
 var Promize = require('promise');
 var Twitter = require('twitter');
 var fs = require('fs');
+var extend = require('extend');
 
 var TwitterAggregator = function (options) {
   this.client = new Twitter(options);
@@ -65,13 +66,19 @@ TwitterAggregator.prototype.getCombined = function (localFile, remoteSearchParam
 };
 
 TwitterAggregator.prototype.refresh = function (localFile, remoteSearchParams, options) {
-  options = options || {};
-  options.outputFile = options.outputFile || localFile;
+  var defaultOptions = {
+    outputFile: localFile,
+    preSaveCallback: null
+  };
+  options = extend(defaultOptions, options);
 
   var self = this;
   return new Promize(function(fulfill, reject) {
     self.getCombined(localFile, remoteSearchParams)
       .then(function(data) {
+        // Call pre-save hook
+        if(options.preSaveCallback) options.preSaveCallback(data);
+
         // Write data to the filesystem.
         fs.writeFile(options.outputFile,
           JSON.stringify(data.combined, null, 2),
