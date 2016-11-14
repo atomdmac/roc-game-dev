@@ -64,7 +64,7 @@ TwitterAggregator.prototype.getCombined = function (localFile, remoteSearchParam
   });
 };
 
-TwitterAggregator.prototype.refreshLocal = function (localFile, remoteSearchParams, options) {
+TwitterAggregator.prototype.refresh = function (localFile, remoteSearchParams, options) {
   options = options || {};
   options.outputFile = options.outputFile || localFile;
 

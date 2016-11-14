@@ -64,9 +64,9 @@ describe('TwitterAggregator', function () {
         });
   });
 
-  it('refreshLocal', function (done) {
+  it('refresh', function (done) {
     taInstance
-      .refreshLocal(
+      .refresh(
         // Local input file
         './twitter-aggregator-spec-data.json',
 
