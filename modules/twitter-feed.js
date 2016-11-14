@@ -1,47 +1,70 @@
 var TwitterAggregator = require('./twitter-aggregator');
 var Promize = require('promise');
+var extend = require('extend');
 
-var settings = {
-  refreshRate: 12000000,
+var defaultOptions = {
+  inputFile: './twitter-input.json',
+  outputFile: './twitter-output.json',
   searchParams: {
-    q: '#rocgamedev'
-  }
+    q: '#twitter'
+  },
+  refreshRate: 10000
 };
 
-// Store the refresh timeout ID so we can clear it if necessary.
-var refreshInt;
+function TwitterFeed (options) {
+  // Merge the provided options in with the defaults.
+  this.options = extend(true, {}, defaultOptions, options);
 
-// Cache of tweets.
-var tweetCache = [];
+  // An in-memory cache of the Tweets that have been retreived.
+  this.cache = [];
 
-// Create a TwitterAggregator object to interact with the API.
-var clientCredentials = require('../credentials/twitter-feed-credentials.json');
-var client = new TwitterAggregator(clientCredentials);
+  // Store the refresh timeout ID so we can clear it if necessary.
+  this.refreshInt = null;
 
-function refresh () {
-  return client.refresh().then(
+  // Create a TwitterAggregator object to interact with the API.
+  var clientCredentials = require('../credentials/twitter-feed-credentials.json');
+  this.twitterAggregator = new TwitterAggregator(clientCredentials);
+}
+
+
+TwitterFeed.prototype.refresh = function () {
+  var self = this;
+  return this.twitterAggregator.refresh(
+    this.options.inputFile,
+    this.options.searchParams,
+    {
+      outputFile: this.options.outputFile
+    }).then(
+
     // Success
     function (data) {
-      tweetCache = data.combined;
+      // Make a clone of the returned combined data.
+      self.tweetCache = data.combined.slice(0);
+    },
+
+    // Failure
+    function (reason) {
+      console.log('TwitterAggregator failed: ', reason);
     });
-}
-
-function start () {
-  refreshInt = setInterval(refresh, settings.refreshRate);
-  return refresh();
-}
-
-function stop () {
-  clearInterval(refreshInt);
-}
-
-function getTweets () {
-  return tweetCache;
-}
-
-module.exports = {
-  getTweets: getTweets,
-  start: start,
-  stop: stop,
-  refresh: refresh
 };
+
+TwitterFeed.prototype.start = function () {
+  var self = this;
+  this.refreshInt = setInterval(
+    function () {
+      self.refresh();
+    },
+    this.options.refreshRate
+  );
+  return this.refresh();
+};
+
+TwitterFeed.prototype.stop = function () {
+  clearInterval(this.refreshInt);
+};
+
+TwitterFeed.prototype.getTweets = function () {
+  return this.tweetCache;
+};
+
+module.exports = TwitterFeed;

@@ -4,7 +4,7 @@ var app = express();
 var fs = require('fs');
 var path = require('path');
 var handlebars = require('handlebars');
-var twitterFeed = require('./modules/twitter-feed');
+var TwitterFeed = require('./modules/twitter-feed');
 var facebookFeed = require('./modules/facebook-feed');
 var htmlTpl;
 
@@ -80,8 +80,17 @@ app.post('/update', function (req, res) {
     });
 });
 
-// Twitter aggregator
-twitterFeed.start();
+// Start polling Twitter data source.
+var twitterFeedInstance = new TwitterFeed({
+  inputFile : './data_cache/twitter-input.json',
+  outputFile: './data_cache/twitter-output.json',
+  searchParams: {
+    q: '#rocgamedev'
+  }
+});
+
+// Start polling!
+twitterFeedInstance.start();
 
 // HTTP server
 app.listen(PORT, function () {
@@ -91,7 +100,7 @@ app.listen(PORT, function () {
 // Return all aggregated page data.
 function getPageData () {
   return {
-    tweets: twitterFeed.getTweets(),
+    tweets: twitterFeedInstance.getTweets(),
     events: facebookFeed.getEvents()
   };
 }
