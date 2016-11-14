@@ -23,6 +23,7 @@
   "devDependencies": {
     "browserify": "^13.1.1",
     "chai": "^3.5.0",
+    "extend": "^3.0.0",
     "eyeglass": "^1.1.2",
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
