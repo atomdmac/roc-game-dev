@@ -44,7 +44,7 @@
     <h1>Upcoming Events</h1>
     <ul class="facebook-events {{#is_larger_than events.length 1}}double-column{{/is_larger_than}}">
       {{#each events}}
-      <li class="{{#is_past start_time}}event-passed{{/is_past}}">
+      <li>
         <h2 class="event-name"><a href="https://www.facebook.com/events/{{id}}" target="_blank">{{name}}</a></h2>
         <p><span class="event-location">{{place.name}}</span><span class="event-time"> - {{start_time}}</span></p>
         <p class="event-description">{{{description}}}</p>

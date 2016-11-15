@@ -129,30 +129,11 @@ function getEvents () {
   ];
 }
 
-// Inserts content if the given date is in the past.
-handlebars.registerHelper('is_past', function(dateTimeStr, options) {
-
-    var currentDate = new Date();
-    var inputDate = new Date(dateTimeStr);
-
-    var result = false;
-    if(inputDate < currentDate) result = true;
-
-    if( result ) {
-        return options.fn(this);
-    } else {
-        return options.inverse(this);
-    }
-
-});
-
-// Inserts content if the given date is in the past.
+// Inserts content if the first number is larger than the second.
 handlebars.registerHelper('is_larger_than', function(number1, number2, options) {
-  console.log(arguments);
-    if( number1 > number2 ) {
-        return options.fn(this);
-    } else {
-        return options.inverse(this);
-    }
-
+  if( number1 > number2 ) {
+      return options.fn(this);
+  } else {
+      return options.inverse(this);
+  }
 });
