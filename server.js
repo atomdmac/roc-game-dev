@@ -1,3 +1,4 @@
+var logger = require('winston');
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
@@ -12,6 +13,9 @@ var htmlTpl;
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
+// Configure logger.
+logger.add(logger.transports.File, { filename: 'server.log' });
 
 // Which port should the server offer connections on?
 var PORT = 8080;
@@ -72,11 +76,13 @@ app.post('/update', function (req, res) {
     // Success
     .then(function (fbResponse) {
       res.send(fbResponse);
+      logger.info('Facebook event data updated successfully.');
     },
 
     // Failure
     function (reason) {
-     res.send(reason);
+      logger.error('Facebook event data upate failure!.');
+      res.send(reason);
     });
 });
 
@@ -94,7 +100,7 @@ twitterFeedInstance.start();
 
 // HTTP server
 app.listen(PORT, function () {
-  console.log('ROC Game Dev server listening on port', PORT);
+  logger.info('ROC Game Dev server listening on port', PORT);
 });
 
 // Return all aggregated page data.
