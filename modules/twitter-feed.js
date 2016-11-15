@@ -8,7 +8,7 @@ var defaultOptions = {
   searchParams: {
     q: '#twitter'
   },
-  refreshRate: 10000
+  refreshRate: 60000
 };
 
 function TwitterFeed (options) {
