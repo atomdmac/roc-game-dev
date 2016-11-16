@@ -19,8 +19,8 @@ var filePath = {
     src: [
       'package.json',
       'server.js',
-      'server-start.sh',
-      'server-stop.sh',
+      'start-server',
+      'stop-server',
       'modules/**',
       'data_cache/**/*',
       'credentials/**/*'
