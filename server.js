@@ -18,12 +18,12 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 logger.add(logger.transports.File, { filename: 'server.log' });
 
 // Which port should the server offer connections on?
-var PORT = 8080;
+var PORT = 80;
 
 // DEBUG MODE
 // If set to TRUE, HTML templates will be re-compiled on an interval to make
 // debugging not so terrible.
-var DEBUG_MODE = true;
+var DEBUG_MODE = false;
 
 // Short-cut variables.
 var cwd = path.resolve();
@@ -35,10 +35,17 @@ function compileHTMLTemplates () {
   });
 }
 
-// DEBUG: If in debug mode, recompile templates on an interval.
+// DEBUG: If in debug mode...
 if(DEBUG_MODE) {
+  // Run on port 8080 instead of 80
+  PORT = 8080;
+
+  // recompile templates on an interval.
   setInterval(compileHTMLTemplates, 1000);
-} else {
+}
+
+// If NOT in debug mode...
+else {
   compileHTMLTemplates();
 }
 
