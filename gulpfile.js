@@ -7,7 +7,7 @@ var sftpOptions = {
   host: 'rocgamedev.org',
   auth: 'keyMain',
   authFile: '.ftppass',
-  remotePath: '/var/www/html/new-site'
+  remotePath: 'www'
 };
 
 var sass = require('gulp-sass');
