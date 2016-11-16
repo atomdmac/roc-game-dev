@@ -29,7 +29,9 @@ var filePath = {
       'package.json',
       'server.js',
       'start-server',
+      'start-server-dev',
       'stop-server',
+      'stop-server-dev',
       'modules/**',
       'data_cache/**/*',
       'credentials/**/*'
