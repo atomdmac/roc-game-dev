@@ -58,8 +58,8 @@ TwitterAggregator.prototype.getCombined = function (localFile, remoteSearchParam
 
           // Sort combined results by ID
           results.combined.sort(function (a, b) {
-            if(a.id > b.id) return  1;
-            if(a.id < b.id) return -1;
+            if(a.id > b.id) return -1;
+            if(a.id < b.id) return  1;
             return 0;
           });
 

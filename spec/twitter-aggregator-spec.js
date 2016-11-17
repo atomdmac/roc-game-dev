@@ -55,7 +55,9 @@ describe('TwitterAggregator', function () {
         // Success
         function (data) {
           // Are combined appropriately.
-          expect(data.combined.length).to.equal(data.remote.length + 1);
+          expect(data).to.have.property('local');
+          expect(data).to.have.property('remote');
+          expect(data).to.have.property('combined');
         },
 
         // Failure
@@ -104,16 +106,16 @@ describe('TwitterAggregator', function () {
       // Should have more than 1 tweet.
       expect(tweets).to.have.length.above(0);
 
-      var largestId = null;
+      var smallestId = null;
       tweets.forEach(function (item, index) {
-        if(largestId === null) {
-          largestId = item.id;
+        if(smallestId === null) {
+          smallestId = item.id;
           return;
         }
-        if(largestId < item.id) {
-          largestId = item.id;
+        if(smallestId > item.id) {
+          smallestId = item.id;
         } else {
-          throw new Error('Tweets are not sorted by ID (descending)');
+          throw new Error('Tweets are not sorted by ID (descending) ' + item.id + ' is larger than ' + smallestId);
         }
       });
     });
