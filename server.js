@@ -9,6 +9,9 @@ var TwitterFeed = require('./modules/twitter-feed');
 var facebookFeed = require('./modules/facebook-feed');
 var htmlTpl;
 
+// Parse command-line arguments.
+var cmdLineArgs = require('minimist')(process.argv);
+
 // Configure body-parser Express plug-in for using variables from POST requests.
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
@@ -18,11 +21,11 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 logger.add(logger.transports.File, { filename: 'server.log' });
 
 // Which port should the server offer connections on?
-var PORT = 80;
+var PORT = cmdLineArgs.port || 80;
 
 // DEBUG MODE
 // Set to FALSE before moving to production.
-var DEBUG_MODE = false;
+var DEBUG_MODE = cmdLineArgs.debug !== undefined ? true : false;
 
 // Short-cut variables.
 var cwd = path.resolve();
@@ -36,9 +39,6 @@ function compileHTMLTemplates () {
 
 // DEBUG: If in debug mode...
 if(DEBUG_MODE) {
-  // Run on port 8080 instead of 80
-  PORT = 8080;
-
   // recompile templates on an interval.
   setInterval(compileHTMLTemplates, 1000);
 }
