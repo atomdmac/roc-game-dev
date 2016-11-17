@@ -52,8 +52,8 @@ $color3: #107593;
 $color4: #d29034;
 
 $black100: #000000;
-$black200: lighten($black100, 10%);
-$black300: lighten($black100, 20%);
+$black200: lighten($black100, 20%);
+$black300: lighten($black100, 30%);
 
 $white100: #ffffff;
 $white200: darken($white100, 10%);
