@@ -50,13 +50,21 @@ TwitterAggregator.prototype.getCombined = function (localFile, remoteSearchParam
           var localData = data[0];
           var remoteData = data[1];
           var combinedData = self.combine(localData, remoteData);
-
-          // Success!
-          fulfill({
+          var results = {
             combined: combinedData,
             local: localData,
             remote: remoteData
+          };
+
+          // Sort combined results by ID
+          results.combined.sort(function (a, b) {
+            if(a.id > b.id) return  1;
+            if(a.id < b.id) return -1;
+            return 0;
           });
+
+          // Success!
+          fulfill(results);
         },
         function (error) {
           reject(error);
@@ -67,8 +75,7 @@ TwitterAggregator.prototype.getCombined = function (localFile, remoteSearchParam
 
 TwitterAggregator.prototype.refresh = function (localFile, remoteSearchParams, options) {
   var defaultOptions = {
-    outputFile: localFile,
-    preSaveCallback: null
+    outputFile: localFile
   };
   options = extend(defaultOptions, options);
 
@@ -76,8 +83,6 @@ TwitterAggregator.prototype.refresh = function (localFile, remoteSearchParams, o
   return new Promize(function(fulfill, reject) {
     self.getCombined(localFile, remoteSearchParams)
       .then(function(data) {
-        // Call pre-save hook
-        if(options.preSaveCallback) options.preSaveCallback(data);
 
         // Write data to the filesystem.
         fs.writeFile(options.outputFile,

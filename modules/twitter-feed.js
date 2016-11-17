@@ -26,22 +26,13 @@ function TwitterFeed (options) {
   this.twitterAggregator = new TwitterAggregator(clientCredentials);
 }
 
-// Helper function that sorts Tweets based on ID/date before they're saved to
-// disk by TwitterAggregator
-function sortTweets (data) {
-  data.combined.sort(function (a, b) {
-    return a.id < b.id;
-  });
-}
-
 TwitterFeed.prototype.refresh = function () {
   var self = this;
   return this.twitterAggregator.refresh(
     this.options.inputFile,
     this.options.searchParams,
     {
-      outputFile: this.options.outputFile,
-      preSaveCallback: sortTweets
+      outputFile: this.options.outputFile
     }).then(
 
     // Success

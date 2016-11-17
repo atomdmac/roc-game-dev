@@ -28,7 +28,7 @@ describe('TwitterAggregator', function () {
 
         // Fail
         function(error) {
-          expect(false, 'Failed to load local Twitter data.');
+          throw new Error(error.message);
         }
       );
   });
@@ -44,7 +44,7 @@ describe('TwitterAggregator', function () {
 
         // Fail
         function(error) {
-          expect(false).to.equal(true, 'Failed to load remote Twitter data.');
+          throw new Error(error.message);
         });
   });
 
@@ -60,37 +60,63 @@ describe('TwitterAggregator', function () {
 
         // Failure
         function (error) {
-          expect(false);
+          throw new Error(error.message);
         });
   });
 
-  it('refresh', function (done) {
-    taInstance
-      .refresh(
-        // Local input file
-        './twitter-aggregator-spec-data.json',
+  describe('refresh', function () {
 
-        // Remote search parameters
-        {
-          q:'#rocgamedev'
-        },
+    var pathToTweetCache = './twitter-aggregator-spec-data.json';
+    var pathToModifiedTweetCache = './twitter-aggregator-data.output.json';
 
-        // Other options
-        {
-          outputFile: './twitter-aggregator-data.output.json'
+    it('Should save data to specified output file', function () {
+      return taInstance
+        .refresh(
+          // Local input file
+          pathToTweetCache,
+
+          // Remote search parameters
+          {
+            q:'#rocgamedev'
+          },
+
+          // Other options
+          {
+            outputFile: pathToModifiedTweetCache
+          }
+        )
+        .then(
+          // Success
+          function (data) {
+            expect(true).to.equal(true);
+          },
+
+          // Failure
+          function (error) {
+            throw new Error(error.message);
+          });
+    });
+
+    it('Should sort tweets by date (descending) before being saved to disk', function () {
+      // NOTE: We assume that the preveious test (savomg data tp disk) succeeded.
+      var tweets = require(pathToModifiedTweetCache);
+
+      // Should have more than 1 tweet.
+      expect(tweets).to.have.length.above(0);
+
+      var largestId = null;
+      tweets.forEach(function (item, index) {
+        if(largestId === null) {
+          largestId = item.id;
+          return;
         }
-      )
-      .then(
-        // Success
-        function (data) {
-          expect(true).to.be.true;
-          done();
-        },
+        if(largestId < item.id) {
+          largestId = item.id;
+        } else {
+          throw new Error('Tweets are not sorted by ID (descending)');
+        }
+      });
+    });
 
-        // Failure
-        function (error) {
-          expect(false).to.be.true;
-          done();
-        });
   });
 });
