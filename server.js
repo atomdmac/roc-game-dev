@@ -21,8 +21,7 @@ logger.add(logger.transports.File, { filename: 'server.log' });
 var PORT = 80;
 
 // DEBUG MODE
-// If set to TRUE, HTML templates will be re-compiled on an interval to make
-// debugging not so terrible.
+// Set to FALSE before moving to production.
 var DEBUG_MODE = false;
 
 // Short-cut variables.

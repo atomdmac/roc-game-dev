@@ -1,1 +1,1 @@
-forever -a -e server-err.log start server.js
+forever -a -e server-err.log --uid "production" start server.js
