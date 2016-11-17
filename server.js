@@ -43,10 +43,8 @@ if(DEBUG_MODE) {
   setInterval(compileHTMLTemplates, 1000);
 }
 
-// If NOT in debug mode...
-else {
-  compileHTMLTemplates();
-}
+// Compile HTML templates immediately.
+compileHTMLTemplates();
 
 // Start web services.
 
