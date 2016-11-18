@@ -38,7 +38,7 @@ TwitterFeed.prototype.refresh = function () {
     // Success
     function (data) {
       // Make a clone of the returned combined data.
-      self.tweetCache = data.combined.slice(0);
+      self.cache = data.combined.slice(0);
     },
 
     // Failure
@@ -62,8 +62,14 @@ TwitterFeed.prototype.stop = function () {
   clearInterval(this.refreshInt);
 };
 
-TwitterFeed.prototype.getTweets = function () {
-  return this.tweetCache;
+TwitterFeed.prototype.getTweets = function (maxTweets) {
+  if(typeof maxTweets === 'number' && maxTweets > 0) {
+    return this.cache.slice(0, maxTweets);
+  }
+
+  else {
+    return this.cache.slice();
+  }
 };
 
 module.exports = TwitterFeed;
