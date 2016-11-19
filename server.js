@@ -6,7 +6,7 @@ var fs = require('fs');
 var path = require('path');
 var handlebars = require('handlebars');
 var TwitterFeed = require('./modules/twitter-feed');
-var facebookFeed = require('./modules/facebook-feed');
+var FacebookFeed = require('./modules/facebook-feed');
 var htmlTpl;
 
 // Parse command-line arguments.
@@ -75,7 +75,7 @@ app.get('/update', function (req, res) {
 
 // Accept event update requests.
 app.post('/update', function (req, res) {
-  facebookFeed.refresh(req.body.token)
+  facebookFeedInstance.refresh(req.body.token)
 
     // Success
     .then(function (fbResponse) {
@@ -99,6 +99,11 @@ var twitterFeedInstance = new TwitterFeed({
   }
 });
 
+var facebookFeedInstance = new FacebookFeed({
+  cacheLocation: './data_cache/events.json',
+  groupId: '1453415071632653'
+});
+
 // Start polling!
 twitterFeedInstance.start();
 
@@ -110,8 +115,8 @@ app.listen(PORT, function () {
 // Return all aggregated page data.
 function getPageData () {
   return {
-    tweets: twitterFeedInstance.getTweets(),
-    events: facebookFeed.getEvents()
+    tweets: twitterFeedInstance.getTweets(12),
+    events: facebookFeedInstance.getEvents()
   };
 }
 
