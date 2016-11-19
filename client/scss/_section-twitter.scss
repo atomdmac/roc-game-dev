@@ -13,6 +13,12 @@
     }
   }
 
+  img {
+    vertical-align: middle;
+    margin-right: $gutter / 2;
+    border-radius: $border-radius;
+  }
+
   a {
     border: 0;
     color: $white100;
@@ -36,7 +42,8 @@
       border-right: 15px solid transparent;
       border-bottom: 15px solid $black300;
       position: absolute;
-      top: -15px
+      top: -15px;
+      left: 50px;
     }
   }
 }

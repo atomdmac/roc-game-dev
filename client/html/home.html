@@ -60,7 +60,7 @@
     <ul class="{{#is_larger_than tweets.length 1}}double-column{{/is_larger_than}}">
       {{#each tweets}}
       <li class="tweet">
-        <h2 class="label-user"><a href="https://twitter.com/{{user.screen_name}}" target="_blank">{{user.name}}</a></h2>
+        <h2 class="label-user"><a href="https://twitter.com/{{user.screen_name}}" target="_blank"><img src="{{user.profile_image_url}}" />{{user.name}}</a></h2>
         <a href="https://twitter.com/{{user.screen_name}}/status/{{id_str}}" target="_blank"><p>{{{text}}}</p></a>
       </li>
       {{/each}}
