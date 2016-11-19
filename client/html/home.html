@@ -42,6 +42,7 @@
   <!-- Facebook -->
   <section class="section-card section-facebook section-grid" id="section-facebook">
     <h1>Upcoming Events</h1>
+    {{#if events.length}}
     <ul class="facebook-events {{#is_larger_than events.length 1}}double-column{{/is_larger_than}}">
       {{#each events}}
       <li>
@@ -51,6 +52,10 @@
       </li>
       {{/each}}
     </ul>
+    {{else}}
+    <h2>Aw, Jeez!</h2>
+    <p>It looks like we don't have any events currently on the books. In the meantime, you can join our <a href="https://www.facebook.com/groups/rocgamedev/" target="_blank">Facebook group</a> to receive alerts when new events are scheduled.</p>
+    {{/if}}
   </section>
 
   <!-- Twitter -->
