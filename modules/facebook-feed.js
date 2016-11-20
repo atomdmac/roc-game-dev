@@ -95,7 +95,7 @@ function refresh (token) {
 
           // Update our in-memory copy of the data.
           eventData = transformEventData(response.data);
-          eventDate = removePastEvents(eventData);
+          eventData = removePastEvents(eventData);
 
           // Attempt to write data to disk for later.
           // NOTE: We're saving the *ORIGINAL* data that we got from Facebook.
