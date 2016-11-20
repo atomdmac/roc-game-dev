@@ -6,8 +6,8 @@ var twitterFeedInstance;
 before(function () {
   // Start polling Twitter data source.
   twitterFeedInstance = new TwitterFeed({
-    inputFile : '../data_cache/twitter.json',
-    outputFile: '../data_cache/twitter.json',
+    inputFile : './data_cache/twitter.json',
+    outputFile: './data_cache/twitter.json',
     searchParams: {
       q: '#rocgamedev'
     }

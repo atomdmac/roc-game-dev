@@ -15,18 +15,18 @@ describe('FacebookFeed', function () {
       var cachedEvents;
 
       it('Should return an empty array if no event data found on disk', function () {
-        cachedEvents = FacebookFeed.loadEventsFromDisk('../data_doesnt_exist.json');
+        cachedEvents = FacebookFeed.loadEventsFromDisk('./data_doesnt_exist.json');
         expect(cachedEvents).to.have.length(0);
       });
 
       it('Should return previously saved event data', function () {
-        cachedEvents = FacebookFeed.loadEventsFromDisk('../data_cache/events.json');
+        cachedEvents = FacebookFeed.loadEventsFromDisk('./data_cache/events.json');
         expect(cachedEvents.length).to.be.above(0);
       });
     });
 
     describe('#transformEventData', function () {
-      var cachedEvents = FacebookFeed.loadEventsFromDisk('../data_cache/events.json');
+      var cachedEvents = FacebookFeed.loadEventsFromDisk('./data_cache/events.json');
 
       it('Should NOT throw an error if \'options\' argument is not given', function () {
         FacebookFeed.transformEventData(cachedEvents);
@@ -49,7 +49,7 @@ describe('FacebookFeed', function () {
     });
 
     describe('#removePastEvents', function () {
-      var cachedEvents = FacebookFeed.loadEventsFromDisk('../data_cache/events.json');
+      var cachedEvents = FacebookFeed.loadEventsFromDisk('./data_cache/events.json');
       var transformedEvents = FacebookFeed.transformEventData(cachedEvents);
 
       it('Should throw an error if passed malformed event data', function () {
@@ -85,7 +85,7 @@ describe('FacebookFeed', function () {
 
     describe('#refresh', function () {
       var fbfInstance = new FacebookFeed({
-        cacheLocation: '../data_cache/events.json',
+        cacheLocation: './data_cache/events.json',
         groupId: '1453415071632653'
       });
 
@@ -122,7 +122,7 @@ describe('FacebookFeed', function () {
 
     describe('#getEvents', function () {
       var fbfInstance = new FacebookFeed({
-        cacheLocation: '../data_cache/events.json',
+        cacheLocation: './data_cache/events.json',
         groupId: '1453415071632653'
       });
 

@@ -1,5 +1,6 @@
 var expect = require('chai').expect;
 var TwitterAggregator = require('../modules/twitter-aggregator');
+var helpers = require('./helpers');
 
 // We're using an external version of the Promise object since the version of
 // node currently running on our server doesn't have a native version yet.
@@ -19,7 +20,7 @@ describe('TwitterAggregator', function () {
 
   it('getLocal', function () {
     return taInstance
-      .getLocal('../data_cache/twitter.json')
+      .getLocal('./data_cache/twitter.json')
       .then(
         // Success
         function(localData) {
@@ -50,7 +51,7 @@ describe('TwitterAggregator', function () {
 
   it('getCombined', function () {
     return taInstance
-      .getCombined('./twitter-aggregator-spec-data.json', {q:'#rocgamedev'})
+      .getCombined('./spec/twitter-aggregator-spec-data.json', {q:'#rocgamedev'})
       .then(
         // Success
         function (data) {
@@ -68,8 +69,8 @@ describe('TwitterAggregator', function () {
 
   describe('refresh', function () {
 
-    var pathToTweetCache = './twitter-aggregator-spec-data.json';
-    var pathToModifiedTweetCache = './twitter-aggregator-data.output.json';
+    var pathToTweetCache = './spec/twitter-aggregator-spec-data.json';
+    var pathToModifiedTweetCache = './spec/twitter-aggregator-data.output.json';
 
     it('Should save data to specified output file', function () {
       return taInstance
@@ -101,7 +102,7 @@ describe('TwitterAggregator', function () {
 
     it('Should sort tweets by date (descending) before being saved to disk', function () {
       // NOTE: We assume that the preveious test (savomg data tp disk) succeeded.
-      var tweets = require(pathToModifiedTweetCache);
+      var tweets = helpers.getJSON(pathToModifiedTweetCache);
 
       // Should have more than 1 tweet.
       expect(tweets).to.have.length.above(0);

@@ -35,4 +35,11 @@ describe('StringUtil.wrapUrl', function () {
     expect(actualString).to.equal(expectedString);
   });
 
+  it('Should insert \'target\' attribute if given', function () {
+    originalString = 'This is a URL and it looks like this:\n https://www.facebook.com/ritmagic/\n\n Isn\'t that neat?\n  \nAnd as an added bonus, here\'s another URL that looks like this: http://www.google.com';
+    expectedString = 'This is a URL and it looks like this:\n <a target="_blank" href="https://www.facebook.com/ritmagic/">https://www.facebook.com/ritmagic/</a>\n\n Isn\'t that neat?\n  \nAnd as an added bonus, here\'s another URL that looks like this: <a target="_blank" href="http://www.google.com">http://www.google.com</a>';
+    actualString   = stringUtil.wrapUrls(originalString, {target: '_blank'});
+    expect(actualString).to.equal(expectedString);
+  });
+
 });

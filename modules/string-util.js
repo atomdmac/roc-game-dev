@@ -6,14 +6,14 @@ function shorten(originalString, maxLength) {
 
 function wrapUrls(originalString, options) {
   options = options || {};
-  options.target = options.target || '_blank';
 
   var urlRegEx = /http[s]?:\/\/[^\n\s]*/g;
   var splitString = originalString.split(urlRegEx);
   var urls = originalString.match(urlRegEx);
 
   var tokens = splitString.map(function (item, index) {
-    return item + (urls[index] !== undefined ? ('<a target="' + options.target + '" href="' + urls[index] + '">' + urls[index] + '</a>') : '');
+    var target = options.target ? ' target="' + options.target + '"' : '';
+    return item + (urls[index] !== undefined ? ('<a' + target + ' href="' + urls[index] + '">' + urls[index] + '</a>') : '');
   });
 
   return tokens.join('');
