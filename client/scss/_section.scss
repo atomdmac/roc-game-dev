@@ -30,7 +30,7 @@
     }
   }
 
-  &>p:first-of-type {
+  &>p:nth-child(2) {
     @include margin-top(1.5);
     @include margin-bottom(0);
   }
