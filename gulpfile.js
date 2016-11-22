@@ -138,7 +138,20 @@ gulp.task('deploy-dev', function() {
     .pipe(sftp(sftpDevelopmentOptions));
 });
 
+gulp.task('test', function () {
+  var mocha = require('gulp-mocha');
+  gulp
+    .src('./spec/*-spec.js')
+    .pipe(mocha({bail: true}))
+    .once('error', function () {
+      process.exit();
+    })
+    .once('end', function () {
+      process.exit();
+    });
+});
+
 
 gulp.task('build', ['script', 'sass', 'html', 'images']);
 gulp.task('watch', ['build', 'watch-script', 'watch-sass', 'watch-html', 'watch-images']);
-gulp.task('default', ['build']);
+gulp.task('default', ['test', 'script']);
