@@ -34,7 +34,11 @@ FacebookFeed.transformEventData = function (eventData, options) {
 
   eventData.forEach(function (event, index) {
     newEventData.push({
-      description: stringUtil.wrapUrls(event.description),
+      description: stringUtil.wrapUrls(
+        stringUtil.linebreaksToMarkup(
+          event.description
+          )
+        ),
       start_time     : moment(event.start_time).format(options.dateFormat),
       end_time       : moment(event.end_time).format(options.dateFormat),
       start_time_raw : event.start_time,

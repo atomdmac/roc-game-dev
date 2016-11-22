@@ -7,7 +7,7 @@ function shorten(originalString, maxLength) {
 function wrapUrls(originalString, options) {
   options = options || {};
 
-  var urlRegEx = /http[s]?:\/\/[^\n\s]*/g;
+  var urlRegEx = /http[s]?:\/\/[^\n\s"<>#%\{\}\|\\\^~\[\]\`]*/g;
   var splitString = originalString.split(urlRegEx);
   var urls = originalString.match(urlRegEx);
 
@@ -19,7 +19,13 @@ function wrapUrls(originalString, options) {
   return tokens.join('');
 }
 
+function linebreaksToMarkup(inputStr) {
+  var lineBreakRegEx = /[\n]/;
+  return inputStr.split(lineBreakRegEx).join('<br>');
+}
+
 module.exports = {
   shorten: shorten,
-  wrapUrls: wrapUrls
+  wrapUrls: wrapUrls,
+  linebreaksToMarkup: linebreaksToMarkup
 };
