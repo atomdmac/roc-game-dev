@@ -112,7 +112,7 @@ FacebookFeed.prototype.refresh = function (token) {
 
         // Facebook returned an error :(
         if(response.error) {
-          reject(response);
+          reject(response.error);
         }
 
         // Facebook response is successful.  Now let's try to save that data to
