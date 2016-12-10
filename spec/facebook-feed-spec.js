@@ -2,6 +2,7 @@ var expect = require('chai').expect;
 var assert = require('chai').assert;
 var FacebookFeed = require('../modules/facebook-feed');
 var fbCredentials = require('../credentials/facebook-feed-credentials.json');
+var testDataPath = './spec/data_cache/events.json';
 
 describe('FacebookFeed', function () {
 
@@ -20,13 +21,13 @@ describe('FacebookFeed', function () {
       });
 
       it('Should return previously saved event data', function () {
-        cachedEvents = FacebookFeed.loadEventsFromDisk('./data_cache/events.json');
+        cachedEvents = FacebookFeed.loadEventsFromDisk(testDataPath);
         expect(cachedEvents.length).to.be.above(0);
       });
     });
 
     describe('#transformEventData', function () {
-      var cachedEvents = FacebookFeed.loadEventsFromDisk('./data_cache/events.json');
+      var cachedEvents = FacebookFeed.loadEventsFromDisk(testDataPath);
 
       it('Should NOT throw an error if \'options\' argument is not given', function () {
         FacebookFeed.transformEventData(cachedEvents);
@@ -49,22 +50,15 @@ describe('FacebookFeed', function () {
     });
 
     describe('#removePastEvents', function () {
-      var cachedEvents = FacebookFeed.loadEventsFromDisk('./data_cache/events.json');
+      var cachedEvents = FacebookFeed.loadEventsFromDisk(testDataPath);
       var transformedEvents = FacebookFeed.transformEventData(cachedEvents);
-
-      it('Should throw an error if passed malformed event data', function () {
-        var failFunction = function () {
-          FacebookFeed.removePastEvents(cachedEvents);
-        };
-        expect(failFunction).to.throw(/end_time_raw/);
-      });
 
       it('Should not return events who\'s end_time occurs after the given date', function () {
         var cutOffDate = new Date('11/19/2016 16:00:00');
         var filteredEvents = FacebookFeed.removePastEvents(transformedEvents, cutOffDate);
 
         // Should have filtered out all but one event from the sample data.
-        expect(filteredEvents).to.have.length(1);
+        expect(filteredEvents).to.have.length(3);
 
         // Ensure that ALL returned dates occur after the given cut-off date.
         filteredEvents.forEach(function (item) {
@@ -85,7 +79,7 @@ describe('FacebookFeed', function () {
 
     describe('#refresh', function () {
       var fbfInstance = new FacebookFeed({
-        cacheLocation: './data_cache/events.json',
+        cacheLocation: testDataPath,
         groupId: '1453415071632653'
       });
 
@@ -122,7 +116,7 @@ describe('FacebookFeed', function () {
 
     describe('#getEvents', function () {
       var fbfInstance = new FacebookFeed({
-        cacheLocation: './data_cache/events.json',
+        cacheLocation: testDataPath,
         groupId: '1453415071632653'
       });
 
