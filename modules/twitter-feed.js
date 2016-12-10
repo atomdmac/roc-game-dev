@@ -33,17 +33,19 @@ TwitterFeed.prototype.refresh = function () {
 		this.options.searchParams,
 		{
 			outputFile: this.options.outputFile
-		}).then(
-
+		})
+	.then(
 		// Success
 		function (data) {
 			// Make a clone of the returned combined data.
 			self.cache = data.combined.slice(0);
+			return data;
 		},
 
 		// Failure
 		function (reason) {
 			logger.error('TwitterAggregator failed: ', reason);
+			return reason;
 		});
 };
 

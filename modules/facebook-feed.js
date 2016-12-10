@@ -1,6 +1,6 @@
 var FB = require('fb');
 var Promize = require('promise');
-var fs = require('fs');
+var fs = require('mz/fs');
 var moment = require('moment');
 var stringUtil = require('./string-util');
 var extend = require('extend');
@@ -124,22 +124,20 @@ FacebookFeed.prototype.refresh = function (token) {
 					// NOTE: We're saving the *ORIGINAL* data that we got from Facebook.
 					// This allows us to update the way date is transformed later without
 					// needing to fetch it again from Facebook.
-					fs.writeFile(self.options.cacheLocation, JSON.stringify(response.data), function (writeErr) {
-
-						// Data write was successful.
-						if(!writeErr) {
+					fs.writeFile(
+						self.options.cacheLocation,
+						JSON.stringify(response.data)
+					).then(
+						// Success
+						function () {
 							fulfill(JSON.stringify(response));
-						}
+						},
 
 						// Data write has failed.  Let the user know.
-						else {
-							reject({
-								error: {
-									message: writeErr
-								}
-							});
+						function (reason) {
+							reject(reason);
 						}
-					});
+					);
 				}
 			}
 		);

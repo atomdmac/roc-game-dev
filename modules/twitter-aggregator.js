@@ -1,6 +1,6 @@
 var Promize = require('promise');
 var Twitter = require('twitter');
-var fs = require('fs');
+var fs = require('mz/fs');
 var extend = require('extend');
 
 var TwitterAggregator = function (options) {
@@ -43,35 +43,38 @@ TwitterAggregator.prototype.getRemote = function (searchParams) {
 
 TwitterAggregator.prototype.getCombined = function (localFile, remoteSearchParams) {
 	var self = this;
-	return new Promize(function(fulfill, reject) {
-		Promize
-			.all([self.getLocal(localFile), self.getRemote(remoteSearchParams)])
-			.then(
-				function (data) {
-					var localData = data[0];
-					var remoteData = data[1];
-					var combinedData = self.combine(localData, remoteData);
-					var results = {
-						combined: combinedData,
-						local: localData,
-						remote: remoteData
-					};
 
-					// Sort combined results by ID
-					results.combined.sort(function (a, b) {
-						if(a.id > b.id) return -1;
-						if(a.id < b.id) return  1;
-						return 0;
-					});
+	return Promize.all([
+		self.getLocal(localFile),
+		self.getRemote(remoteSearchParams)])
+	.then(
+		// Success
+		function (data) {
+			var localData = data[0];
+			var remoteData = data[1];
+			var combinedData = self.combine(localData, remoteData);
+			var results = {
+				combined: combinedData,
+				local: localData,
+				remote: remoteData
+			};
 
-					// Success!
-					fulfill(results);
-				},
-				function (error) {
-					reject(error);
-				}
-			);
-	});
+			// Sort combined results by ID
+			results.combined.sort(function (a, b) {
+				if(a.id > b.id) return -1;
+				if(a.id < b.id) return  1;
+				return 0;
+			});
+
+			// Success!
+			return Promize.resolve(results);
+		},
+
+		// Failure
+		function (error) {
+			return Promize.reject(error);
+		}
+	);
 };
 
 TwitterAggregator.prototype.refresh = function (localFile, remoteSearchParams, options) {
@@ -80,29 +83,27 @@ TwitterAggregator.prototype.refresh = function (localFile, remoteSearchParams, o
 	};
 	options = extend(defaultOptions, options);
 
-	var self = this;
-	return new Promize(function(fulfill, reject) {
-		self.getCombined(localFile, remoteSearchParams)
-			.then(function(data) {
+	return this.getCombined(localFile, remoteSearchParams)
+		.then(function(data) {
 
-				// Write data to the filesystem.
-				fs.writeFile(options.outputFile,
-					JSON.stringify(data.combined, null, 2),
-					{encoding: 'utf8'},
-					function (err) {
-						if(err === null) {
-							fulfill(data);
-						} else {
-							reject(err);
-						}
-					});
-			},
+			// Write data to the filesystem.
+			return fs.writeFile(
+				options.outputFile,
+				JSON.stringify(data.combined, null, 2),
+				{encoding: 'utf8'}
+			).then(
+				// Success
+				function () {
+					return data;
+				}
+			);
+		},
 
-			// Fail
-			function (error) {
-				reject(error);
-			});
-	});
+		// Fail
+		function (error) {
+			return Promize.reject(error);
+		}
+	);
 };
 
 TwitterAggregator.prototype.combine = function (local, remote) {
