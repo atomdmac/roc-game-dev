@@ -64,8 +64,15 @@ FacebookFeed.transformEventData = function (eventData, options) {
 FacebookFeed.removePastEvents = function (eventList, cutOffDate) {
   cutOffDate = cutOffDate || new Date();
   return eventList.filter(function (event, index) {
-    if(event.end_time_raw === undefined) throw Error('Event objects are missing property \'end_time_raw\'.  Make sure you pass data that was created from FacebookFeed.transformEventData');
-    return new Date(event.end_time_raw) > cutOffDate;
+    // Prefer event end time when determining if event is in the past or not.
+    if(event.end_time_raw !== undefined) {
+      return new Date(event.end_time_raw) > cutOffDate;
+    }
+
+    // Fall-back to start time if end time unavailable.
+    else if (event.start_time_raw !== undefined) {
+      return new Date(event.start_time_raw) > cutOffDate;
+    }
   });
 };
 
