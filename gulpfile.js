@@ -1,157 +1,161 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var browserify = require('gulp-browserify');
+var eslint = require('gulp-eslint');
 var extend = require('extend');
 
 var sftp = require('gulp-sftp');
 
 // Options for deploying to development
 var sftpDevelopmentOptions = {
-  host: 'rocgamedev.org',
-  auth: 'keyMain',
-  authFile: '.ftppass',
-  remotePath: 'www/dev'
+	host: 'rocgamedev.org',
+	auth: 'keyMain',
+	authFile: '.ftppass',
+	remotePath: 'www/dev'
 };
 
 // Options for deploying to production
 var sftpProductionOptions = extend(true, {}, sftpDevelopmentOptions, {
-  remotePath: 'www'
+	remotePath: 'www'
 });
-
 
 var sass = require('gulp-sass');
 var eyeglass = require('eyeglass');
 var sassOptions = {};
 
 var filePath = {
-  server: {
-    src: [
-      'package.json',
-      'server.js',
-      'start-server',
-      'start-server-dev',
-      'stop-server',
-      'stop-server-dev',
-      'modules/**',
-      'data_cache/**/*',
-      'credentials/**/*'
-    ]
-  },
-  sass: {
-    src: ['client/scss/**/*.scss'],
-    dest: 'client/build/css'
-  },
-  script: {
-    src: ['client/js/app.js'],
-    dest: 'client/build/js'
-  },
-  html: {
-    src: ['client/html/*.html'],
-    dest: 'client/build/html'
-  },
-  images: {
-    src: ['client/images/*.png'],
-    dest: 'client/build/images'
-  }
+	server: {
+		src: [
+			'modules/*.js',
+			'spect/*.js',
+			'!node_modules/**'
+		]
+	},
+	sass: {
+		src: ['client/scss/**/*.scss'],
+		dest: 'client/build/css'
+	},
+	script: {
+		src: ['client/js/app.js'],
+		dest: 'client/build/js'
+	},
+	html: {
+		src: ['client/html/*.html'],
+		dest: 'client/build/html'
+	},
+	images: {
+		src: ['client/images/*.png'],
+		dest: 'client/build/images'
+	}
 };
 
 gulp.task('sass', function () {
-  gulp
-    .src(filePath.sass.src)
-    .pipe(sass(eyeglass(sassOptions)).on("error", sass.logError))
-    .pipe(gulp.dest(filePath.sass.dest));
-});
-
-gulp.task('watch-sass', function() {
-  gulp.watch(filePath.sass.src, ['sass']);
-  gulp.watch(filePath.sass.dest).on('change', function(file) {
-    console.log("Changed sass: " + file.path);
-    server.changed(file.path);
-  });
+	gulp
+		.src(filePath.sass.src)
+		.pipe(sass(eyeglass(sassOptions)).on("error", sass.logError))
+		.pipe(gulp.dest(filePath.sass.dest));
 });
 
 gulp.task('script', function () {
-  gulp
-    .src(filePath.script.src)
-    .pipe(browserify())
-    .pipe(uglify())
-    .pipe(gulp.dest(filePath.script.dest));
-});
-
-gulp.task('watch-script', function() {
-  gulp.watch(filePath.script.src, ['script']);
-  gulp.watch(filePath.script.dest).on('change', function(file) {
-    console.log("Changed script: " + file.path);
-    server.changed(file.path);
-  });
+	gulp
+		.src(filePath.script.src)
+		.pipe(browserify())
+		.pipe(uglify())
+		.pipe(gulp.dest(filePath.script.dest));
 });
 
 gulp.task('html', function () {
-  gulp
-    .src(filePath.html.src)
-    .pipe(gulp.dest(filePath.html.dest));
-});
-
-gulp.task('watch-html', function() {
-  gulp.watch(filePath.html.src, ['html']);
-  gulp.watch(filePath.html.dest).on('change', function(file) {
-    console.log("Changed html: " + file.path);
-    server.changed(file.path);
-  });
+	gulp
+		.src(filePath.html.src)
+		.pipe(gulp.dest(filePath.html.dest));
 });
 
 gulp.task('images', function () {
-  gulp
-    .src(filePath.images.src)
-    .pipe(gulp.dest(filePath.images.dest));
+	gulp
+		.src(filePath.images.src)
+		.pipe(gulp.dest(filePath.images.dest));
 });
 
-gulp.task('watch-images', function() {
-  gulp.watch(filePath.images.src, ['images']);
-  gulp.watch(filePath.images.dest).on('change', function(file) {
-    console.log("Changed images: " + file.path);
-    server.changed(file.path);
-  });
+gulp.task('watch:script', function() {
+	gulp.watch(filePath.script.src, ['script']);
+	gulp.watch(filePath.script.dest).on('change', function(file) {
+		console.log("Changed script: " + file.path);
+		server.changed(file.path);
+	});
 });
 
-gulp.task('deploy', function() {
-  var src = [].concat(filePath.server.src);
-  src.push(filePath.script.dest + '/**/*');
-  src.push(filePath.sass.dest + '/**/*');
-  src.push(filePath.html.dest + '/**/*');
-  src.push(filePath.images.dest + '/**/*');
-
-  gulp
-    .src(src, {base: './'})
-    .pipe(sftp(sftpProductionOptions));
+gulp.task('watch:sass', function() {
+	gulp.watch(filePath.sass.src, ['sass']);
+	gulp.watch(filePath.sass.dest).on('change', function(file) {
+		console.log("Changed sass: " + file.path);
+		server.changed(file.path);
+	});
 });
 
-gulp.task('deploy-dev', function() {
-  var src = [].concat(filePath.server.src);
-  src.push(filePath.script.dest + '/**/*');
-  src.push(filePath.sass.dest + '/**/*');
-  src.push(filePath.html.dest + '/**/*');
-  src.push(filePath.images.dest + '/**/*');
-
-  gulp
-    .src(src, {base: './'})
-    .pipe(sftp(sftpDevelopmentOptions));
+gulp.task('watch:html', function() {
+	gulp.watch(filePath.html.src, ['html']);
+	gulp.watch(filePath.html.dest).on('change', function(file) {
+		console.log("Changed html: " + file.path);
+		server.changed(file.path);
+	});
 });
 
-gulp.task('test', function () {
-  var mocha = require('gulp-mocha');
-  gulp
-    .src('./spec/*-spec.js')
-    .pipe(mocha({bail: true}))
-    .once('error', function () {
-      process.exit();
-    })
-    .once('end', function () {
-      process.exit();
-    });
+gulp.task('watch:images', function() {
+	gulp.watch(filePath.images.src, ['images']);
+	gulp.watch(filePath.images.dest).on('change', function(file) {
+		console.log("Changed images: " + file.path);
+		server.changed(file.path);
+	});
+});
+
+gulp.task('lint:script', function () {
+	var allScriptPaths = filePath.script.src.concat(filePath.server.src);
+	return gulp.src(allScriptPaths)
+		.pipe(eslint())
+		.pipe(eslint.format('node_modules/eslint-path-formatter'))
+		.pipe(eslint.failAfterError());
+});
+
+gulp.task('test', ['lint:script'], function (done) {
+	var mocha = require('gulp-mocha');
+	gulp
+		.src('./spec/*-spec.js')
+		.pipe(mocha({bail: true}))
+		.once('error', function () {
+			process.exit();
+		})
+		.once('end', function () {
+			done();
+		});
+});
+
+gulp.task('upload:production', ['test'], function() {
+	var src = [].concat(filePath.server.src);
+	src.push(filePath.script.dest + '/**/*');
+	src.push(filePath.sass.dest + '/**/*');
+	src.push(filePath.html.dest + '/**/*');
+	src.push(filePath.images.dest + '/**/*');
+
+	gulp
+		.src(src, {base: './'})
+		.pipe(sftp(sftpProductionOptions));
+});
+
+gulp.task('upload:development', ['test'], function() {
+	var src = [].concat(filePath.server.src);
+	src.push(filePath.script.dest + '/**/*');
+	src.push(filePath.sass.dest + '/**/*');
+	src.push(filePath.html.dest + '/**/*');
+	src.push(filePath.images.dest + '/**/*');
+
+	gulp
+		.src(src, {base: './'})
+		.pipe(sftp(sftpDevelopmentOptions));
 });
 
 
 gulp.task('build', ['script', 'sass', 'html', 'images']);
-gulp.task('watch', ['build', 'watch-script', 'watch-sass', 'watch-html', 'watch-images']);
-gulp.task('default', ['test', 'script']);
+gulp.task('watch', ['build', 'watch:script', 'watch:sass', 'watch:html', 'watch:images']);
+gulp.task('deploy:production', ['test', 'build', 'upload:production']);
+gulp.task('deploy:development', ['test', 'build', 'upload:development']);
+gulp.task('default', ['lint:script', 'test', 'script']);

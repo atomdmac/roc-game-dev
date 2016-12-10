@@ -1,33 +1,33 @@
 function shorten(originalString, maxLength) {
-  maxLength = maxLength || 10;
-  if(originalString.length > maxLength) return originalString.substr(0, maxLength) + '...';
-  return originalString;
+	maxLength = maxLength || 10;
+	if(originalString.length > maxLength) return originalString.substr(0, maxLength) + '...';
+	return originalString;
 }
 
 function wrapUrls(originalString, options) {
-  options = options || {};
+	options = options || {};
 
-  var urlRegEx = /http[s]?:\/\/[^\n\s"<>#%\{\}\|\\\^~\[\]\`]*/g;
-  var splitString = originalString.split(urlRegEx);
-  var urls = originalString.match(urlRegEx);
+	var urlRegEx = /http[s]?:\/\/[^\n\s"<>#%\{\}\|\\\^~\[\]\`]*/g;
+	var splitString = originalString.split(urlRegEx);
+	var urls = originalString.match(urlRegEx);
 
-  if (urls === null) return originalString;
+	if (urls === null) return originalString;
 
-  var tokens = splitString.map(function (item, index) {
-    var target = options.target ? ' target="' + options.target + '"' : '';
-    return item + (urls[index] !== undefined ? ('<a' + target + ' href="' + urls[index] + '">' + urls[index] + '</a>') : '');
-  });
+	var tokens = splitString.map(function (item, index) {
+		var target = options.target ? ' target="' + options.target + '"' : '';
+		return item + (urls[index] !== undefined ? ('<a' + target + ' href="' + urls[index] + '">' + urls[index] + '</a>') : '');
+	});
 
-  return tokens.join('');
+	return tokens.join('');
 }
 
 function linebreaksToMarkup(inputStr) {
-  var lineBreakRegEx = /[\n]/;
-  return inputStr.split(lineBreakRegEx).join('<br>');
+	var lineBreakRegEx = /[\n]/;
+	return inputStr.split(lineBreakRegEx).join('<br>');
 }
 
 module.exports = {
-  shorten: shorten,
-  wrapUrls: wrapUrls,
-  linebreaksToMarkup: linebreaksToMarkup
+	shorten: shorten,
+	wrapUrls: wrapUrls,
+	linebreaksToMarkup: linebreaksToMarkup
 };
