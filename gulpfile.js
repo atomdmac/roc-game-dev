@@ -3,6 +3,7 @@ var uglify = require('gulp-uglify');
 var browserify = require('gulp-browserify');
 var eslint = require('gulp-eslint');
 var extend = require('extend');
+var runSequence = require('run-sequence');
 
 var sftp = require('gulp-sftp');
 
@@ -116,39 +117,35 @@ gulp.task('lint:script', function () {
 		.pipe(eslint.failAfterError());
 });
 
-gulp.task('test', ['lint:script'], function (done) {
+gulp.task('test', function () {
 	var mocha = require('gulp-mocha');
-	gulp
+	return gulp
 		.src('./spec/*-spec.js')
-		.pipe(mocha({bail: true}))
-		.once('error', function () {
-			process.exit();
-		})
-		.once('end', function () {
-			done();
-		});
+		.pipe(mocha({bail: true}));
 });
 
 gulp.task('upload:production', ['test'], function() {
 	var src = [].concat(filePath.server.src);
+	src.push('package.json');
 	src.push(filePath.script.dest + '/**/*');
 	src.push(filePath.sass.dest + '/**/*');
 	src.push(filePath.html.dest + '/**/*');
 	src.push(filePath.images.dest + '/**/*');
 
-	gulp
+	return gulp
 		.src(src, {base: './'})
 		.pipe(sftp(sftpProductionOptions));
 });
 
-gulp.task('upload:development', ['test'], function() {
+gulp.task('upload:development', function() {
 	var src = [].concat(filePath.server.src);
+	src.push('package.json');
 	src.push(filePath.script.dest + '/**/*');
 	src.push(filePath.sass.dest + '/**/*');
 	src.push(filePath.html.dest + '/**/*');
 	src.push(filePath.images.dest + '/**/*');
 
-	gulp
+	return gulp
 		.src(src, {base: './'})
 		.pipe(sftp(sftpDevelopmentOptions));
 });
@@ -156,6 +153,22 @@ gulp.task('upload:development', ['test'], function() {
 
 gulp.task('build', ['script', 'sass', 'html', 'images']);
 gulp.task('watch', ['build', 'watch:script', 'watch:sass', 'watch:html', 'watch:images']);
-gulp.task('deploy:production', ['test', 'build', 'upload:production']);
-gulp.task('deploy:development', ['test', 'build', 'upload:development']);
+gulp.task('deploy:production', function (callback) {
+	runSequence(
+		'lint:script',
+		'test',
+		['script', 'sass', 'html', 'images'],
+		'upload:production',
+		callback
+	);
+});
+gulp.task('deploy:development', function (callback) {
+	runSequence(
+		'lint:script',
+		'test',
+		['script', 'sass', 'html', 'images'],
+		'upload:development',
+		callback
+	);
+});
 gulp.task('default', ['lint:script', 'test', 'script']);
