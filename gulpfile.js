@@ -154,7 +154,7 @@ gulp.task('deploy:production', function (callback) {
 	runSequence(
 		'lint:script',
 		'test',
-		['script', 'sass', 'html', 'images'],
+		'build',
 		'upload:production',
 		callback
 	);
@@ -163,7 +163,7 @@ gulp.task('deploy:development', function (callback) {
 	runSequence(
 		'lint:script',
 		'test',
-		['script', 'sass', 'html', 'images'],
+		'build',
 		'upload:development',
 		callback
 	);
