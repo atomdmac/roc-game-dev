@@ -11,6 +11,8 @@ function wrapUrls(originalString, options) {
   var splitString = originalString.split(urlRegEx);
   var urls = originalString.match(urlRegEx);
 
+  if (urls === null) return originalString;
+
   var tokens = splitString.map(function (item, index) {
     var target = options.target ? ' target="' + options.target + '"' : '';
     return item + (urls[index] !== undefined ? ('<a' + target + ' href="' + urls[index] + '">' + urls[index] + '</a>') : '');

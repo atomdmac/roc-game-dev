@@ -56,6 +56,13 @@ describe('StringUtil.wrapUrl', function () {
     expect(actualString).to.equal(expectedString);
   });
 
+  it('Should handle strings that do not contain URLs', function () {
+    originalString = 'This is a string that does not contain any URLs.';
+    expectedString = 'This is a string that does not contain any URLs.';
+    actualString   = stringUtil.wrapUrls(originalString);
+    expect(actualString).to.equal(expectedString);
+  })
+
 });
 
 describe('StringUtil.linebreaksToMarkup', function () {
