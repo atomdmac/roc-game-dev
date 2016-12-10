@@ -4,6 +4,7 @@ var browserify = require('gulp-browserify');
 var eslint = require('gulp-eslint');
 var extend = require('extend');
 var runSequence = require('run-sequence');
+var logger = require('winston');
 
 var sftp = require('gulp-sftp');
 
@@ -53,7 +54,7 @@ var filePath = {
 gulp.task('sass', function () {
 	gulp
 		.src(filePath.sass.src)
-		.pipe(sass(eyeglass(sassOptions)).on("error", sass.logError))
+		.pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
 		.pipe(gulp.dest(filePath.sass.dest));
 });
 
@@ -80,32 +81,28 @@ gulp.task('images', function () {
 gulp.task('watch:script', function() {
 	gulp.watch(filePath.script.src, ['script']);
 	gulp.watch(filePath.script.dest).on('change', function(file) {
-		console.log("Changed script: " + file.path);
-		server.changed(file.path);
+		logger.info('Changed script: ' + file.path);
 	});
 });
 
 gulp.task('watch:sass', function() {
 	gulp.watch(filePath.sass.src, ['sass']);
 	gulp.watch(filePath.sass.dest).on('change', function(file) {
-		console.log("Changed sass: " + file.path);
-		server.changed(file.path);
+		logger.info('Changed sass: ' + file.path);
 	});
 });
 
 gulp.task('watch:html', function() {
 	gulp.watch(filePath.html.src, ['html']);
 	gulp.watch(filePath.html.dest).on('change', function(file) {
-		console.log("Changed html: " + file.path);
-		server.changed(file.path);
+		logger.info('Changed html: ' + file.path);
 	});
 });
 
 gulp.task('watch:images', function() {
 	gulp.watch(filePath.images.src, ['images']);
 	gulp.watch(filePath.images.dest).on('change', function(file) {
-		console.log("Changed images: " + file.path);
-		server.changed(file.path);
+		logger.info('Changed images: ' + file.path);
 	});
 });
 
