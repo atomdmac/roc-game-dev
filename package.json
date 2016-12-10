@@ -4,7 +4,8 @@
   "description": "The ROC Game Dev official site.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha spec/*spec.js"
+    "test": "mocha spec/*spec.js",
+    "lint": "eslint --ignore-path ./node_modules/** ./**"
   },
   "author": "",
   "license": "ISC",
@@ -24,10 +25,12 @@
   "devDependencies": {
     "browserify": "^13.1.1",
     "chai": "^3.5.0",
+    "eslint-path-formatter": "^0.1.1",
     "extend": "^3.0.0",
     "eyeglass": "^1.1.2",
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
+    "gulp-eslint": "^3.0.1",
     "gulp-mocha": "^3.0.1",
     "gulp-sass": "^2.3.2",
     "gulp-sftp": "^0.1.5",
