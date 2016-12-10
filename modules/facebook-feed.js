@@ -33,32 +33,26 @@ FacebookFeed.transformEventData = function (eventData, options) {
   options = extend({}, defaultOptions, options);
 
   eventData.forEach(function (event, index) {
-    newEventData.push({
-      description: stringUtil.wrapUrls(
-        stringUtil.linebreaksToMarkup(
-          event.description
-          )
-        ),
-      start_time     : moment(event.start_time).format(options.dateFormat),
-      end_time       : moment(event.end_time).format(options.dateFormat),
-      start_time_raw : event.start_time,
-      end_time_raw   : event.end_time,
-      id             : event.id,
-      name           : event.name,
-      place          : {
-        id  : event.place.id,
-        name: event.place.name,
-        location: {
-          city     : event.place.location.city,
-          country  : event.place.location.country,
-          latitude : event.place.location.latitude,
-          longitude: event.place.location.longitude,
-          state    : event.place.location.state,
-          street   : event.place.location.street,
-          zip      : event.place.location.zip
-        }
-      }
-    });
+    // Clone event object and augment as necessary.
+    var newEvent = extend({}, event);
+
+    // Format times
+    newEvent.start_time = moment.parseZone(event.start_time).format(options.dateFormat);
+    newEvent.end_time = moment.parseZone(event.end_time).format(options.dateFormat);
+
+    // Maintain raw/unformatted times
+    newEvent.start_time_raw = event.start_time;
+    newEvent.end_time_raw = event.end_time;
+
+    // Format description
+    newEvent.description = stringUtil.wrapUrls(
+      stringUtil.linebreaksToMarkup(
+        event.description
+        )
+      );
+
+    // Update event list
+    newEventData.push(newEvent);
   });
 
   return newEventData;
