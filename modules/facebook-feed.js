@@ -107,7 +107,6 @@ FacebookFeed.prototype.refresh = function (token) {
     FB.api(
       '/' + self.options.groupId + '/events',
       // {since: nowTimeStamp},
-      {limit: 2},
       function (response) {
 
         // Facebook returned an error :(
