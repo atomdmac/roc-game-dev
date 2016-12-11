@@ -122,8 +122,8 @@ function getPageData () {
 // Inserts content if the first number is larger than the second.
 handlebars.registerHelper('is_larger_than', function(number1, number2, options) {
 	if( number1 > number2 ) {
-			return options.fn(this);
+		return options.fn(this);
 	} else {
-			return options.inverse(this);
+		return options.inverse(this);
 	}
 });
