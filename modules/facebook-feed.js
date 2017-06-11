@@ -54,6 +54,10 @@ FacebookFeed.transformEventData = function (eventData, options) {
 		newEventData.push(newEvent);
 	});
 
+	// By default, Facebook returns data with the newest items first.  We want to
+	// order dates with the _closest_ event first instead.
+	newEventData.reverse();
+
 	return newEventData;
 };
 
@@ -119,6 +123,9 @@ FacebookFeed.prototype.refresh = function (token) {
 					// Update our in-memory copy of the data.
 					self.events = FacebookFeed.transformEventData(response.data);
 					self.events = FacebookFeed.removePastEvents(self.events);
+
+					// Order w/ nearest event first.
+					self.events.reverse();
 
 					// Attempt to write data to disk for later.
 					// NOTE: We're saving the *ORIGINAL* data that we got from Facebook.
