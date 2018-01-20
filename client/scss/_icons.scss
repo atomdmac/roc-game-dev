@@ -1,0 +1,16 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 0.5em;
+
+  &-clock {
+    background-image: url('../images/clock.svg');
+  }
+
+  &-location {
+    background-image: url('../images/location.svg');
+  }
+}
