@@ -31,15 +31,15 @@ var cwd = path.resolve();
 
 // Load HTML templates
 function compileHTMLTemplates () {
-	fs.readFile('./client/build/html/home.html', 'utf8', function (err, data) {
-		htmlTpl = handlebars.compile(data);
-	});
+  fs.readFile('./client/build/html/home.html', 'utf8', function (err, data) {
+    htmlTpl = handlebars.compile(data);
+  });
 }
 
 // DEBUG: If in debug mode...
 if(DEBUG_MODE) {
-	// recompile templates on an interval.
-	setInterval(compileHTMLTemplates, 1000);
+  // recompile templates on an interval.
+  setInterval(compileHTMLTemplates, 1000);
 }
 
 // Compile HTML templates immediately.
@@ -49,17 +49,17 @@ compileHTMLTemplates();
 
 // Home page rendering
 app.get('/', function (req, res) {
-	res.send(htmlTpl(getPageData()));
+  res.send(htmlTpl(getPageData()));
 });
 
 // JavaScript files
 app.get('/js/:fileName', function (req, res) {
-	res.sendFile(cwd + '/client/build/js/' + req.params.fileName);
+  res.sendFile(cwd + '/client/build/js/' + req.params.fileName);
 });
 
 // CSS files
 app.get('/css/:fileName', function (req, res) {
-	res.sendFile(cwd + '/client/build/css/' + req.params.fileName);
+  res.sendFile(cwd + '/client/build/css/' + req.params.fileName);
 });
 
 // Images
@@ -69,11 +69,11 @@ app.get('/images/:fileName', function (req, res) {
 
 // Start polling Twitter data source.
 var twitterFeedInstance = new TwitterFeed({
-	inputFile : './data_cache/twitter.json',
-	outputFile: './data_cache/twitter.json',
-	searchParams: {
-		q: '#rocgamedev'
-	}
+  inputFile : './data_cache/twitter.json',
+  outputFile: './data_cache/twitter.json',
+  searchParams: {
+    q: '#rocgamedev'
+  }
 });
 
 // Start polling Twitter!
@@ -88,7 +88,7 @@ gCalEventFetcher.start();
 
 // HTTP server
 app.listen(PORT, function () {
-	logger.info('ROC Game Dev server listening on port', PORT);
+  logger.info('ROC Game Dev server listening on port', PORT);
 });
 
 // Return all aggregated page data.
@@ -101,9 +101,9 @@ function getPageData () {
 
 // Inserts content if the first number is larger than the second.
 handlebars.registerHelper('is_larger_than', function(number1, number2, options) {
-	if( number1 > number2 ) {
-		return options.fn(this);
-	} else {
-		return options.inverse(this);
-	}
+  if( number1 > number2 ) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
 });
