@@ -4,6 +4,8 @@
   "description": "The ROC Game Dev official site.",
   "main": "index.js",
   "scripts": {
+    "build:client": "./node_modules/.bin/gulp build",
+    "watch:client": "./node_modules/.bin/gulp watch",
     "test": "mocha spec/*spec.js",
     "lint": "eslint --ignore-path ./node_modules/** ./**"
   },
