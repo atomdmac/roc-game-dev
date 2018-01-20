@@ -6,7 +6,7 @@ var fs = require('fs');
 var path = require('path');
 var handlebars = require('handlebars');
 var TwitterFeed = require('./modules/twitter-feed');
-var FacebookFeed = require('./modules/facebook-feed');
+var GCalEventFetcher = require('./modules/gcal-event-fetcher');
 var htmlTpl;
 
 // Parse command-line arguments.
@@ -64,29 +64,7 @@ app.get('/css/:fileName', function (req, res) {
 
 // Images
 app.get('/images/:fileName', function (req, res) {
-	res.sendFile(cwd + '/client/build/images/' + req.params.fileName);
-});
-
-// Facebook Event Updates
-app.get('/update', function (req, res) {
-	res.sendFile(cwd + '/client/build/html/update.html');
-});
-
-// Accept event update requests.
-app.post('/update', function (req, res) {
-	facebookFeedInstance.refresh(req.body.token)
-
-		// Success
-		.then(function (fbResponse) {
-			res.send(fbResponse);
-			logger.info('Facebook event data updated successfully.');
-		},
-
-		// Failure
-		function (reason) {
-			logger.error('Facebook event data upate failure!.');
-			res.send(reason);
-		});
+  res.sendFile(cwd + '/client/build/images/' + req.params.fileName);
 });
 
 // Start polling Twitter data source.
@@ -98,13 +76,15 @@ var twitterFeedInstance = new TwitterFeed({
 	}
 });
 
-var facebookFeedInstance = new FacebookFeed({
-	cacheLocation: './data_cache/events.json',
-	groupId: '1453415071632653'
+// Start polling Twitter!
+twitterFeedInstance.start();
+
+var gCalEventFetcher = new GCalEventFetcher({
+  url: 'https://calendar.google.com/calendar/ical/esid2k5ropbgsd13kop9kk33qc%40group.calendar.google.com/public/basic.ics'
 });
 
-// Start polling!
-twitterFeedInstance.start();
+// Start polling GCal!
+gCalEventFetcher.start();
 
 // HTTP server
 app.listen(PORT, function () {
@@ -113,10 +93,10 @@ app.listen(PORT, function () {
 
 // Return all aggregated page data.
 function getPageData () {
-	return {
-		tweets: twitterFeedInstance.getTweets(12),
-		events: facebookFeedInstance.getEvents()
-	};
+  return {
+    tweets: twitterFeedInstance.getTweets(12),
+    events: gCalEventFetcher.getEvents()
+  };
 }
 
 // Inserts content if the first number is larger than the second.
