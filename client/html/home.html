@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ROC Game Dev</title>
   <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Open+Sans" rel="stylesheet">
+  <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
   <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <link href="/css/print.css" media="print" rel="stylesheet" type="text/css" />
   <!--[if IE]>
@@ -39,7 +40,7 @@
   <!-- Member Projects -->
   <!-- <section class="section-card section-gallery" id="section-gallery"></section> -->
 
-  <!-- Facebook -->
+  <!-- Events -->
   <section class="section-card section-facebook" id="section-facebook">
     <h1>Upcoming Events</h1>
     {{#if events.length}}
@@ -47,8 +48,15 @@
 	    <ul class="facebook-events {{#is_larger_than events.length 1}}double-column{{/is_larger_than}}">
 	      {{#each events}}
 	      <li>
-	        <h2 class="event-name"><a href="https://www.facebook.com/events/{{id}}" target="_blank">{{name}}</a></h2>
-	        <p><span class="event-location">{{place.name}}</span><span class="event-time"> - {{start_time}}</span></p>
+	        <h2 class="event-name">{{summary}}</h2>
+          <div class="event-time">
+            <span class="icon icon-clock" aria-hidden="true"></span>
+            {{startFormatted}}
+          </div>
+          <div class="event-location">
+            <span class="icon icon-location" aria-hidden="true"></span>
+            <a href="{{locationUrl}}" target="_blank">{{locationShort}}</a>
+          </div>
 	        <p class="event-description">{{{description}}}</p>
 	      </li>
 	      {{/each}}

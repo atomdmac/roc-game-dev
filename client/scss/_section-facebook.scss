@@ -5,6 +5,7 @@
   }
 
   h2 {
+    margin-bottom: 0;
     a {
       border: 0;
     }
@@ -24,5 +25,16 @@
   .event-time,
   .event-location {
     font-weight: bold;
+    font-size: 0.75rem;
+    color: $black400;
+
+    a {
+      color: $black400;
+      border-bottom: none;
+    }
+  }
+
+  .event-location {
+    margin-bottom: 1rem;
   }
 }
