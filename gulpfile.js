@@ -46,7 +46,7 @@ var filePath = {
 		dest: 'client/build/html'
 	},
 	images: {
-		src: ['client/images/*.png'],
+		src: ['client/images/*'],
 		dest: 'client/build/images'
 	}
 };
