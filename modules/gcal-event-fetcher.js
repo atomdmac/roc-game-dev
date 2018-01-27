@@ -45,6 +45,11 @@ GCalEventFetcher.prototype.refreshEvents = function () {
         endFormatted: moment(event.end).format(DATE_FORMAT)
         // TODO: Link to GCal event
       }))
+      .sort((event1, event2) => {
+        if (event1.start > event2.start) return 1
+        else if (event1.start < event2.start) return -1
+        else return 0
+      })
       .value();
   });
 };
