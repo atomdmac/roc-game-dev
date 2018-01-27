@@ -5,4 +5,4 @@ node_modules
 /.ftppass
 /credentials
 *.log
-/data_cache
+data_cache
