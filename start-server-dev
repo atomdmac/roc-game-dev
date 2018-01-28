@@ -1,1 +1,0 @@
-forever start -a -e server-err.log --uid "development" server.js --port 8080 --debug
