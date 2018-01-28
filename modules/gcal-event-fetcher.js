@@ -1,6 +1,7 @@
 var _ = require('lodash');
 var ical = require('ical');
-var moment = require('moment');
+var moment = require('moment-timezone');
+const TIME_ZONE = 'America/New_York';
 const DATE_FORMAT = 'MMM Do [at] h:mma';
 
 function GCalEventFetcher (options) {
@@ -31,6 +32,11 @@ GCalEventFetcher.prototype.refreshEvents = function () {
       .values()
       // Only include on-going or future events.
       .filter(event => moment(event.end).isAfter(now))
+      // Format dates
+      .map(event => ({
+        ...event,
+        start: moment(event.start).tz(TIME_ZONE)
+      }))
       // Compose additional fields.
       .map(event => ({
         ...event,

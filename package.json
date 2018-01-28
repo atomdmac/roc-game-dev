@@ -28,6 +28,7 @@
     "lodash": "^4.17.4",
     "minimist": "^1.2.0",
     "moment": "^2.15.2",
+    "moment-timezone": "^0.5.14",
     "normalize.css": "^4.2.0",
     "promise": "^7.1.1",
     "scrollingelement": "git+https://github.com/mathiasbynens/document.scrollingElement.git",
