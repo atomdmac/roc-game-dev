@@ -20,7 +20,7 @@
       "user" : "root",
       "host" : "rgd",
       "repo" : "https://github.com/atomdmac/roc-game-dev.git",
-      "ref"  : "origin/gcal-integration",
+      "ref"  : "origin/master",
       "path" : "/var/www/production",
       "pre-setup" : "apt-get install -y git",
       "post-deploy" : "npm install && npm run build:client && pm2 startOrReload ecosystem.json --env production"
