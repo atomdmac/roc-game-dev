@@ -8,9 +8,7 @@
     "ignore_watch"       : ["node_modules", "data_cache", ".git", "*.log"],
     "watch": true,
     "env" : {
-      "NODE_ENV" : "normal",
-      "PORT": 8080,
-      "ICAL": "https://calendar.google.com/calendar/ical/dqlkcmsj2crn156aj0gap762cc%40group.calendar.google.com/public/basic.ics"
+      "NODE_ENV" : "normal"
     },
     "env_production" : {
       "NODE_ENV" : "production"

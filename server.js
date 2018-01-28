@@ -1,3 +1,4 @@
+require('dotenv').config();
 var logger = require('winston');
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -80,7 +81,7 @@ var twitterFeedInstance = new TwitterFeed({
 twitterFeedInstance.start();
 
 var gCalEventFetcher = new GCalEventFetcher({
-  url: process.env.ICAL || '';
+  url: process.env.ICAL || ''
 });
 
 // Start polling GCal!

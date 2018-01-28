@@ -2,6 +2,7 @@
 /credentials
 /data_cache
 /design
+.env
 .ftppass
 *.log
 /node_modules
