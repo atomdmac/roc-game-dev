@@ -12,8 +12,18 @@
       "PORT": 8080
     },
     "env_production" : {
-      "NODE_ENV" : "production",
-      "PORT": 80
+      "NODE_ENV" : "production"
     }
-  }]
+  }],
+  "deploy" : {
+    "production" : {
+      "user" : "root",
+      "host" : "rgd",
+      "repo" : "https://github.com/atomdmac/roc-game-dev.git",
+      "ref"  : "origin/gcal-integration",
+      "path" : "/var/www/production",
+      "pre-setup" : "apt-get install -y git",
+      "post-deploy" : "npm install && npm run build:client && pm2 startOrReload --env production"
+    }
+  }
 }
