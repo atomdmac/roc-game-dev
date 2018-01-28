@@ -1,6 +1,6 @@
 {
     "apps" : [{
-    "name"               : "Server",
+    "name"               : "server",
     "script"             : "server.js",
     "exec_mode"          : "cluster",
     "instances"          : "4",
@@ -23,7 +23,7 @@
       "ref"  : "origin/gcal-integration",
       "path" : "/var/www/production",
       "pre-setup" : "apt-get install -y git",
-      "post-deploy" : "npm install && npm run build:client && pm2 startOrReload --env production"
+      "post-deploy" : "npm install && npm run build:client && pm2 startOrReload ecosystem.json --env production"
     }
   }
 }
