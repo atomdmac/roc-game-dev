@@ -1,0 +1,19 @@
+{
+    "apps" : [{
+    "name"               : "Server",
+    "script"             : "server.js",
+    "exec_mode"          : "cluster",
+    "instances"          : "4",
+    "max_memory_restart" : "260M",
+    "ignore_watch"       : ["node_modules", "data_cache", ".git", "*.log"],
+    "watch": true,
+    "env" : {
+      "NODE_ENV" : "normal",
+      "PORT": 8080
+    },
+    "env_production" : {
+      "NODE_ENV" : "production",
+      "PORT": 80
+    }
+  }]
+}

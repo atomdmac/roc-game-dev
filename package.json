@@ -4,8 +4,8 @@
   "description": "The ROC Game Dev official site.",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/nodemon server.js --port=8080",
-    "prod": "node server.js",
+    "dev": "./node_modules/.bin/nodemon server.js --PORT=8080",
+    "prod": "./node_modules/.bin/pm2 startOrReload process.json",
     "build:client": "./node_modules/.bin/gulp build",
     "watch:client": "./node_modules/.bin/gulp watch",
     "test": "mocha spec/*spec.js",
@@ -14,7 +14,9 @@
   "author": "",
   "license": "ISC",
   "nodemonConfig": {
-    "ignore": ["./data_cache"]
+    "ignore": [
+      "./data_cache"
+    ]
   },
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -47,6 +49,7 @@
     "mz": "^2.6.0",
     "nodemon": "^1.14.11",
     "normalize-scss": "^6.0.0",
+    "pm2": "^2.9.3",
     "remove": "^0.1.5",
     "run-sequence": "^1.2.2",
     "typey": "^1.0.3",
