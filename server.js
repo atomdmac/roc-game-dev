@@ -80,10 +80,7 @@ var twitterFeedInstance = new TwitterFeed({
 twitterFeedInstance.start();
 
 var gCalEventFetcher = new GCalEventFetcher({
-  // RGD
-  // url: 'https://calendar.google.com/calendar/ical/dqlkcmsj2crn156aj0gap762cc%40group.calendar.google.com/public/basic.ics'
-  // Test Calendar
-  url: 'https://calendar.google.com/calendar/ical/esid2k5ropbgsd13kop9kk33qc%40group.calendar.google.com/public/basic.ics'
+  url: process.env.ICAL || '';
 });
 
 // Start polling GCal!

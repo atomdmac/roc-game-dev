@@ -9,7 +9,8 @@
     "watch": true,
     "env" : {
       "NODE_ENV" : "normal",
-      "PORT": 8080
+      "PORT": 8080,
+      "ICAL": "https://calendar.google.com/calendar/ical/dqlkcmsj2crn156aj0gap762cc%40group.calendar.google.com/public/basic.ics"
     },
     "env_production" : {
       "NODE_ENV" : "production"
