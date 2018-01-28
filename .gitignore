@@ -1,8 +1,9 @@
-.sass-cache
-/design
-node_modules
-/sftp-config.json
-/.ftppass
+/client/build
 /credentials
+/data_cache
+/design
+.ftppass
 *.log
-data_cache
+/node_modules
+sftp-config.json
+/client/.sass-cache
