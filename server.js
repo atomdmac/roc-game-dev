@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 logger.add(logger.transports.File, { filename: 'server.log' });
 
 // Which port should the server offer connections on?
-var PORT = cmdLineArgs.port || 80;
+var PORT = cmdLineArgs.PORT || process.env.PORT || 8080;
 
 // DEBUG MODE
 // Set to FALSE before moving to production.
@@ -80,6 +80,9 @@ var twitterFeedInstance = new TwitterFeed({
 twitterFeedInstance.start();
 
 var gCalEventFetcher = new GCalEventFetcher({
+  // RGD
+  // url: 'https://calendar.google.com/calendar/ical/dqlkcmsj2crn156aj0gap762cc%40group.calendar.google.com/public/basic.ics'
+  // Test Calendar
   url: 'https://calendar.google.com/calendar/ical/esid2k5ropbgsd13kop9kk33qc%40group.calendar.google.com/public/basic.ics'
 });
 
