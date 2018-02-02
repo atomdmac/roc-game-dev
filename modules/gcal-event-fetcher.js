@@ -1,6 +1,7 @@
 var _ = require('lodash');
 var ical = require('ical');
 var moment = require('moment-timezone');
+var stringUtil = require('./string-util');
 const TIME_ZONE = 'America/New_York';
 const DATE_FORMAT = 'MMM Do [at] h:mma';
 
@@ -40,6 +41,11 @@ GCalEventFetcher.prototype.refreshEvents = function () {
       // Compose additional fields.
       .map(event => ({
         ...event,
+        description: stringUtil.linebreaksToMarkup(
+          stringUtil.wrapUrls(
+            event.description
+          )
+        ),
         // A shortened location string
         locationShort: createShortLocationString(event.location),
         // Link to Google Maps
