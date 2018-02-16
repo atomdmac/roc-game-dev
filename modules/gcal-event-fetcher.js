@@ -1,7 +1,7 @@
-var _ = require('lodash');
-var ical = require('ical');
-var moment = require('moment-timezone');
-var stringUtil = require('./string-util');
+const _ = require('lodash');
+const ical = require('ical');
+const moment = require('moment-timezone');
+const stringUtil = require('./string-util');
 const TIME_ZONE = 'America/New_York';
 const DATE_FORMAT = 'MMM Do [at] h:mma';
 
@@ -63,9 +63,9 @@ GCalEventFetcher.prototype.refreshEvents = function () {
         // TODO: Link to GCal event
       }))
       .sort((event1, event2) => {
-        if (event1.start > event2.start) return 1
-        else if (event1.start < event2.start) return -1
-        else return 0
+        if (event1.start > event2.start) return 1;
+        else if (event1.start < event2.start) return -1;
+        else return 0;
       })
       .value();
   });
