@@ -27,12 +27,17 @@ GCalEventFetcher.prototype.refreshEvents = function () {
     if (err) {
       throw err;
     }
-    var now = moment();
+    const now = moment();
+    const in30Days = moment().add(30, 'days');
+
     this.events = _(calendarEvents)
       // Conver to array
       .values()
-      // Only include on-going or future events.
-      .filter(event => moment(event.end).isAfter(now))
+      // Only include on-going or future events within the next 30 days.
+      .filter(event => {
+        const date = moment(event.end);
+        return date.isAfter(now) && date.isBefore(in30Days);
+      })
       // Format dates
       .map(event => ({
         ...event,
