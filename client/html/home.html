@@ -48,7 +48,7 @@
 	    <ul class="facebook-events {{#is_larger_than events.length 1}}double-column{{/is_larger_than}}">
 	      {{#each events}}
 	      <li>
-	        <h2 class="event-name">{{summary}}</h2>
+          <h2 class="event-name"><a href"{{gcalUrl}}">{{summary}}</a></h2>
           <div class="event-time">
             <span class="icon icon-clock" aria-hidden="true"></span>
             {{startFormatted}}
@@ -66,6 +66,7 @@
     <h2>Aw, Jeez!</h2>
     <p>It looks like we don't have any events currently on the books. In the meantime, you can join our <a href="https://www.facebook.com/groups/rocgamedev/" target="_blank">Facebook group</a> to receive alerts when new events are scheduled.</p>
     {{/if}}
+    <p style="font-size: 0.75em">Psst!  You can find a GCal feed of all of this stuff <a href="https://calendar.google.com/calendar/embed?src=dqlkcmsj2crn156aj0gap762cc%40group.calendar.google.com&ctz=America%2FNew_York" target="new">here.</a>
   </section>
 
   <!-- Twitter -->
