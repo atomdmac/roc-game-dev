@@ -15,3 +15,10 @@ This site is build on Node JS and, in addition to the modules that are automatic
  - forever
  - mocha
  - gulp
+
+## Deployments
+Deployments are handled through `PM2`.  In order to deploy, you'll need an SSH key for the environment that you want to deploy to (ex. development or production).
+ - Merge the changes that you'd like to deploy to `master`
+ - Make sure the merged changes are on your local machine
+ - `pm2 deploy production`
+ - You're done!
